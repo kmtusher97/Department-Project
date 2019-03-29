@@ -25,10 +25,10 @@ public class UserServicesImplementation implements UserServices {
         return userRepository.getOne(id);
     }
 
-    /*@Override
-    public User getUserByEmail(String email) {
-        return null;
-    }*/
+    @Override
+    public User getByEmail(String email) {
+        return userRepository.findByEmail(email);
+    }
 
     @Override
     public void saveOrUpdateUser(User user) {
