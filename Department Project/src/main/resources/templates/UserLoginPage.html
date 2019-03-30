@@ -5,10 +5,12 @@
   <title>Login</title>
 </head>
 <body>
-  <form th:action="@{/authenticate}" method="post" th:object="${userForm}">
+  <form th:action="@{/home}" method="post" th:object="${userForm}">
     <input type="text" th:field="*{email}">
     </br></br>
     <input type="text" th:field="*{password}">
+    </br></br>
+    <a th:href="@{/recoverPass}" role="button">Forgot Password</a>
     </br></br>
     <input type="submit" value="Login">
   </form>

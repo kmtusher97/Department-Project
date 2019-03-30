@@ -11,4 +11,5 @@ public interface UserServices {
     public User getByEmail(String email);
     public void saveOrUpdateUser(User user);
     public void deleteUser(Integer id);
+    public boolean isAdmin(Integer id);
 }

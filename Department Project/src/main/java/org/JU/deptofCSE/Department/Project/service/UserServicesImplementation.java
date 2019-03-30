@@ -39,4 +39,9 @@ public class UserServicesImplementation implements UserServices {
     public void deleteUser(Integer id) {
         userRepository.deleteById(id);
     }
+
+    @Override
+    public boolean isAdmin(Integer id) {
+        return (id == 1001);
+    }
 }

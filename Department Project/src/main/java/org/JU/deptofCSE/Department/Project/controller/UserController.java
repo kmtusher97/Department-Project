@@ -24,19 +24,26 @@ public class UserController {
         return loginPage;
     }
 
-    @RequestMapping(value = "/authenticate", method = RequestMethod.POST)
+    @RequestMapping(value = "/home", method = RequestMethod.POST)
     public ModelAndView authenticateLogin(@ModelAttribute("userForm") User user) {
         User requestedUser = userServices.getByEmail(user.getEmail());
-        if(requestedUser == null) {
-            return new ModelAndView("redirect/login");
+
+        if(requestedUser == null || !requestedUser.getPassword().equals(user.getPassword())) {
+            return new ModelAndView("redirect:/login");
         }
         ModelAndView homePage;
-        if( requestedUser.getId() == 1001 ) {
+        if( userServices.isAdmin(requestedUser.getId()) ) {
             homePage = new ModelAndView("AdminHomePage");
         }
         else {
             homePage = new ModelAndView("TeacherHomePage");
         }
         return homePage;
+    }
+
+    @RequestMapping(value = "/recoverPass", method = RequestMethod.GET)
+    public ModelAndView recoverUserPassword() {
+        ModelAndView passwordRecover = new ModelAndView("PasswordRecoverPage");
+        return passwordRecover;
     }
 }
