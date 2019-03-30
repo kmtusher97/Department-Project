@@ -15,4 +15,11 @@ import java.util.List;
 @RequestMapping("/test")
 public class TestController {
 
+    @Autowired
+    TeacherServices teacherServices;
+
+    @RequestMapping(value = "/allT", method = RequestMethod.GET)
+    public List<Teacher> getAllTeacher() {
+        return (List<Teacher>)teacherServices.getAllTeacher();
+    }
 }
