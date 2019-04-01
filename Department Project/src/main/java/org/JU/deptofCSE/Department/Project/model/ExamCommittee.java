@@ -28,9 +28,6 @@ public class ExamCommittee {
     @Column(name = "session")
     private String session;
 
-    @Column(name = "semester")
-    private Integer semester;
-
     @Column(name = "year")
     private Integer year;
 
@@ -85,14 +82,6 @@ public class ExamCommittee {
         this.session = session;
     }
 
-    public Integer getSemester() {
-        return semester;
-    }
-
-    public void setSemester(Integer semester) {
-        this.semester = semester;
-    }
-
     public Integer getYear() {
         return year;
     }
@@ -118,7 +107,6 @@ public class ExamCommittee {
                 ", member2=" + member2 +
                 ", member3=" + member3 +
                 ", session='" + session + '\'' +
-                ", semester=" + semester +
                 ", year=" + year +
                 ", numberOfStudent=" + numberOfStudent +
                 '}';
