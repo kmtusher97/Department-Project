@@ -7,7 +7,7 @@ import java.util.List;
 public interface TeacherServices {
 
     public List<Teacher> getAllTeacher();
-    public Teacher getTeacher(Integer id);
+    public Teacher getTeacherById(Integer id);
     public void saveOrUpdate(Teacher teacher);
     public void delete(Integer id);
 }
