@@ -21,7 +21,7 @@ public class TeacherServicesImplementation implements TeacherServices {
     }
 
     @Override
-    public Teacher getTeacher(Integer id) {
+    public Teacher getTeacherById(Integer id) {
         return teacherRepository.getOne(id);
     }
 
