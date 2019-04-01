@@ -32,7 +32,7 @@ public class ExamCommittee {
     private Integer semester;
 
     @Column(name = "year")
-    private Year year;
+    private Integer year;
 
     @Column(name = "numberOfStudent")
     private Integer numberOfStudent;
@@ -93,11 +93,11 @@ public class ExamCommittee {
         this.semester = semester;
     }
 
-    public Year getYear() {
+    public Integer getYear() {
         return year;
     }
 
-    public void setYear(Year year) {
+    public void setYear(Integer year) {
         this.year = year;
     }
 
@@ -107,5 +107,20 @@ public class ExamCommittee {
 
     public void setNumberOfStudent(Integer numberOfStudent) {
         this.numberOfStudent = numberOfStudent;
+    }
+
+    @Override
+    public String toString() {
+        return "ExamCommittee{" +
+                "examId=" + examId +
+                ", chairman=" + chairman +
+                ", member1=" + member1 +
+                ", member2=" + member2 +
+                ", member3=" + member3 +
+                ", session='" + session + '\'' +
+                ", semester=" + semester +
+                ", year=" + year +
+                ", numberOfStudent=" + numberOfStudent +
+                '}';
     }
 }
