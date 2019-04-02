@@ -1,9 +1,6 @@
 package org.JU.deptofCSE.Department.Project.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
@@ -11,6 +8,7 @@ import java.util.Date;
 public class Routine {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "routineId")
     private Integer routineId;
 
