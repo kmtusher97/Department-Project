@@ -25,6 +25,9 @@ public class TestController {
     @Autowired
     ExamCommitteeServices examCommitteeServices;
 
+    @Autowired
+    VenueServices venueServices;
+
     @RequestMapping(value = "/allT", method = RequestMethod.GET)
     public List<Teacher> getAllTeacher() {
         return (List<Teacher>)teacherServices.getAllTeacher();
@@ -41,9 +44,9 @@ public class TestController {
     }
 
     @RequestMapping(value = "/allE",method = RequestMethod.GET)
-    public List<ExamCommittee> getAllExamcommittee()
-    {
+    public List<ExamCommittee> getAllExamcommittee() {
         return examCommitteeServices.getAllExamCommittee();
     }
+
 
 }

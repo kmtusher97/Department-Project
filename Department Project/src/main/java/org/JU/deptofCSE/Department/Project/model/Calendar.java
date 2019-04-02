@@ -9,7 +9,7 @@ public class Calendar {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "data")
+    @Column(name = "date")
     private Date date;
 
     @Column(name = "day")
