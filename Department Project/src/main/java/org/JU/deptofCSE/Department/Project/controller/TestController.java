@@ -1,7 +1,13 @@
 package org.JU.deptofCSE.Department.Project.controller;
 
-import org.JU.deptofCSE.Department.Project.model.*;
-import org.JU.deptofCSE.Department.Project.service.*;
+import org.JU.deptofCSE.Department.Project.model.routine.Admin;
+import org.JU.deptofCSE.Department.Project.model.routine.Calendar;
+import org.JU.deptofCSE.Department.Project.model.routine.ExamCommittee;
+import org.JU.deptofCSE.Department.Project.model.routine.Teacher;
+import org.JU.deptofCSE.Department.Project.service.routine.AdminServices;
+import org.JU.deptofCSE.Department.Project.service.routine.CalendarServices;
+import org.JU.deptofCSE.Department.Project.service.routine.ExamCommitteeServices;
+import org.JU.deptofCSE.Department.Project.service.routine.TeacherServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
