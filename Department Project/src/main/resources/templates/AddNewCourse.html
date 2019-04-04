@@ -36,6 +36,27 @@
         <label for="rational">Rational</label>
         <input type="text" class="" id="rational" th:field="*{rational}">
       </div>
+      <br>
+
+      <fieldset>
+        <table>
+          <thead>
+          <tr>
+            <th>Objectives</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr th:each="courseObjective, itemStat : *{courseObjectives}">
+            <td>
+              <input type="text" th:field="*{courseObjectives[__${itemStat.index}__]}" />
+            </td>
+          </tr>
+          </tbody>
+        </table>
+        <input type="submit" th:value="submit">
+        <input type="reset" th:value="reset">
+      </fieldset>
+
 
     </form>
   </div>
