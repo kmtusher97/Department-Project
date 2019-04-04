@@ -10,7 +10,7 @@ public class Authors {
     @XmlElement(name = "Author")
     List<String> author;
 
-    public List<String> getAuthors() {
+    public List<String> get_Author() {
         return author;
     }
 
