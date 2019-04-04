@@ -3,7 +3,6 @@ package org.JU.deptofCSE.Department.Project.model.syllabus;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
 import java.io.Serializable;
 import java.util.List;
 
@@ -11,14 +10,21 @@ import java.util.List;
 @XmlRootElement(name = "Books")
 public class Books implements Serializable {
 
-    @XmlElement(name = "Book")
-    private List<Book> bookList;
+    @XmlElement(name = "Book") // special check
+    private List<Book> books;
 
-    public List<Book> getBooks() {
-        return bookList;
+    public List<Book> get_Books() {
+        return books;
     }
 
     public void setBooks(List<Book> books) {
-        this.bookList = books;
+        this.books = books;
+    }
+
+    @Override
+    public String toString() {
+        return "Books{" +
+                "books=" + books +
+                '}';
     }
 }

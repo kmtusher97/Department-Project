@@ -4,10 +4,10 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.List;
 
-@XmlRootElement(name = "authors")
+@XmlRootElement(name = "Authors")
 public class Authors {
 
-    @XmlElement(name = "author")
+    @XmlElement(name = "Author")
     List<String> author;
 
     public List<String> getAuthors() {
