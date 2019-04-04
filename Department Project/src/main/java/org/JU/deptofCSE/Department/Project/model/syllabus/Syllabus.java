@@ -7,21 +7,45 @@ import java.util.List;
 @XmlRootElement(name = "Syllabus")
 public class Syllabus {
 
-    @XmlElement(name = "Semesters")
-    List<Semesters> semesters;
+    @XmlElement(name = "EffictiveFrom")
+    private Integer effictiveFrom;
 
-    public List<Semesters> get_Semesters() {
+    @XmlElement(name = "EffictiveTo")
+    private Integer effictiveTo;
+
+    @XmlElement(name = "Semesters")
+    private Semesters semesters;
+
+    public Integer getEffictiveFrom() {
+        return effictiveFrom;
+    }
+
+    public void setEffictiveFrom(Integer effictiveFrom) {
+        this.effictiveFrom = effictiveFrom;
+    }
+
+    public Integer getEffictiveTo() {
+        return effictiveTo;
+    }
+
+    public void setEffictiveTo(Integer effictiveTo) {
+        this.effictiveTo = effictiveTo;
+    }
+
+    public Semesters getSemesters() {
         return semesters;
     }
 
-    public void setSemesters(List<Semesters> semesters) {
+    public void setSemesters(Semesters semesters) {
         this.semesters = semesters;
     }
 
     @Override
     public String toString() {
         return "Syllabus{" +
-                "semesters=" + semesters +
+                "effictiveFrom=" + effictiveFrom +
+                ", effictiveTo=" + effictiveTo +
+                ", semesters=" + semesters +
                 '}';
     }
 }
