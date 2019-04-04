@@ -5,6 +5,39 @@
   <title>Add New Course</title>
 </head>
 <body>
-  
+  <div>
+    <form th:action="@{/saveCourse}" method=post th:object="${courseEditForm}">
+
+      <div>
+        <label for="courseCode">Course Code</label>
+        <input type="text" class="" id="courseCode" th:field="*{courseCode}">
+      </div>
+      <br>
+
+      <div>
+        <label for="courseTitle">Course Title</label>
+        <input type="text" class="" id="courseTitle" th:field="*{courseTitle}">
+      </div>
+      <br>
+
+      <div>
+        <label for="courseType">Course Type</label>
+        <input type="text" class="" id="courseType" th:field="*{courseType}">
+      </div>
+      <br>
+
+      <div>
+        <label for="courseCredit">Course Credit</label>
+        <input type="text" class="" id="courseCredit" th:field="*{courseCredit}">
+      </div>
+      <br>
+
+      <div>
+        <label for="rational">Rational</label>
+        <input type="text" class="" id="rational" th:field="*{rational}">
+      </div>
+
+    </form>
+  </div>
 </body>
 </html>
