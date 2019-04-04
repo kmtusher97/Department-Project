@@ -1,11 +1,12 @@
 package org.JU.deptofCSE.Department.Project.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 @Entity
 @Table(name = "Calendar")
-public class Calendar {
+public class Calendar implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

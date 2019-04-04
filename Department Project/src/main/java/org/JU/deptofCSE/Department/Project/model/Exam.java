@@ -1,17 +1,18 @@
 package org.JU.deptofCSE.Department.Project.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 
 @Entity
 @Table(name = "Exam")
-public class Exam {
+public class Exam implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "examId")
-    private Integer examId;
+    private int examId;
 
     @Column(name = "date")
     private Date date;
