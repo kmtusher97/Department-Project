@@ -1,4 +1,4 @@
-package org.JU.deptofCSE.Department.Project.controller.syllabus;
+package org.JU.deptofCSE.Department.Project.model.syllabus;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
