@@ -10,10 +10,10 @@ import java.util.List;
 @XmlRootElement(name = "Books")
 public class Books implements Serializable {
 
-    @XmlElement(name = "Book") // special check
     private List<Book> books;
 
-    public List<Book> get_Books() {
+    @XmlElement(name = "Book")
+    public List<Book> getBooks() {
         return books;
     }
 

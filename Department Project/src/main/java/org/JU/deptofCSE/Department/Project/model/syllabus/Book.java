@@ -7,13 +7,12 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement(name = "Book")
 public class Book {
 
-    @XmlElement(name = "BookName")
     private String bookName;
 
-    @XmlElement(name = "Authors")
     private Authors authors;
 
-    public String get_BookName() {
+    @XmlElement(name = "BookName")
+    public String getBookName() {
         return bookName;
     }
 
@@ -21,7 +20,8 @@ public class Book {
         this.bookName = bookName;
     }
 
-    public Authors get_Authors() {
+    @XmlElement(name = "Authors")
+    public Authors getAuthors() {
         return authors;
     }
 

@@ -7,10 +7,10 @@ import java.util.List;
 @XmlRootElement(name = "Courses")
 public class Courses {
 
-    @XmlElement(name = "Course")
     List<Course>courses;
 
-    public List<Course> get_Courses() {
+    @XmlElement(name = "Course")
+    public List<Course> getCourses() {
         return courses;
     }
 

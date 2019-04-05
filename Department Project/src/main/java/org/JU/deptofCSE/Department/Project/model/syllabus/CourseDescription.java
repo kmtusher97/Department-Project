@@ -7,13 +7,13 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement(name = "CourseDescription")
 public class CourseDescription {
 
-    @XmlElement(name = "Title")
     private String title;
 
-    @XmlElement(name = "Description")
     private String Description;
 
-    public String get_Title() {
+
+    @XmlElement(name = "Title")
+    public String getTitle() {
         return title;
     }
 
@@ -21,7 +21,8 @@ public class CourseDescription {
         this.title = title;
     }
 
-    public String get_Description() {
+    @XmlElement(name = "Description")
+    public String getDescription() {
         return Description;
     }
 

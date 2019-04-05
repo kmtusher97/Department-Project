@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Course>
+    <CourseCode>CSE 102</CourseCode>
+    <CourseCredit>1</CourseCredit>
+    <CourseObjectives>
+        <CourseObjective>
+            <Objective>Circuit Lab</Objective>
+        </CourseObjective>
+        <CourseObjective>
+            <Objective>Circuit Lab</Objective>
+        </CourseObjective>
+        <CourseObjective>
+            <Objective>Circuit Lab</Objective>
+        </CourseObjective>
+    </CourseObjectives>
+    <CourseTitle>Electronic Circuit Laboratory</CourseTitle>
+    <CourseType>Lab</CourseType>
+    <Rational>Something</Rational>
+</Course>

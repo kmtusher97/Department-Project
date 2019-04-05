@@ -7,35 +7,29 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement(name = "Course")
 public class Course {
 
-    @XmlElement(name = "CourseCode")
     private String courseCode;
 
-    @XmlElement(name = "CourseTitle")
     private String courseTitle;
 
-    @XmlElement(name = "CourseType")
     private String courseType;
 
-    @XmlElement(name = "CourseCredit")
     private Integer courseCredit;
 
-    @XmlElement(name = "Rational")
     private String rational;
 
-    @XmlElement(name = "CourseObjectives")
     private CourseObjectives courseObjectives;
 
-    @XmlElement(name = "LearningOutcomes")
     private LearningOutcomes learningOutcomes;
 
-    @XmlElement(name = "CourseDescriptions")
     private CourseDescriptions courseDescriptions;
 
-    @XmlElement(name = "Books")
     private Books books;
 
 
-    public String get_CourseCode() {
+
+
+    @XmlElement(name = "CourseCode")
+    public String getCourseCode() {
         return courseCode;
     }
 
@@ -43,7 +37,8 @@ public class Course {
         this.courseCode = courseCode;
     }
 
-    public String get_CourseTitle() {
+    @XmlElement(name = "CourseTitle")
+    public String getCourseTitle() {
         return courseTitle;
     }
 
@@ -51,11 +46,17 @@ public class Course {
         this.courseTitle = courseTitle;
     }
 
-    public String get_CourseType() {
+    @XmlElement(name = "CourseType")
+    public String getCourseType() {
         return courseType;
     }
 
-    public Integer get_CourseCredit() {
+    public void setCourseType(String courseType) {
+        this.courseType = courseType;
+    }
+
+    @XmlElement(name = "CourseCredit")
+    public Integer getCourseCredit() {
         return courseCredit;
     }
 
@@ -63,11 +64,8 @@ public class Course {
         this.courseCredit = courseCredit;
     }
 
-    public void setCourseType(String courseType) {
-        this.courseType = courseType;
-    }
-
-    public String get_Rational() {
+    @XmlElement(name = "Rational")
+    public String getRational() {
         return rational;
     }
 
@@ -75,7 +73,8 @@ public class Course {
         this.rational = rational;
     }
 
-    public CourseObjectives get_CourseObjectives() {
+    @XmlElement(name = "CourseObjectives")
+    public CourseObjectives getCourseObjectives() {
         return courseObjectives;
     }
 
@@ -83,7 +82,15 @@ public class Course {
         this.courseObjectives = courseObjectives;
     }
 
-    public LearningOutcomes get_LearningOutcomes() {
+    public void addNewCourseObjective(CourseObjective courseObjective) {
+        if(this.courseObjectives == null) {
+            this.courseObjectives = new CourseObjectives();
+        }
+        this.courseObjectives.addCourseObjective(courseObjective);
+    }
+
+    @XmlElement(name = "LearningOutcomes")
+    public LearningOutcomes getLearningOutcomes() {
         return learningOutcomes;
     }
 
@@ -91,7 +98,8 @@ public class Course {
         this.learningOutcomes = learningOutcomes;
     }
 
-    public CourseDescriptions get_CourseDescriptions() {
+    @XmlElement(name = "CourseDescriptions")
+    public CourseDescriptions getCourseDescriptions() {
         return courseDescriptions;
     }
 
@@ -99,13 +107,17 @@ public class Course {
         this.courseDescriptions = courseDescriptions;
     }
 
-    public Books get_Books() {
+    @XmlElement(name = "Books")
+    public Books getBooks() {
         return books;
     }
 
     public void setBooks(Books books) {
         this.books = books;
     }
+
+
+
 
     @Override
     public String toString() {

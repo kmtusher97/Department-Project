@@ -7,10 +7,10 @@ import java.util.List;
 @XmlRootElement(name = "CourseDescriptions")
 public class CourseDescriptions {
 
-    @XmlElement(name = "CourseDescription")
     private List<CourseDescription> courseDescriptions;
 
-    public List<CourseDescription> get_CourseDescriptions() { // set different name than variable name
+    @XmlElement(name = "CourseDescription")
+    public List<CourseDescription> getCourseDescriptions() { // set different name than variable name
         return courseDescriptions;
     }
 

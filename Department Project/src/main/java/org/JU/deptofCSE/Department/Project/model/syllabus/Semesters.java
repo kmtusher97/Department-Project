@@ -7,10 +7,10 @@ import java.util.List;
 @XmlRootElement(name = "Semesters")
 public class Semesters {
 
-    @XmlElement(name = "Semester")
     List<Semester>semesters;
 
-    public List<Semester> get_Semesters() {
+    @XmlElement(name = "Semester")
+    public List<Semester> getSemesters() {
         return semesters;
     }
 

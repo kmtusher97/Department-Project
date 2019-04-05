@@ -7,15 +7,14 @@ import java.util.List;
 @XmlRootElement(name = "Syllabus")
 public class Syllabus {
 
-    @XmlElement(name = "EffictiveFrom")
     private Integer effictiveFrom;
 
-    @XmlElement(name = "EffictiveTo")
     private Integer effictiveTo;
 
-    @XmlElement(name = "Semesters")
     private Semesters semesters;
 
+
+    @XmlElement(name = "EffictiveFrom")
     public Integer getEffictiveFrom() {
         return effictiveFrom;
     }
@@ -24,6 +23,7 @@ public class Syllabus {
         this.effictiveFrom = effictiveFrom;
     }
 
+    @XmlElement(name = "EffictiveTo")
     public Integer getEffictiveTo() {
         return effictiveTo;
     }
@@ -32,6 +32,7 @@ public class Syllabus {
         this.effictiveTo = effictiveTo;
     }
 
+    @XmlElement(name = "Semesters")
     public Semesters getSemesters() {
         return semesters;
     }

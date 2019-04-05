@@ -7,10 +7,10 @@ import java.util.List;
 @XmlRootElement(name = "LearningOutcomes")
 public class LearningOutcomes {
 
-    @XmlElement(name = "LearningOutcome")
     List<String>learningOutcome;
 
-    public List<String> get_LearningOutcome() {
+    @XmlElement(name = "LearningOutcome")
+    public List<String> getLearningOutcome() {
         return learningOutcome;
     }
 

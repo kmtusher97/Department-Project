@@ -6,10 +6,10 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement(name = "Semester")
 public class Semester {
 
-    @XmlElement(name = "Courses")
     private Courses courses;
 
-    public Courses get_Courses() {
+    @XmlElement(name = "Courses")
+    public Courses getCourses() {
         return courses;
     }
 
