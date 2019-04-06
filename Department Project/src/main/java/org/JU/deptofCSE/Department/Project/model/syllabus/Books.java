@@ -4,6 +4,7 @@ package org.JU.deptofCSE.Department.Project.model.syllabus;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -12,6 +13,13 @@ public class Books implements Serializable {
 
     private List<Book> books;
 
+    public Books() {
+    }
+
+    public Books(List<Book> books) {
+        this.books = books;
+    }
+
     @XmlElement(name = "Book")
     public List<Book> getBooks() {
         return books;
@@ -19,6 +27,13 @@ public class Books implements Serializable {
 
     public void setBooks(List<Book> books) {
         this.books = books;
+    }
+
+    public void addBook(Book book) {
+        if(this.books == null) {
+            this.books = new ArrayList<Book>();
+        }
+        this.books.add(book);
     }
 
     @Override

@@ -9,8 +9,15 @@ public class CourseDescription {
 
     private String title;
 
-    private String Description;
+    private String description;
 
+    public CourseDescription() {
+    }
+
+    public CourseDescription(String title, String description) {
+        this.title = title;
+        this.description = description;
+    }
 
     @XmlElement(name = "Title")
     public String getTitle() {
@@ -23,18 +30,18 @@ public class CourseDescription {
 
     @XmlElement(name = "Description")
     public String getDescription() {
-        return Description;
+        return description;
     }
 
     public void setDescription(String description) {
-        Description = description;
+        this.description = description;
     }
 
     @Override
     public String toString() {
         return "CourseDescription{" +
                 "title='" + title + '\'' +
-                ", Description='" + Description + '\'' +
+                ", description='" + description + '\'' +
                 '}';
     }
 }

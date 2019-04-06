@@ -1,11 +1,9 @@
 package org.JU.deptofCSE.Department.Project.controller.syllabus;
 
 
-import org.JU.deptofCSE.Department.Project.model.syllabus.Authors;
 import org.JU.deptofCSE.Department.Project.model.syllabus.Book;
 import org.JU.deptofCSE.Department.Project.model.syllabus.Books;
 import org.JU.deptofCSE.Department.Project.service.syllabus.BooksServices;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,7 +16,7 @@ import java.util.List;
 @RequestMapping("/books")
 public class BooksController {
 
-    //@Autowired(required = true)
+    /*//@Autowired(required = true)
     BooksServices booksServices = new BooksServices();
 
     @RequestMapping(value = "/save")
@@ -46,5 +44,5 @@ public class BooksController {
         Books books = booksServices.getBooks();
         System.err.println(books);
         return books;
-    }
+    }*/
 }

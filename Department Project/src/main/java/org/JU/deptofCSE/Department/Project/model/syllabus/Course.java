@@ -13,7 +13,7 @@ public class Course {
 
     private String courseType;
 
-    private Integer courseCredit;
+    private Float courseCredit;
 
     private String rational;
 
@@ -56,11 +56,11 @@ public class Course {
     }
 
     @XmlElement(name = "CourseCredit")
-    public Integer getCourseCredit() {
+    public Float getCourseCredit() {
         return courseCredit;
     }
 
-    public void setCourseCredit(Integer courseCredit) {
+    public void setCourseCredit(Float courseCredit) {
         this.courseCredit = courseCredit;
     }
 
@@ -98,6 +98,13 @@ public class Course {
         this.learningOutcomes = learningOutcomes;
     }
 
+    public void addNewLearningOutcome(LearningOutcome learningOutcome) {
+        if(this.learningOutcomes == null) {
+            this.learningOutcomes = new LearningOutcomes();
+        }
+        this.learningOutcomes.addLearningOutcome(learningOutcome);
+    }
+
     @XmlElement(name = "CourseDescriptions")
     public CourseDescriptions getCourseDescriptions() {
         return courseDescriptions;
@@ -107,6 +114,13 @@ public class Course {
         this.courseDescriptions = courseDescriptions;
     }
 
+    public void addNewCourseDescription(CourseDescription courseDescription) {
+        if(this.courseDescriptions == null) {
+            this.courseDescriptions = new CourseDescriptions();
+        }
+        this.courseDescriptions.addCourseDescription(courseDescription);
+    }
+
     @XmlElement(name = "Books")
     public Books getBooks() {
         return books;
@@ -114,6 +128,13 @@ public class Course {
 
     public void setBooks(Books books) {
         this.books = books;
+    }
+
+    public void addNewBook(Book book) {
+        if(this.books == null) {
+            this.books = new Books();
+        }
+        this.books.addBook(book);
     }
 
 

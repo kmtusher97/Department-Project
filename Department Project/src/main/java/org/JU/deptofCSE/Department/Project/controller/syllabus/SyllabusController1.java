@@ -1,7 +1,6 @@
 package org.JU.deptofCSE.Department.Project.controller.syllabus;
 
 
-import org.JU.deptofCSE.Department.Project.model.syllabus.Authors;
 import org.JU.deptofCSE.Department.Project.model.syllabus.Book;
 import org.JU.deptofCSE.Department.Project.model.syllabus.Books;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,7 +11,6 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -65,7 +63,7 @@ public class SyllabusController1 {
         return "okkk";
     }*/
 
-    @RequestMapping(value = "/books")
+    /*@RequestMapping(value = "/books")
     public String test() throws JAXBException {
 
         Book book = new Book();
@@ -115,14 +113,14 @@ public class SyllabusController1 {
         Books books = new Books();
         List<Book> l1 = new ArrayList<Book>();
         l1.add(book);
-/*
+*//*
         Book book1 = new Book();
         book1.setBookName("Programming Competition");
         al.clear();
         al.add("Mahbubul Hasan");
         authors.setAuthor(al);
         book1.setAuthors(authors);
-        l1.add(book1);*/
+        l1.add(book1);*//*
 
         books.setBooks(l1);
         System.err.println(books);
@@ -134,5 +132,5 @@ public class SyllabusController1 {
         marshaller.marshal(books, new File("books2.xml"));
         marshaller.marshal(books, System.out);
         return "okkk";
-    }
+    }*/
 }

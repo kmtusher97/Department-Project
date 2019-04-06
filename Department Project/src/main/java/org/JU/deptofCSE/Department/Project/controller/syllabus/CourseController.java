@@ -32,7 +32,7 @@ public class CourseController {
     @RequestMapping(value = "/saveCourse", method = RequestMethod.POST)
     public ModelAndView saveCourse(@ModelAttribute("courseEditForm") Course course) throws JAXBException {
         ModelAndView modelAndView = new ModelAndView("SavedCourse");
-        System.err.println(course);
+        //System.err.println(course);
         course = courseServices.removeNullValues(course);
         courseServices.saveCourse(course);
         System.err.println(course);
