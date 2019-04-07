@@ -4,7 +4,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.List;
 
-@XmlRootElement(name = "Syllabus")
+@XmlRootElement(name = "syllabus")
 public class Syllabus {
 
     private Integer effictiveFrom;
@@ -41,9 +41,21 @@ public class Syllabus {
         this.semesters = semesters;
     }
 
+
+
+    public Integer countOfSemesters() {
+        return semesters.getSemesters().size();
+    }
+
+    public void populateSemestes(int numberOfSemesters) {
+        for(int i = countOfSemesters(); i < numberOfSemesters; i++) {
+            this.semesters.addSemseter(new Semester());
+        }
+    }
+
     @Override
     public String toString() {
-        return "Syllabus{" +
+        return "syllabus{" +
                 "effictiveFrom=" + effictiveFrom +
                 ", effictiveTo=" + effictiveTo +
                 ", semesters=" + semesters +

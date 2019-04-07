@@ -21,7 +21,7 @@ public class CourseRepository {
     public Course getCourse() throws JAXBException {
         JAXBContext jaxbContext = JAXBContext.newInstance(Course.class);
         Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
-        File file = new File("courseRepo.xml.xml");
+        File file = new File("courseRepo.xml");
         Course course = (Course) unmarshaller.unmarshal(file);
         Marshaller marshaller = jaxbContext.createMarshaller();
         marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);

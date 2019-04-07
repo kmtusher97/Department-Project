@@ -41,9 +41,11 @@ public class CourseController {
     }
 
     @RequestMapping(value = "/read", method = RequestMethod.GET)
-    public void readCourse() throws JAXBException {
+    public ModelAndView readCourse() throws JAXBException {
+        ModelAndView modelAndView = new ModelAndView("SyllabusView");
         Course course = courseServices.getCourse();
         System.err.println(course);
+        return modelAndView;
     }
 
 }

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Add New Syllabus</title>
+</head>
+<body>
+  <div>
+    <form th:action="@{/addSems}" method="post" th:object="${syllabusForm}">
+      <div>
+        <label for="from">Effective From</label>
+        <input type="text" class="" id="from" th:field="${syllabusForm.effictiveFrom}">
+      </div>
+      <br>
+
+      <div>
+        <label for="to">Effective From</label>
+        <input type="text" class="" id="to" th:field="${syllabusForm.effictiveTo}">
+      </div>
+      <br>
+
+      <div>
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+      </div>
+    </form>
+  </div>
+</body>
+</html>
