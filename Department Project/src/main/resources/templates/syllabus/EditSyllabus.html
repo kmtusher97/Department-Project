@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${title}"></title>
+</head>
+<body>
+<div>
+    <table border="1">
+        <thead>
+        <tr>
+            <th>Semester</th>
+            <th>Courses</th>
+            <th>Add Course</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="semester : ${syllabus.semesters.semesters}">
+            <td th:text="${semester.name}"></td>
+            <td>
+                <select>
+                    <option th:each="course : ${semester.courses.courses}" th:text="${course.courseCode} + ': ' + ${course.courseTitle}"></option>
+                </select>
+            </td>
+            <td>
+                <a th:href="@{/syl/addNewCourse/{semesterName}/{fileName} (semesterName=${semester.name}, fileName=${title})}">Add</a>
+            </td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+            <td colspan="3">
+                <a th:href="@{/syl/addNewSemester/{fileName} (fileName=${title})}" role="button">Add Semester</a>
+            </td>
+        </tr>
+        </tfoot>
+    </table>
+</div>
+</body>
+</html>

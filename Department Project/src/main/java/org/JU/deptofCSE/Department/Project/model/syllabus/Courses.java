@@ -2,12 +2,21 @@ package org.JU.deptofCSE.Department.Project.model.syllabus;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import java.util.ArrayList;
 import java.util.List;
 
 @XmlRootElement(name = "Courses")
 public class Courses {
 
-    List<Course>courses;
+    private List<Course> courses;
+
+    public Courses() {
+        this.courses = new ArrayList<Course>();
+    }
+
+    public Courses(List<Course> courses) {
+        this.courses = courses;
+    }
 
     @XmlElement(name = "Course")
     public List<Course> getCourses() {
@@ -16,6 +25,11 @@ public class Courses {
 
     public void setCourses(List<Course> courses) {
         this.courses = courses;
+    }
+
+
+    public void addCourse(Course course) {
+        this.courses.add(course);
     }
 
     @Override

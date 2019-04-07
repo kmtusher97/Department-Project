@@ -18,12 +18,13 @@ public class SyllabusServices {
     }
 
     public Syllabus checkExistance(Syllabus syllabus) throws JAXBException {
-        String fileName = "syllabus" + Integer.toString(syllabus.getEffictiveFrom()) + Integer.toString(syllabus.getEffictiveTo());
-        Syllabus syllabusStored = syllabusRepository.getSyllabus(fileName);
+        Syllabus syllabusStored = syllabusRepository.getSyllabus(syllabus.makeXmlFileName());
+
         if(syllabusStored != null) {
             syllabus = syllabusStored;
         }
 
         return syllabus;
     }
+
 }

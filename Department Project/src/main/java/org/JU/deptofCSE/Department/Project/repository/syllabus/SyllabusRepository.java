@@ -14,14 +14,14 @@ public class SyllabusRepository {
         JAXBContext jaxbContext = JAXBContext.newInstance(Syllabus.class);
         Marshaller marshaller = jaxbContext.createMarshaller();
         marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-        marshaller.marshal(syllabus, new File(fileName + ".xml"));
+        marshaller.marshal(syllabus, new File("Syllabus_Repository/" + fileName + ".xml"));
         marshaller.marshal(syllabus, System.out);
     }
 
     public Syllabus getSyllabus(String fileName) throws JAXBException {
         JAXBContext jaxbContext = JAXBContext.newInstance(Syllabus.class);
         Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
-        File file = new File(fileName + ".xml");
+        File file = new File("Syllabus_Repository/" + fileName + ".xml");
         if(!file.exists()) {
             return null;
         }

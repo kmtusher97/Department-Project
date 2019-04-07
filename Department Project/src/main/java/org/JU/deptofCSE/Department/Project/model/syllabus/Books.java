@@ -14,6 +14,7 @@ public class Books implements Serializable {
     private List<Book> books;
 
     public Books() {
+        this.books = new ArrayList<Book>();
     }
 
     public Books(List<Book> books) {
@@ -41,5 +42,9 @@ public class Books implements Serializable {
         return "Books{" +
                 "books=" + books +
                 '}';
+    }
+
+    public Integer getCount() {
+        return this.books.size();
     }
 }

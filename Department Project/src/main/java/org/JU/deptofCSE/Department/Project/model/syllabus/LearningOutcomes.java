@@ -11,6 +11,7 @@ public class LearningOutcomes {
     private List<LearningOutcome> learningOutcome;
 
     public LearningOutcomes() {
+        this.learningOutcome = new ArrayList<LearningOutcome>();
     }
 
     public LearningOutcomes(List<LearningOutcome> learningOutcome) {
@@ -38,5 +39,9 @@ public class LearningOutcomes {
         return "LearningOutcomes{" +
                 "learningOutcome=" + learningOutcome +
                 '}';
+    }
+
+    public Integer getCount() {
+        return  this.learningOutcome.size();
     }
 }

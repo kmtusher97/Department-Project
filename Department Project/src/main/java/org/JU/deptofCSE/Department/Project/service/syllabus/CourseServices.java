@@ -19,25 +19,21 @@ public class CourseServices {
     }
 
     public Course populateCourse(Course course) {
-        Books books = new Books();
-        CourseObjectives courseObjectives = new CourseObjectives();
-        LearningOutcomes learningOutcomes = new LearningOutcomes();
-        CourseDescriptions courseDescriptions = new CourseDescriptions();
-
-        for(int i = 0; i < 5; i++) {
-            books.addBook(new Book());
-            courseObjectives.addCourseObjective(new CourseObjective());
-            learningOutcomes.addLearningOutcome(new LearningOutcome());
+        for(int i = course.getCountOfBooks(); i < 5; i++) {
+            course.addNewBook(new Book());
         }
 
-        for(int i = 0; i < 8; i++) {
-            courseDescriptions.addCourseDescription(new CourseDescription());
+        for(int i = course.getCountOfCourseObjectives(); i < 10; i++) {
+            course.addNewCourseObjective(new CourseObjective());
         }
 
-        course.setBooks(books);
-        course.setCourseObjectives(courseObjectives);
-        course.setLearningOutcomes(learningOutcomes);
-        course.setCourseDescriptions(courseDescriptions);
+        for(int i = course.getCountOfLearningOutComes(); i < 10; i++) {
+            course.addNewLearningOutcome(new LearningOutcome());
+        }
+
+        for(int i = course.getCountOfCourseDescriptions(); i < 10; i++) {
+            course.addNewCourseDescription(new CourseDescription());
+        }
         return course;
     }
 
@@ -45,10 +41,9 @@ public class CourseServices {
         List<Book> bookList = course.getBooks().getBooks();
         course.setBooks(new Books());
         for(Book book : bookList) {
-            if(book.getBookName().length() == 0 || book.getAuthorsString().length() == 0) {
+            if(book.getBookName().length() == 0) {
                 continue;
             }
-            book.makeAuthorList();
             course.addNewBook(book);
         }
 

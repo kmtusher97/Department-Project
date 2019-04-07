@@ -8,7 +8,15 @@ import java.util.List;
 @XmlRootElement(name = "Semesters")
 public class Semesters {
 
-    List<Semester>semesters;
+    private List<Semester> semesters;
+
+    public Semesters() {
+        this.semesters = new ArrayList<Semester>();
+    }
+
+    public Semesters(List<Semester> semesters) {
+        this.semesters = semesters;
+    }
 
     @XmlElement(name = "Semester")
     public List<Semester> getSemesters() {
@@ -24,6 +32,22 @@ public class Semesters {
             this.semesters = new ArrayList<Semester>();
         }
         this.semesters.add(semester);
+    }
+
+
+    public void addSemester(Semester semester) {
+        if(this.semesters == null) {
+            this.semesters = new ArrayList<Semester>();
+        }
+        this.semesters.add(semester);
+    }
+
+    public void addCourse(Course course, String semesterName) {
+        for(Semester semester : this.semesters) {
+            if(semester.getName().equals(semesterName)) {
+                semester.addCourse(course);
+            }
+        }
     }
 
     @Override

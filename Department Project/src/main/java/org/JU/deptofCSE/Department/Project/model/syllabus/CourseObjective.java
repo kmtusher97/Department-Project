@@ -9,6 +9,7 @@ public class CourseObjective {
     private String objective;
 
     public CourseObjective() {
+        this.objective = "";
     }
 
     public CourseObjective(String objective) {

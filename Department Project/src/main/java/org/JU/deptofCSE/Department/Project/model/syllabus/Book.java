@@ -2,8 +2,6 @@ package org.JU.deptofCSE.Department.Project.model.syllabus;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
-import java.util.ArrayList;
-import java.util.List;
 
 
 @XmlRootElement(name = "Book")
@@ -11,9 +9,7 @@ public class Book {
 
     private String bookName;
 
-    private String authorsString;
-
-    private List<String> authors;
+    private String authors;
 
     private String edition;
 
@@ -22,11 +18,15 @@ public class Book {
     private String publishYear;
 
     public Book() {
+        this.bookName = "";
+        this.authors = "";
+        this.edition = "";
+        this.publisher = "";
+        this.publishYear = "";
     }
 
-    public Book(String bookName, String authorsString, List<String> authors, String edition, String publisher, String publishYear) {
+    public Book(String bookName, String authors, String edition, String publisher, String publishYear) {
         this.bookName = bookName;
-        this.authorsString = authorsString;
         this.authors = authors;
         this.edition = edition;
         this.publisher = publisher;
@@ -42,38 +42,13 @@ public class Book {
         this.bookName = bookName;
     }
 
-    public String getAuthorsString() {
-        return authorsString;
-    }
-
-    public void setAuthorsString(String authorsString) {
-        this.authorsString = authorsString;
-    }
-
-    @XmlElement(name = "Author")
-    public List<String> getAuthors() {
+    @XmlElement(name = "Authors")
+    public String getAuthors() {
         return authors;
     }
 
-    public void setAuthors(List<String> authors) {
+    public void setAuthors(String authors) {
         this.authors = authors;
-    }
-
-    public void makeAuthorList() {
-        String[] authorList = authorsString.split(",");
-        if(this.authors == null) {
-            this.authors = new ArrayList<String>();
-        }
-        for(String s : authorList) {
-            this.authors.add(s);
-        }
-    }
-
-    public void addAuthor(String author) {
-        if(this.authors == null) {
-            this.authors = new ArrayList<String>();
-        }
-        this.authors.add(author);
     }
 
     @XmlElement(name = "Edition")
@@ -107,9 +82,9 @@ public class Book {
     public String toString() {
         return "Book{" +
                 "bookName='" + bookName + '\'' +
-                ", authorsString='" + authorsString + '\'' +
-                ", authors=" + authors +
+                ", authors='" + authors + '\'' +
                 ", edition='" + edition + '\'' +
+                ", publisher='" + publisher + '\'' +
                 ", publishYear='" + publishYear + '\'' +
                 '}';
     }

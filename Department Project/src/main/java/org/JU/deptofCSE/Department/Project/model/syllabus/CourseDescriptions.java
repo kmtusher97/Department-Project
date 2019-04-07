@@ -11,6 +11,7 @@ public class CourseDescriptions {
     private List<CourseDescription> courseDescription;
 
     public CourseDescriptions() {
+        this.courseDescription = new ArrayList<CourseDescription>();
     }
 
     public CourseDescriptions(List<CourseDescription> courseDescription) {
@@ -38,5 +39,9 @@ public class CourseDescriptions {
         return "CourseDescriptions{" +
                 "courseDescription=" + courseDescription +
                 '}';
+    }
+
+    public Integer getCount() {
+        return this.courseDescription.size();
     }
 }

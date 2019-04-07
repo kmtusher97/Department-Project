@@ -12,6 +12,8 @@ public class CourseDescription {
     private String description;
 
     public CourseDescription() {
+        this.title = "";
+        this.description = "";
     }
 
     public CourseDescription(String title, String description) {

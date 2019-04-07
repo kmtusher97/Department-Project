@@ -17,7 +17,7 @@ public class UserController {
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public ModelAndView userLogin() {
-        ModelAndView loginPage = new ModelAndView("UserLoginPage");
+        ModelAndView loginPage = new ModelAndView("routine/UserLoginPage");
         User userForm = new User();
         userForm.setId(0);
         loginPage.addObject("userForm", userForm);
@@ -33,17 +33,17 @@ public class UserController {
         }
         ModelAndView homePage;
         if( userServices.isAdmin(requestedUser.getId()) ) {
-            homePage = new ModelAndView("AdminHomePage");
+            homePage = new ModelAndView("routine/AdminHomePage");
         }
         else {
-            homePage = new ModelAndView("TeacherHomePage");
+            homePage = new ModelAndView("routine/TeacherHomePage");
         }
         return homePage;
     }
 
     @RequestMapping(value = "/recoverPass", method = RequestMethod.GET)
     public ModelAndView recoverUserPassword() {
-        ModelAndView passwordRecover = new ModelAndView("PasswordRecoverPage");
+        ModelAndView passwordRecover = new ModelAndView("routine/PasswordRecoverPage");
         return passwordRecover;
     }
 }

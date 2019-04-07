@@ -13,7 +13,7 @@ public class Course {
 
     private String courseType;
 
-    private Float courseCredit;
+    private double courseCredit;
 
     private String rational;
 
@@ -26,7 +26,32 @@ public class Course {
     private Books books;
 
 
+    public Course() {
+        this.courseCode = "";
+        this.courseTitle = "";
+        this.courseType = "";
+        this.courseCredit = 0.0;
+        this.rational = "";
+        this.courseObjectives = new CourseObjectives();
+        this.learningOutcomes = new LearningOutcomes();
+        this.courseDescriptions = new CourseDescriptions();
+        this.books = new Books();
+    }
 
+    public Course(String courseCode, String courseTitle,
+                  String courseType, Float courseCredit, String rational,
+                  CourseObjectives courseObjectives, LearningOutcomes learningOutcomes,
+                  CourseDescriptions courseDescriptions, Books books) {
+        this.courseCode = courseCode;
+        this.courseTitle = courseTitle;
+        this.courseType = courseType;
+        this.courseCredit = courseCredit;
+        this.rational = rational;
+        this.courseObjectives = courseObjectives;
+        this.learningOutcomes = learningOutcomes;
+        this.courseDescriptions = courseDescriptions;
+        this.books = books;
+    }
 
     @XmlElement(name = "CourseCode")
     public String getCourseCode() {
@@ -56,11 +81,11 @@ public class Course {
     }
 
     @XmlElement(name = "CourseCredit")
-    public Float getCourseCredit() {
+    public double getCourseCredit() {
         return courseCredit;
     }
 
-    public void setCourseCredit(Float courseCredit) {
+    public void setCourseCredit(double courseCredit) {
         this.courseCredit = courseCredit;
     }
 
@@ -82,13 +107,6 @@ public class Course {
         this.courseObjectives = courseObjectives;
     }
 
-    public void addNewCourseObjective(CourseObjective courseObjective) {
-        if(this.courseObjectives == null) {
-            this.courseObjectives = new CourseObjectives();
-        }
-        this.courseObjectives.addCourseObjective(courseObjective);
-    }
-
     @XmlElement(name = "LearningOutcomes")
     public LearningOutcomes getLearningOutcomes() {
         return learningOutcomes;
@@ -96,13 +114,6 @@ public class Course {
 
     public void setLearningOutcomes(LearningOutcomes learningOutcomes) {
         this.learningOutcomes = learningOutcomes;
-    }
-
-    public void addNewLearningOutcome(LearningOutcome learningOutcome) {
-        if(this.learningOutcomes == null) {
-            this.learningOutcomes = new LearningOutcomes();
-        }
-        this.learningOutcomes.addLearningOutcome(learningOutcome);
     }
 
     @XmlElement(name = "CourseDescriptions")
@@ -114,13 +125,6 @@ public class Course {
         this.courseDescriptions = courseDescriptions;
     }
 
-    public void addNewCourseDescription(CourseDescription courseDescription) {
-        if(this.courseDescriptions == null) {
-            this.courseDescriptions = new CourseDescriptions();
-        }
-        this.courseDescriptions.addCourseDescription(courseDescription);
-    }
-
     @XmlElement(name = "Books")
     public Books getBooks() {
         return books;
@@ -130,6 +134,7 @@ public class Course {
         this.books = books;
     }
 
+
     public void addNewBook(Book book) {
         if(this.books == null) {
             this.books = new Books();
@@ -137,8 +142,42 @@ public class Course {
         this.books.addBook(book);
     }
 
+    public void addNewCourseDescription(CourseDescription courseDescription) {
+        if(this.courseDescriptions == null) {
+            this.courseDescriptions = new CourseDescriptions();
+        }
+        this.courseDescriptions.addCourseDescription(courseDescription);
+    }
 
+    public void addNewLearningOutcome(LearningOutcome learningOutcome) {
+        if(this.learningOutcomes == null) {
+            this.learningOutcomes = new LearningOutcomes();
+        }
+        this.learningOutcomes.addLearningOutcome(learningOutcome);
+    }
 
+    public void addNewCourseObjective(CourseObjective courseObjective) {
+        if(this.courseObjectives == null) {
+            this.courseObjectives = new CourseObjectives();
+        }
+        this.courseObjectives.addCourseObjective(courseObjective);
+    }
+
+    public Integer getCountOfBooks() {
+        return this.books.getCount();
+    }
+
+    public Integer getCountOfCourseDescriptions() {
+        return this.courseDescriptions.getCount();
+    }
+
+    public Integer getCountOfLearningOutComes() {
+        return this.learningOutcomes.getCount();
+    }
+
+    public Integer getCountOfCourseObjectives() {
+        return this.courseObjectives.getCount();
+    }
 
     @Override
     public String toString() {

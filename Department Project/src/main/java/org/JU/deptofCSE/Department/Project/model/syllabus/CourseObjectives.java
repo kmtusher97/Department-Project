@@ -11,6 +11,7 @@ public class CourseObjectives {
     private List<CourseObjective> courseObjective;
 
     public CourseObjectives() {
+        this.courseObjective = new ArrayList<CourseObjective>();
     }
 
     public CourseObjectives(List<CourseObjective> courseObjective) {
@@ -38,5 +39,9 @@ public class CourseObjectives {
         return "CourseObjectives{" +
                 "courseObjective=" + courseObjective +
                 '}';
+    }
+
+    public Integer getCount() {
+        return this.courseObjective.size();
     }
 }

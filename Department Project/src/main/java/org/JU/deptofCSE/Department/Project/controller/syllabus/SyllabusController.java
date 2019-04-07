@@ -1,9 +1,11 @@
 package org.JU.deptofCSE.Department.Project.controller.syllabus;
 
+import org.JU.deptofCSE.Department.Project.model.syllabus.Semester;
 import org.JU.deptofCSE.Department.Project.model.syllabus.Syllabus;
 import org.JU.deptofCSE.Department.Project.service.syllabus.SyllabusServices;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -24,12 +26,32 @@ public class SyllabusController {
         return addSyllabusPage;
     }
 
-    @RequestMapping(value = "/addSems", method = RequestMethod.POST)
+    @RequestMapping(value = "/editSyl", method = RequestMethod.POST)
     public ModelAndView addSemesters(@ModelAttribute("syllabusForm") Syllabus syllabus) throws JAXBException {
         syllabus = syllabusServices.checkExistance(syllabus);
-        syllabus.populateSemestes(8);
-        ModelAndView addSemestersPage = new ModelAndView("syllabus/AddSemesters");
-        addSemestersPage.addObject("syllabusForm", syllabus);
-        return addSemestersPage;
+        syllabusServices.saveSyllabus(syllabus, syllabus.makeXmlFileName());
+
+        ModelAndView editSyllabusPage = new ModelAndView("syllabus/EditSyllabus");
+        editSyllabusPage.addObject("syllabus", syllabus);
+        editSyllabusPage.addObject("title", syllabus.makeXmlFileName());
+
+        return editSyllabusPage;
     }
+
+    @RequestMapping(value = "/addNewSemester/{fileName}", method = RequestMethod.GET)
+    public ModelAndView addNewSemester(@PathVariable("fileName") String fileName) throws JAXBException {
+        Syllabus syllabus = syllabusServices.getSyllabus(fileName);
+        Semester semester = new Semester();
+
+        semester.setName("Semester " + Integer.toString(syllabus.countOfSemesters() + 1));
+        syllabus.addNewSemester(semester);
+        syllabusServices.saveSyllabus(syllabus, fileName);
+
+        ModelAndView editSyllabusPage = new ModelAndView("syllabus/EditSyllabus");
+        editSyllabusPage.addObject("syllabus", syllabus);
+        editSyllabusPage.addObject("title", fileName);
+
+        return editSyllabusPage;
+    }
+
 }

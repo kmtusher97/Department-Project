@@ -9,6 +9,7 @@ public class LearningOutcome {
     private String outcome;
 
     public LearningOutcome() {
+        this.outcome = "";
     }
 
     public LearningOutcome(String outcome) {
