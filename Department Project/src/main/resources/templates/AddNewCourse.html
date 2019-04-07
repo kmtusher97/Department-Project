@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Add New Course</title>
+</head>
+<body>
+  <h1>Add New Course</h1>
+  <div>
+    <form th:action="@{/syl/saveCourse}" method=post>
+
+      <div>
+        <label for="courseCode">Course Code</label>
+        <input type="text" class="" id="courseCode" th:field="${courseEditForm.courseCode}">
+      </div>
+      <br>
+
+      <div>
+        <label for="courseTitle">Course Title</label>
+        <input type="text" class="" id="courseTitle" th:field="${courseEditForm.courseTitle}">
+      </div>
+      <br>
+
+      <div>
+        <label for="courseType">Course Type</label>
+        <input type="text" class="" id="courseType" th:field="${courseEditForm.courseType}">
+      </div>
+      <br>
+
+      <div>
+        <label for="courseCredit">Course Credit</label>
+        <input type="text" class="" id="courseCredit" th:field="${courseEditForm.courseCredit}">
+      </div>
+      <br>
+
+      <div>
+        <label for="rational">Rational</label>
+        <input type="text" class="" id="rational" th:field="${courseEditForm.rational}">
+      </div>
+      <br>
+
+      <div>
+        <table th:object="${courseEditForm.courseObjectives}">
+          <thead>
+            <tr>
+              <th> Objectives</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr th:each="courseObj, itemStat : *{courseObjective}">
+              <td>
+                <input th:field="*{courseObjective[__${itemStat.index}__].objective}" />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <br><br>
+
+      <div>
+        <table th:object="${courseEditForm.learningOutcomes}">
+          <thead>
+            <tr>
+              <th> Learning Outcomes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr th:each="learningOut, itemStat : *{learningOutcome}">
+              <td>
+                <input th:field="*{learningOutcome[__${itemStat.index}__].outcome}" />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <br><br>
+
+      <div>
+        <table th:object="${courseEditForm.courseDescriptions}">
+          <caption>Course Descriptions</caption>
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr th:each="courseDescrp, itemStat : *{courseDescription}">
+              <td>
+                <input th:field="*{courseDescription[__${itemStat.index}__].title}" />
+              </td>
+              <td>
+                <input th:field="*{courseDescription[__${itemStat.index}__].description}" />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <br><br>
+
+      <div>
+        <table th:object="${courseEditForm.books}">
+          <caption>Reference Books</caption>
+          <thead>
+            <tr>
+              <th>Book Name</th>
+              <th>Authors</th>
+              <th>Edition</th>
+              <th>Publisher</th>
+              <th>Year</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr th:each="book, itemStat : *{books}">
+              <td>
+                <input th:field="*{books[__${itemStat.index}__].bookName}" />
+              </td>
+              <td>
+                <input th:field="*{books[__${itemStat.index}__].authorsString}" placeholder="Author1, Author2, Author3"/>
+              </td>
+              <td>
+                <input th:field="*{books[__${itemStat.index}__].edition}" />
+              </td>
+              <td>
+                <input th:field="*{books[__${itemStat.index}__].publisher}" />
+              </td>
+              <td>
+                <input th:field="*{books[__${itemStat.index}__].publishYear}" />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <br><br>
+
+      <div>
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+      </div>
+    </form>
+  </div>
+</body>
+</html>

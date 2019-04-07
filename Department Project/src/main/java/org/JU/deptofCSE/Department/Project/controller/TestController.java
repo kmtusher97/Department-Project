@@ -13,7 +13,7 @@ import java.util.List;
 @RequestMapping("/test")
 public class TestController {
 
-    @Autowired
+    /*@Autowired
     TeacherServices teacherServices;
 
     @Autowired
@@ -44,7 +44,7 @@ public class TestController {
     @RequestMapping(value = "/allE",method = RequestMethod.GET)
     public List<ExamCommittee> getAllExamcommittee() {
         return examCommitteeServices.getAllExamCommittee();
-    }
+    }*/
 
 
 }
