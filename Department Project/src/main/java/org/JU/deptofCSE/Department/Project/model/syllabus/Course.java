@@ -181,6 +181,21 @@ public class Course {
     }
 
 
+    public Integer getCourseCodeNumber() {
+        Integer codeNumner = 0, powerOf10 = 1;
+        for(int i = this.courseCode.length() - 1; i >= 0; i--) {
+            char ch = this.courseCode.charAt(i);
+            if(ch >= '0' && ch <= '9') {
+                codeNumner += ((ch - '0') * powerOf10);
+                powerOf10 *= 10;
+            }
+            else {
+                break;
+            }
+        }
+        return codeNumner;
+    }
+
     @Override
     public String toString() {
         return "Course{" +
