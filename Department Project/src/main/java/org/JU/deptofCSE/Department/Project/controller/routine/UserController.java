@@ -33,7 +33,7 @@ public class UserController {
         }
         ModelAndView homePage;
         if( userServices.isAdmin(requestedUser.getId()) ) {
-            homePage = new ModelAndView("routine/AdminHomePage");
+            homePage = new ModelAndView("routine/AdminDashboard");
         }
         else {
             homePage = new ModelAndView("routine/TeacherHomePage");

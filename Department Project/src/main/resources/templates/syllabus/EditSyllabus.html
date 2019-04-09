@@ -8,20 +8,79 @@
 <div>
     <table border="1">
         <thead>
-        <tr>
-            <th>Semester</th>
-            <th>Courses</th>
-            <th>Action</th>
-        </tr>
+            <tr>
+                <th>Semester</th>
+                <th>Courses Code</th>
+                <th>Title</th>
+                <th>Credit</th>
+                <th th:colspan="${3}">Action</th>
+            </tr>
         </thead>
         <tbody>
-        <tr th:each="semester : ${syllabus.semesters.semesters}">
-            <td th:text="${semester.name}"></td>
+        <div th:remove="tag" th:each="semester : ${syllabus.semesters.semesters}"
+             th:with="courseCount=${semester.courses.courses.size()}">
+            <tr>
+                <td th:rowspan="${#sets.size(semester.courses.courses)}" th:text="${semester.name}"></td>
+                <td th:text="${courseCount > 0} ? ${semester.courses.courses[0].courseCode}"></td>
+                <td th:text="${courseCount > 0} ? ${semester.courses.courses[0].courseTitle}"></td>
+                <td th:text="${courseCount > 0} ? ${semester.courses.courses[0].courseCredit}"></td>
+                <td>
+                    <a th:href="${courseCount > 0} ? @{/syl/updateCourse/{courseCode}/{semesterName}/{fileName}
+                                (courseCode=${semester.courses.courses[0].courseCode}, semesterName=${semester.name}, fileName=${fileName})}"
+                       th:role="button">Edit</a>
+                </td>
+                <td>
+                    <a href="#" th:role="button">Delete</a>
+                </td>
+                <td th:rowspan="${#sets.size(semester.courses.courses)}">
+                    <a th:href="@{/syl/addNewCourse/{semesterName}/{fileName} (semesterName=${semester.name}, fileName=${fileName})}"
+                       th:role="button">Add</a>
+                </td>
+            </tr>
+            <tr th:each="course, stats : ${semester.courses.courses}" th:if="${!stats.first}">
+                <td th:text="${course.courseCode}"></td>
+                <td th:text="${course.courseTitle}"></td>
+                <td th:text="${course.courseCredit}"></td>
+                <td>
+                    <a th:href="@{/syl/updateCourse/{courseCode}/{semesterName}/{fileName}
+                                (courseCode=${course.courseCode}, semesterName=${semester.name}, fileName=${fileName})}"
+                       th:role="button">Edit</a>
+                </td>
+                <td>
+                    <a href="#" th:role="button">Delete</a>
+                </td>
+            </tr>
+        </div>
+        </tbody>
+        <tfoot>
+        <tr>
+            <td th:colspan="${7}">
+                <a th:href="@{/syl/addNewSemester/{fileName} (fileName=${fileName})}" role="button">Add Semester</a>
+            </td>
+        </tr>
+        </tfoot>
+    </table>
+</div>
+</body>
+</html>
+
+<!--
+<tr th:each="semester : ${syllabus.semesters.semesters}">
+            <td th:rowspan="${#sets.size(semester.courses.courses)}" th:text="${semester.name}"></td>
+            <td>
+                <div type="none" th:each="course : ${semester.courses.courses}">
+                    <p th:text="${course.courseCode}"></p>
+                </div>
+            </td>
+            <td>
+                <div type="none" th:each="course : ${semester.courses.courses}">
+                    <p th:text="${course.courseTitle}"></p>
+                </div>
+            </td>
             <td>
                 <div th:each="course : ${semester.courses.courses}">
-                    <a th:text="${course.courseCode} + ': ' + ${course.courseTitle}"
-                       th:href="@{/syl/updateCourse/{courseCode}/{semesterName}/{fileName} (courseCode=${course.courseCode},
-                       semesterName=${semester.name}, fileName=${fileName})}" role="button"></a>
+                    <a th:href="@{/syl/updateCourse/{courseCode}/{semesterName}/{fileName} (courseCode=${course.courseCode},
+                    semesterName=${semester.name}, fileName=${fileName})}" role="button"></a>
                 </div>
                 <a th:href="@{/syl/addNewCourse/{semesterName}/{fileName} (semesterName=${semester.name}, fileName=${fileName})}" role="button">Add New Course</a>
             </td>
@@ -31,12 +90,9 @@
         </tbody>
         <tfoot>
         <tr>
-            <td colspan="3">
+            <td th:colspan="${5}">
                 <a th:href="@{/syl/addNewSemester/{fileName} (fileName=${fileName})}" role="button">Add Semester</a>
             </td>
         </tr>
         </tfoot>
-    </table>
-</div>
-</body>
-</html>
+-->

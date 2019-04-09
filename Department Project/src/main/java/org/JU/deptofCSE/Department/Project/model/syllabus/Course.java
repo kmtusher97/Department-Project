@@ -3,7 +3,6 @@ package org.JU.deptofCSE.Department.Project.model.syllabus;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
-import java.util.Objects;
 
 @XmlRootElement(name = "Course")
 public class Course {
