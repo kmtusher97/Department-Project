@@ -65,81 +65,12 @@
                     </LearningOutcomes>
                     <Rational>Learn Programming</Rational>
                 </Course>
-                <Course>
-                    <Books>
-                        <Book>
-                            <Authors>Bdsfd s,sdf sfsdf</Authors>
-                            <BookName>Introductory Circuit Analysis</BookName>
-                            <Edition>10th</Edition>
-                            <PublishYear>2010</PublishYear>
-                            <Publisher>dfsfdf</Publisher>
-                        </Book>
-                    </Books>
-                    <CourseCode>MATH 101</CourseCode>
-                    <CourseCredit>3.0</CourseCredit>
-                    <CourseDescriptions>
-                        <CourseDescription>
-                            <Description>sfssdsdas</Description>
-                            <Title>Matrices</Title>
-                        </CourseDescription>
-                    </CourseDescriptions>
-                    <CourseObjectives>
-                        <CourseObjective>
-                            <Objective>To introduce students to give practical experience on basic programming principles, good programming style, design and solve the problems in a structured approach.</Objective>
-                        </CourseObjective>
-                        <CourseObjective>
-                            <Objective>To analyze functions and their graphs. It will be shown how calculus and graphing utilities, working together, can provide most of the important information about their behavior of functions.</Objective>
-                        </CourseObjective>
-                        <CourseObjective>
-                            <Objective>To provide students with a good understanding of the concepts two dimensional geometry.</Objective>
-                        </CourseObjective>
-                        <CourseObjective>
-                            <Objective>To Students will learn about co-ordinate, translation and rotation of axis, conic, conic section for two dimension.</Objective>
-                        </CourseObjective>
-                    </CourseObjectives>
-                    <CourseTitle>Mathematics I (Matrix, Differential Calculus and Coordinate Geometry)</CourseTitle>
-                    <CourseType>Theory</CourseType>
-                    <LearningOutcomes>
-                        <LearningOutcome>
-                            <Outcome>Solve problems step by step and design computer programs</Outcome>
-                        </LearningOutcome>
-                    </LearningOutcomes>
-                    <Rational>Something Rational</Rational>
-                </Course>
             </Courses>
             <SemesterName>Semester 1</SemesterName>
         </Semester>
         <Semester>
             <Courses/>
             <SemesterName>Semester 2</SemesterName>
-        </Semester>
-        <Semester>
-            <Courses/>
-            <SemesterName>Semester 3</SemesterName>
-        </Semester>
-        <Semester>
-            <Courses/>
-            <SemesterName>Semester 4</SemesterName>
-        </Semester>
-        <Semester>
-            <Courses/>
-            <SemesterName>Semester 5</SemesterName>
-        </Semester>
-        <Semester>
-            <Courses/>
-            <SemesterName>Semester 6</SemesterName>
-        </Semester>
-        <Semester>
-            <Courses/>
-            <SemesterName>Semester 7</SemesterName>
-        </Semester>
-        <Semester>
-            <Courses/>
-            <SemesterName>Semester 8</SemesterName>
-        </Semester>
-        <Semester>
-            <Courses/>
-            <SemesterName>Semester 9</SemesterName>
         </Semester>
     </Semesters>
 </Syllabus>

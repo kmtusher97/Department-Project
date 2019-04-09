@@ -11,7 +11,7 @@ public class Courses {
 
     public Courses() {
         this.courses = new TreeSet<Course>(
-                Comparator.comparing(Course::getCourseCode)
+                Comparator.comparing(Course::getCourseCodeNumber)
         );
     }
 
