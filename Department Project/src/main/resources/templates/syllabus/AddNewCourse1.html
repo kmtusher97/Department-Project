@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link rel="icon" href="images/favicon.ico">
+	<title>Add new Course</title>
+
+	<link href="dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link href="css/font-awesome.css" rel="stylesheet">
+    
+    <link href="css/style.css" rel="stylesheet">
+	
+</head>
+<body>
+	<div class="container-fluid" id="wrapper">
+		<div class="row">
+			<nav class="sidebar col-xs-12 col-sm-4 col-lg-3 col-xl-2">
+				<h1 class="site-title"><a href="index.html"><em class="fa fa-rocket"></em>Welcome Admin</a></h1>
+				
+				<a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><em class="fa fa-bars"></em></a>
+				<ul class="nav nav-pills flex-column sidebar-nav">
+					<li class="nav-item"><a class="nav-link" href="Dashboard.html"><em class="fa fa-dashboard"></em> Dashboard</a></li>
+				</ul>
+				
+				<a href="#" class="logout-button"><em class="fa fa-power-off"></em> Signout</a></nav>
+			<main class="col-xs-12 col-sm-8 col-lg-9 col-xl-10 pt-3 pl-4 ml-auto">
+				<header class="page-header row justify-center">
+					<div class="col-md-6 col-lg-8" >
+						<h1 class="float-left text-center text-md-left">Add New Course</h1>
+					</div>
+					<div class="dropdown user-dropdown col-md-6 col-lg-4 text-center text-md-right"><a class="btn btn-stripped dropdown-toggle" href="https://example.com" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<img src="images/Zahid-sir.jpg" alt="profile photo" class="circle float-left profile-photo" width="50" height="auto">
+						<div class="username mt-1">
+							<h4 class="mb-1">Username</h4>
+							<h6 class="text-muted">Super Admin</h6>
+						</div>
+						</a>
+						<div class="dropdown-menu dropdown-menu-right" style="margin-right: 1.5rem;" aria-labelledby="dropdownMenuLink"><a class="dropdown-item" href="#"><em class="fa fa-user-circle mr-1"></em> View Profile</a>
+							 <a class="dropdown-item" href="#"><em class="fa fa-power-off mr-1"></em> Logout</a></div>
+					</div>
+					<div class="clear"></div>
+				</header>
+				<section class="row">
+					<div class="col-sm-12">
+						<section class="row">
+							<div class="col-12">
+								<div class="card mb-4">
+									<div class="card-block">
+										<h3 class="card-title">Add New Course</h3>
+										<form class="form" th:action="@{/syl/saveCourse/{semesterName}/{fileName} (semesterName=${semesterName}, fileName=${fileName})}" method=post>
+											<div class="form-group row">
+												<label class="col-md-3 col-form-label" for="courseCode">Course Code</label>
+												<div class="col-md-9">
+													<input type="text" name="course-code" class="form-control" id="courseCode" th:field="${courseEditForm.courseCode}">
+												</div>
+											</div>
+											<div class="form-group row">
+												<label class="col-md-3 col-form-label" for="courseTitle">Course Title</label>
+												<div class="col-md-9">
+													<input class="form-control" type="text" name="title" id="courseTitle" th:field="${courseEditForm.courseTitle}">
+												</div>
+											</div>
+											<div class="form-group row">
+												<label class="col-md-3 col-form-label" for="courseType">Course Type</label>
+												<div class="col-md-9">
+													<select class="custom-select form-control" id="courseType" th:field="${courseEditForm.courseType}">
+														<option selected>Select Type</option>
+														<option th:value="Theory">Theory</option>
+                										<option th:value="Laboratory">Laboratory Work</option>
+                										<option th:value="Viva-Voce">Viva-Voce</option>
+													</select>
+												</div>
+											</div>
+											<div class="form-group row">
+												<label class="col-md-3 col-form-label" for="courseCredit">Course Credit</label>
+												<div class="col-md-9">
+													<select class="custom-select form-control" id="courseCredit" th:field="${courseEditForm.courseCredit}">
+														<option selected>Select Credit</option>
+														<option th:value="0.5">0.5</option>
+                										<option th:value="1.0">1.0</option>
+                										<option th:value="1.5">1.5</option>
+                										<option th:value="2.0">2.0</option>
+                										<option th:value="2.5">2.5</option>
+                										<option th:value="3.0">3.0</option>
+													</select>
+												</div>
+											</div>
+											<div class="form-group row">
+												<label class="col-md-3 col-form-label" for="rational">Rationale</label>
+												<div class="col-md-9">
+													<input type="text" name="rationale" class="form-control" id="rational" th:field="${courseEditForm.rational}">
+												</div>
+											</div>
+											<div class="form-group row">
+            								<table th:object="${courseEditForm.courseObjectives}">
+                								<thead>
+                								<tr>
+                    								<th class="col-md-3 col-form-label"> Objectives</th>
+                								</tr>
+                								</thead>
+                								<tbody>
+                								<tr th:each="courseObj, itemStat : *{courseObjective}">
+                    								<td>
+                       								 <input class="form-control" th:field="*{courseObjective[__${itemStat.index}__].objective}"/>
+                   								 </td>
+               								 </tr>
+                								</tbody>
+            								</table>
+        								</div>
+        							<div class="form-group row">
+            						 <table th:object="${courseEditForm.learningOutcomes}">
+                						<thead>
+                							<tr>
+                    							<th class="col-md-3 col-form-label"> Learning Outcomes</th>
+               								</tr>
+                						</thead>
+                						<tbody>
+               								<tr th:each="learningOut, itemStat : *{learningOutcome}">
+                    							<td>
+                        							<input class="form-control" th:field="*{learningOutcome[__${itemStat.index}__].outcome}"/>
+                    							</td>
+               								 </tr>
+               							</tbody>
+           							 </table>
+       							 	</div>
+       							 	<div class="form-group row">
+            						<table th:object="${courseEditForm.courseDescriptions}">
+                						<thead>
+                							<tr>
+                    							<th class="col-md-3 col-form-label">Course Description</th>
+               								</tr>
+                						<tr>
+                    						<th class="col-md-3 col-form-label">Title</th>
+                    						<th class="col-md-3 col-form-label">Description</th>
+                						</tr>
+                						</thead>
+                						<tbody>
+                						<tr th:each="courseDescrp, itemStat : *{courseDescription}">
+                    						<td>
+                        						<input class="form-control" th:field="*{courseDescription[__${itemStat.index}__].title}"/>
+                   						 	</td>
+                    						<td>
+                        						<input class="form-control" th:field="*{courseDescription[__${itemStat.index}__].description}"/>
+                    						</td>
+                						</tr>
+                						</tbody>
+            						</table>
+        							</div>
+											
+									<div class="form-group row">
+            							<table th:object="${courseEditForm.books}">
+                							<thead>
+                								<tr>
+                    								<th class="col-md-3 col-form-label">Recommended Book's</th>
+               									</tr>
+                							<tr>
+                    							<th class="col-md-3 col-form-label">Book Name</th>
+                    							<th class="col-md-3 col-form-label">Authors</th>
+                    							<th class="col-md-3 col-form-label">Edition</th>
+                    							<th class="col-md-3 col-form-label">Publisher</th>
+                    							<th class="col-md-3 col-form-label">Year</th>
+                							</tr>
+                							</thead>
+                							<tbody>
+                							<tr th:each="book, itemStat : *{books}">
+                    							<td>
+                        							<input class="form-control" th:field="*{books[__${itemStat.index}__].bookName}"/>
+                    							</td>
+                    							<td>
+                        							<input class="form-control" th:field="*{books[__${itemStat.index}__].authors}"/>
+                    							</td>
+                    							<td>
+                        							<input class="form-control" th:field="*{books[__${itemStat.index}__].edition}"/>
+                    							</td>
+                    							<td>
+                        							<input class="form-control" th:field="*{books[__${itemStat.index}__].publisher}"/>
+                    							</td>
+                    							<td>
+                        							<input class="form-control" th:field="*{books[__${itemStat.index}__].publishYear}"/>
+                    							</td>
+                							</tr>
+                							</tbody>
+            							</table>
+        							</div>
+											<input class="btn btn-lg btn-primary btn-block" type="submit" value="Submit">
+                                            <input class="btn btn-lg btn-primary btn-block" type="reset" value="Reset">
+										</form>
+									</div>
+								</div>
+							</div>
+						</section>
+						
+					</div>
+				</section>
+			</main>
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    
+    <script src="js/bootstrap-datepicker.js"></script>
+    <script src="js/custom.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+	
+	</body>
+</html>
