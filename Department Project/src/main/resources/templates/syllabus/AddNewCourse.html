@@ -5,7 +5,7 @@
     <title>Add New Course</title>
 </head>
 <body>
-<h1>Add New Course</h1>
+<h1 th:text="${fileName} + ' ' + ${semesterName}"></h1>
 <div>
     <form th:action="@{/syl/saveCourse/{semesterName}/{fileName} (semesterName=${semesterName}, fileName=${fileName})}" method=post>
 
@@ -47,7 +47,7 @@
 
         <div>
             <label for="rational">Rational</label>
-            <input type="text" class="" id="rational" th:field="${courseEditForm.rational}">
+            <textarea type="text" class="" id="rational" th:field="${courseEditForm.rational}"></textarea>
         </div>
         <br>
 

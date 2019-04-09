@@ -2,33 +2,43 @@ package org.JU.deptofCSE.Department.Project.model.syllabus;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 @XmlRootElement(name = "Courses")
 public class Courses {
 
-    private List<Course> courses;
+    private SortedSet<Course> courses;
 
     public Courses() {
-        this.courses = new ArrayList<Course>();
+        this.courses = new TreeSet<Course>(
+                Comparator.comparing(Course::getCourseCode)
+        );
     }
 
-    public Courses(List<Course> courses) {
+    public Courses(TreeSet<Course> courses) {
         this.courses = courses;
     }
 
     @XmlElement(name = "Course")
-    public List<Course> getCourses() {
+    public Set<Course> getCourses() {
         return courses;
     }
 
-    public void setCourses(List<Course> courses) {
+    public void setCourses(TreeSet<Course> courses) {
         this.courses = courses;
     }
 
 
     public void addCourse(Course course) {
+        Course courseDelete = new Course();
+        for(Course course1 : this.courses) {
+            if(!course1.getCourseCode().equals(course.getCourseCode())) {
+                continue;
+            }
+            courseDelete = course1;
+            break;
+        }
+        this.courses.remove(courseDelete);
         this.courses.add(course);
     }
 

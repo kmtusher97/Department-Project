@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title th:text="${title}"></title>
+    <title th:text="${fileName}"></title>
 </head>
 <body>
 <div>
@@ -11,26 +11,28 @@
         <tr>
             <th>Semester</th>
             <th>Courses</th>
-            <th>Add Course</th>
+            <th>Action</th>
         </tr>
         </thead>
         <tbody>
         <tr th:each="semester : ${syllabus.semesters.semesters}">
             <td th:text="${semester.name}"></td>
             <td>
-                <select>
-                    <option th:each="course : ${semester.courses.courses}" th:text="${course.courseCode} + ': ' + ${course.courseTitle}"></option>
-                </select>
+                <div th:each="course : ${semester.courses.courses}">
+                    <a th:text="${course.courseCode} + ': ' + ${course.courseTitle}"
+                       th:href="@{/syl/updateCourse/{courseCode}/{semesterName}/{fileName} (courseCode=${course.courseCode},
+                       semesterName=${semester.name}, fileName=${fileName})}" role="button"></a>
+                </div>
+                <a th:href="@{/syl/addNewCourse/{semesterName}/{fileName} (semesterName=${semester.name}, fileName=${fileName})}" role="button">Add New Course</a>
             </td>
             <td>
-                <a th:href="@{/syl/addNewCourse/{semesterName}/{fileName} (semesterName=${semester.name}, fileName=${title})}">Add</a>
             </td>
         </tr>
         </tbody>
         <tfoot>
         <tr>
             <td colspan="3">
-                <a th:href="@{/syl/addNewSemester/{fileName} (fileName=${title})}" role="button">Add Semester</a>
+                <a th:href="@{/syl/addNewSemester/{fileName} (fileName=${fileName})}" role="button">Add Semester</a>
             </td>
         </tr>
         </tfoot>

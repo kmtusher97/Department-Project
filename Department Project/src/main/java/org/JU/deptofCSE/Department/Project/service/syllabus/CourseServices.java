@@ -5,6 +5,7 @@ import org.JU.deptofCSE.Department.Project.repository.syllabus.CourseRepository;
 
 import javax.xml.bind.JAXBException;
 import java.util.List;
+import java.util.Set;
 
 public class CourseServices {
 
@@ -74,5 +75,21 @@ public class CourseServices {
             course.addNewCourseDescription(courseDescription);
         }
         return course;
+    }
+
+    public Course getCoursesBySemesterNameAndCourseCode(List<Semester> semesterList, String semesterName, String courseCode) {
+        for(Semester semester : semesterList) {
+            if(!semester.getName().equals(semesterName)) {
+                continue;
+            }
+            Set<Course> courseList = semester.getCourses().getCourses();
+            for(Course course : courseList) {
+                if(!course.getCourseCode().equals(courseCode)) {
+                    continue;
+                }
+                return course;
+            }
+        }
+        return null;
     }
 }

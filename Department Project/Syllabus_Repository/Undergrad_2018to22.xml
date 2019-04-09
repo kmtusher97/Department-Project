@@ -7,114 +7,104 @@
         <Semester>
             <Courses>
                 <Course>
+                    <Books/>
+                    <CourseCode>CSE 101</CourseCode>
+                    <CourseCredit>3.0</CourseCredit>
+                    <CourseDescriptions/>
+                    <CourseObjectives>
+                        <CourseObjective>
+                            <Objective>To introduce students to give practical experience on basic programming principles, good programming style, design and solve the problems in a structured approach.</Objective>
+                        </CourseObjective>
+                        <CourseObjective>
+                            <Objective>To analyze functions and their graphs. It will be shown how calculus and graphing utilities, working together, can provide most of the important information about their behavior of functions.</Objective>
+                        </CourseObjective>
+                        <CourseObjective>
+                            <Objective>To provide students with a good understanding of the concepts two dimensional geometry.</Objective>
+                        </CourseObjective>
+                    </CourseObjectives>
+                    <CourseTitle>Electronic Circuit</CourseTitle>
+                    <CourseType>Theory</CourseType>
+                    <LearningOutcomes/>
+                    <Rational>Rational Topic</Rational>
+                </Course>
+                <Course>
                     <Books>
                         <Book>
-                            <Authors>Herbert Schildt</Authors>
-                            <BookName>Teach yourself C</BookName>
-                            <Edition>3rd</Edition>
-                            <PublishYear>1997</PublishYear>
-                            <Publisher>McGraw-Hill</Publisher>
-                        </Book>
-                        <Book>
-                            <Authors>E. Balagurusamy</Authors>
-                            <BookName>Programming in ANSI C</BookName>
-                            <Edition>7th</Edition>
-                            <PublishYear>2016</PublishYear>
-                            <Publisher>Tata Mcgraw-Hill</Publisher>
-                        </Book>
-                        <Book>
-                            <Authors>Herbert Schildt</Authors>
-                            <BookName>C: The Complete Reference</BookName>
-                            <Edition>4th</Edition>
-                            <PublishYear>2000</PublishYear>
-                            <Publisher>McGraw-Hill</Publisher>
-                        </Book>
-                        <Book>
-                            <Authors>Paul Deitel and Harvey Deitel</Authors>
-                            <BookName>C-How to Program</BookName>
-                            <Edition>7th</Edition>
-                            <PublishYear>2017</PublishYear>
-                            <Publisher>Prentice Hall</Publisher>
+                            <Authors>gfg</Authors>
+                            <BookName>Introductory Circuit Analysi</BookName>
+                            <Edition>gfdg</Edition>
+                            <PublishYear>2012</PublishYear>
+                            <Publisher>dgdfg</Publisher>
                         </Book>
                     </Books>
                     <CourseCode>CSE 105</CourseCode>
                     <CourseCredit>3.0</CourseCredit>
                     <CourseDescriptions>
                         <CourseDescription>
-                            <Description>C overviews, History and Features, Basic Structure of C Program and Hello World Program, C Program Development Environment</Description>
-                            <Title>Structured Programming Language fundamentals</Title>
-                        </CourseDescription>
-                        <CourseDescription>
-                            <Description>Declaring variables and assigning values, input from keyboard, add comments, Arithmetic Operators, Relational Operators, Logical Operators, Assignment Operators, Increment and Decrement Operators, Conditional Operators, Bitwise Operators, Special Operators, Arithmetic Expressions, Evaluation of Expressions, Type Conversions in Expressions, Operator Precedence and Associativity.</Description>
-                            <Title>Variables, Constants, Data Types, Operators &amp; Expression</Title>
-                        </CourseDescription>
-                        <CourseDescription>
-                            <Description>Decision Making Statements: if-else statement, switch statement; Looping Statements: for loop, while loop, nested if, do while loop, nested loop; Jump Statements: continue, break</Description>
-                            <Title>Program control statements</Title>
-                        </CourseDescription>
-                        <CourseDescription>
-                            <Description>Function prototype, recursion, parameters, arguments, scope rules and storage classes.</Description>
-                            <Title>Functions</Title>
-                        </CourseDescription>
-                        <CourseDescription>
-                            <Description>One and Multi-dimensional arrays, Character Arrays and Strings, Basic of Pointer, pointer expression, pointer arrays.</Description>
-                            <Title>Arrays and Pointer</Title>
-                        </CourseDescription>
-                        <CourseDescription>
-                            <Description>Structures, Unions, Enumerations, Standard input and output, Formatted input and output, File access; Variable length argument list; Command line parameters; Error Handling; Graphics; Linking; Library functions.</Description>
-                            <Title>User defined data types and Input/ Output</Title>
-                        </CourseDescription>
-                        <CourseDescription>
-                            <Description>Dynamic Memory Allocation and Linked List, Macro substitution, File inclusion, Compiler Control Directives.</Description>
-                            <Title>Memory manipulation and Preprocessor</Title>
-                        </CourseDescription>
-                    </CourseDescriptions>
-                    <CourseObjectives>
-                        <CourseObjective>
-                            <Objective>To make students familiar with basic programming principles, good programming style, structured approach to program design, development, testing and documentation</Objective>
-                        </CourseObjective>
-                    </CourseObjectives>
-                    <CourseTitle>Structured Programming</CourseTitle>
-                    <CourseType>Theory</CourseType>
-                    <LearningOutcomes>
-                        <LearningOutcome>
-                            <Outcome>Formulate problems step by step and design computer programs in a structured way</Outcome>
-                        </LearningOutcome>
-                        <LearningOutcome>
-                            <Outcome>Identify programming data structures and describe programming methodologies</Outcome>
-                        </LearningOutcome>
-                        <LearningOutcome>
-                            <Outcome>Apply fundamental programming concepts using high-level programming language to solve problems</Outcome>
-                        </LearningOutcome>
-                    </LearningOutcomes>
-                    <Rational>This course is designed to introduce students in the algorithmic way of thinking and problem solving by computers. Students learn the fundamental principles of structured programming. Typical characteristics and mechanisms of a structured programming language are introduced and students are introduced to the design and development of structured programs in this language. C programming language is used as the course basis. Lectures are completed by lab practice where theoretical knowledge is applied in an appropriate software environment.</Rational>
-                </Course>
-                <Course>
-                    <Books/>
-                    <CourseCode>CSE 106</CourseCode>
-                    <CourseCredit>1.0</CourseCredit>
-                    <CourseDescriptions>
-                        <CourseDescription>
-                            <Description>- Code::Block or Dev-C++ or Visual C++ - How to write, save, compile and run a C program.</Description>
-                            <Title>Introduction:</Title>
+                            <Description>hhg rty  hg bn ghnh</Description>
+                            <Title>fsdf</Title>
                         </CourseDescription>
                     </CourseDescriptions>
                     <CourseObjectives>
                         <CourseObjective>
                             <Objective>To introduce students to give practical experience on basic programming principles, good programming style, design and solve the problems in a structured approach.</Objective>
                         </CourseObjective>
+                        <CourseObjective>
+                            <Objective>To analyze functions and their graphs. It will be shown how calculus and graphing utilities, working together, can provide most of the important information about their behavior of functions.</Objective>
+                        </CourseObjective>
+                        <CourseObjective>
+                            <Objective>To provide students with a good understanding of the concepts two dimensional geometry.</Objective>
+                        </CourseObjective>
                     </CourseObjectives>
-                    <CourseTitle>Structured Programming Laboratory</CourseTitle>
-                    <CourseType>Laboratory Work</CourseType>
+                    <CourseTitle>Structured Programming</CourseTitle>
+                    <CourseType>Theory</CourseType>
+                    <LearningOutcomes>
+                        <LearningOutcome>
+                            <Outcome>hgjfh hgj gjghj hgj f</Outcome>
+                        </LearningOutcome>
+                    </LearningOutcomes>
+                    <Rational>Learn Programming</Rational>
+                </Course>
+                <Course>
+                    <Books>
+                        <Book>
+                            <Authors>Bdsfd s,sdf sfsdf</Authors>
+                            <BookName>Introductory Circuit Analysis</BookName>
+                            <Edition>10th</Edition>
+                            <PublishYear>2010</PublishYear>
+                            <Publisher>dfsfdf</Publisher>
+                        </Book>
+                    </Books>
+                    <CourseCode>MATH 101</CourseCode>
+                    <CourseCredit>3.0</CourseCredit>
+                    <CourseDescriptions>
+                        <CourseDescription>
+                            <Description>sfssdsdas</Description>
+                            <Title>Matrices</Title>
+                        </CourseDescription>
+                    </CourseDescriptions>
+                    <CourseObjectives>
+                        <CourseObjective>
+                            <Objective>To introduce students to give practical experience on basic programming principles, good programming style, design and solve the problems in a structured approach.</Objective>
+                        </CourseObjective>
+                        <CourseObjective>
+                            <Objective>To analyze functions and their graphs. It will be shown how calculus and graphing utilities, working together, can provide most of the important information about their behavior of functions.</Objective>
+                        </CourseObjective>
+                        <CourseObjective>
+                            <Objective>To provide students with a good understanding of the concepts two dimensional geometry.</Objective>
+                        </CourseObjective>
+                        <CourseObjective>
+                            <Objective>To Students will learn about co-ordinate, translation and rotation of axis, conic, conic section for two dimension.</Objective>
+                        </CourseObjective>
+                    </CourseObjectives>
+                    <CourseTitle>Mathematics I (Matrix, Differential Calculus and Coordinate Geometry)</CourseTitle>
+                    <CourseType>Theory</CourseType>
                     <LearningOutcomes>
                         <LearningOutcome>
                             <Outcome>Solve problems step by step and design computer programs</Outcome>
                         </LearningOutcome>
-                        <LearningOutcome>
-                            <Outcome>Apply fundamental programming concepts using high-level programming language</Outcome>
-                        </LearningOutcome>
                     </LearningOutcomes>
-                    <Rational>This lab course is designed for the students to achieve a hands on experience on basic programming. C programming language is used as the course basis. Theoretical lectures are completed by lab practice where theoretical knowledge is applied in an appropriate software environment</Rational>
+                    <Rational>Something Rational</Rational>
                 </Course>
             </Courses>
             <SemesterName>Semester 1</SemesterName>
@@ -122,6 +112,34 @@
         <Semester>
             <Courses/>
             <SemesterName>Semester 2</SemesterName>
+        </Semester>
+        <Semester>
+            <Courses/>
+            <SemesterName>Semester 3</SemesterName>
+        </Semester>
+        <Semester>
+            <Courses/>
+            <SemesterName>Semester 4</SemesterName>
+        </Semester>
+        <Semester>
+            <Courses/>
+            <SemesterName>Semester 5</SemesterName>
+        </Semester>
+        <Semester>
+            <Courses/>
+            <SemesterName>Semester 6</SemesterName>
+        </Semester>
+        <Semester>
+            <Courses/>
+            <SemesterName>Semester 7</SemesterName>
+        </Semester>
+        <Semester>
+            <Courses/>
+            <SemesterName>Semester 8</SemesterName>
+        </Semester>
+        <Semester>
+            <Courses/>
+            <SemesterName>Semester 9</SemesterName>
         </Semester>
     </Semesters>
 </Syllabus>
