@@ -18,6 +18,10 @@ public class SyllabusController {
 
     SyllabusServices syllabusServices = new SyllabusServices();
 
+    public ModelAndView viewSyllabus() {
+        return null;
+    }
+
     @RequestMapping(value = "/addNewSyll", method = RequestMethod.GET)                        // request to add a new syllabus
     public ModelAndView addNewSyllabus() {
         Syllabus syllabus = new Syllabus();

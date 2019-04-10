@@ -6,6 +6,7 @@ import org.JU.deptofCSE.Department.Project.model.syllabus.Syllabus;
 import org.JU.deptofCSE.Department.Project.repository.syllabus.SyllabusRepository;
 
 import javax.xml.bind.JAXBException;
+import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -25,16 +26,6 @@ public class SyllabusServices {
         return (syllabusRepository.getSyllabus(fileName) != null);
     }
 
-    public Syllabus checkExistance(Syllabus syllabus) throws JAXBException {
-        Syllabus syllabusStored = syllabusRepository.getSyllabus(syllabus.makeXmlFileName());
-
-        if(syllabusStored != null) {
-            syllabus = syllabusStored;
-        }
-
-        return syllabus;
-    }
-
     public Syllabus removeSemester(String semesterName, Syllabus syllabus) {
         Set<Semester> semesterSet = syllabus.getSemesters().getSemesters();
         for(Semester semester : semesterSet) {
@@ -48,5 +39,13 @@ public class SyllabusServices {
         semesters.setSemesters((TreeSet<Semester>) semesterSet);
         syllabus.setSemesters(semesters);
         return syllabus;
+    }
+
+    public List<String> getAllSyllabusFileNames() {
+        return syllabusRepository.getAllSyllabusNames();
+    }
+
+    public void deleteSyllabus(String fileName) {
+        syllabusRepository.deleteSyllabus(fileName);
     }
 }

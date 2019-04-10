@@ -7,6 +7,9 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import java.io.File;
+import java.util.List;
+import java.util.SortedSet;
+import java.util.TreeSet;
 
 public class SyllabusRepository {
 
@@ -29,5 +32,28 @@ public class SyllabusRepository {
         Marshaller marshaller = jaxbContext.createMarshaller();
         marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
         return syllabus;
+    }
+
+    public List<String> getAllSyllabusNames() {                        // get the list of names of all stored syllabuses
+        File folder = new File("Syllabus_Repository");
+        File[] listOfSyllabus = folder.listFiles();
+        SortedSet<String> fileNames = new TreeSet<String>();
+
+        for (int i = 0; i < listOfSyllabus.length; i++) {
+            if(listOfSyllabus[i].isFile()) {
+                fileNames.add(listOfSyllabus[i].getName());
+            }
+        }
+        return (List<String>)fileNames;
+    }
+
+    public void deleteSyllabus(String fileName) {
+        File file = new File("Syllabus_Repository/" + fileName + ".xml");
+        if(file.delete()) {
+            System.out.println(fileName + ".xml deleted succesfully!");
+        }
+        else {
+            System.err.println("No such file!!!");
+        }
     }
 }

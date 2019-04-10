@@ -79,11 +79,7 @@
         </Semester>
         <Semester>
             <Courses/>
-            <SemesterName>Semester 5</SemesterName>
-        </Semester>
-        <Semester>
-            <Courses/>
-            <SemesterName>Semester 6</SemesterName>
+            <SemesterName>Semester 4</SemesterName>
         </Semester>
     </Semesters>
 </Syllabus>
