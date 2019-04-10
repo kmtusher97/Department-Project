@@ -79,7 +79,7 @@ public class Syllabus {
     }
 
     public String makeXmlFileName() {
-        return this.category + "_" + this.effictiveFrom + "to" + this.getEffictiveTo();
+        return this.category + "_" + Integer.toString(this.effictiveFrom) + "to" + Integer.toString(this.getEffictiveTo());
     }
 
     public void addNewSemester(Semester semester) {
