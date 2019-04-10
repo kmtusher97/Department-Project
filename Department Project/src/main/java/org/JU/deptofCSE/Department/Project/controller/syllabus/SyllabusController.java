@@ -49,7 +49,7 @@ public class SyllabusController {
 
         ModelAndView editSyllabusPage = new ModelAndView("syllabus/EditSyllabus");
         editSyllabusPage.addObject("syllabus", syllabus);
-        editSyllabusPage.addObject("title", fileName);
+        editSyllabusPage.addObject("fileName", fileName);
 
         return editSyllabusPage;
     }

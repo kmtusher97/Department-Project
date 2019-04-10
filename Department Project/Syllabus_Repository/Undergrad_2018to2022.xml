@@ -11,7 +11,11 @@
                     <CourseCode>MATH 100</CourseCode>
                     <CourseCredit>3.0</CourseCredit>
                     <CourseDescriptions/>
-                    <CourseObjectives/>
+                    <CourseObjectives>
+                        <CourseObjective>
+                            <Objective>To learn about matrix, determinant and its application to the solution of systems of linear equations.</Objective>
+                        </CourseObjective>
+                    </CourseObjectives>
                     <CourseTitle>Mathematics I (Matrix, Differential Calculus and Coordinate Geometry)</CourseTitle>
                     <CourseType>Theory</CourseType>
                     <LearningOutcomes/>
@@ -30,33 +34,11 @@
                 </Course>
                 <Course>
                     <Books/>
-                    <CourseCode>ENG 103</CourseCode>
-                    <CourseCredit>3.0</CourseCredit>
-                    <CourseDescriptions/>
-                    <CourseObjectives/>
-                    <CourseTitle>Communicative English</CourseTitle>
-                    <CourseType>Theory</CourseType>
-                    <LearningOutcomes/>
-                    <Rational></Rational>
-                </Course>
-                <Course>
-                    <Books/>
-                    <CourseCode>CSE 105</CourseCode>
-                    <CourseCredit>3.0</CourseCredit>
-                    <CourseDescriptions/>
-                    <CourseObjectives/>
-                    <CourseTitle>Structured Programming</CourseTitle>
-                    <CourseType>Theory</CourseType>
-                    <LearningOutcomes/>
-                    <Rational></Rational>
-                </Course>
-                <Course>
-                    <Books/>
-                    <CourseCode>CSE 106</CourseCode>
+                    <CourseCode>CSE 102</CourseCode>
                     <CourseCredit>1.0</CourseCredit>
                     <CourseDescriptions/>
                     <CourseObjectives/>
-                    <CourseTitle>Structured Programming Laboratory</CourseTitle>
+                    <CourseTitle>Electronic Circuit Laboratory</CourseTitle>
                     <CourseType>Laboratory</CourseType>
                     <LearningOutcomes/>
                     <Rational></Rational>
@@ -65,7 +47,19 @@
             <SemesterName>Semester 1</SemesterName>
         </Semester>
         <Semester>
-            <Courses/>
+            <Courses>
+                <Course>
+                    <Books/>
+                    <CourseCode>CSE 151</CourseCode>
+                    <CourseCredit>3.0</CourseCredit>
+                    <CourseDescriptions/>
+                    <CourseObjectives/>
+                    <CourseTitle>Device</CourseTitle>
+                    <CourseType>Theory</CourseType>
+                    <LearningOutcomes/>
+                    <Rational></Rational>
+                </Course>
+            </Courses>
             <SemesterName>Semester 2</SemesterName>
         </Semester>
         <Semester>
@@ -75,6 +69,14 @@
         <Semester>
             <Courses/>
             <SemesterName>Semester 4</SemesterName>
+        </Semester>
+        <Semester>
+            <Courses/>
+            <SemesterName>Semester 5</SemesterName>
+        </Semester>
+        <Semester>
+            <Courses/>
+            <SemesterName>Semester 6</SemesterName>
         </Semester>
     </Semesters>
 </Syllabus>
