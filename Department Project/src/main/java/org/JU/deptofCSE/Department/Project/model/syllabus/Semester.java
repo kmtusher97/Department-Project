@@ -43,6 +43,25 @@ public class Semester {
         this.courses.addCourse(course);
     }
 
+    public Integer getSemesterId() {
+        Integer id = 0, powerOf10 = 1;
+        for(int i = this.name.length() - 1; i >= 0; i--) {
+            char ch = this.name.charAt(i);
+            if(ch >= '0' && ch <= '9') {        // is digit
+                id += ((ch - '0') * powerOf10);
+                powerOf10 *= 10;
+            }
+            else {
+                break;
+            }
+        }
+        return id;
+    }
+
+    public void removeCourse(Course course) {
+        this.courses.removeCourse(course);
+    }
+
     @Override
     public String toString() {
         return "Semester{" +

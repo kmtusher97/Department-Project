@@ -15,6 +15,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.xml.bind.JAXBException;
 import java.util.List;
+import java.util.SortedSet;
+import java.util.TreeSet;
 
 @Controller
 @RequestMapping(value = "/syl")
@@ -25,7 +27,7 @@ public class CourseController {
 
     @RequestMapping(value = "/addNewCourse/{semesterName}/{fileName}", method = RequestMethod.GET)
     public ModelAndView addNewCourse(@PathVariable("semesterName") String semesterName,
-                                               @PathVariable("fileName") String fileName) {
+                                     @PathVariable("fileName") String fileName) {
         Course course = new Course();
         ModelAndView courseEditPage = new ModelAndView("syllabus/AddNewCourse");
         course = courseServices.populateCourse(course);
@@ -56,9 +58,9 @@ public class CourseController {
     public ModelAndView updateCourse(@PathVariable("courseCode") String courseCode,
                                      @PathVariable("semesterName") String semesterName,
                                      @PathVariable("fileName") String fileName) throws JAXBException {
-        System.err.println(courseCode + " " + semesterName + " " + fileName);
-        List<Semester> semesterList = syllabusServices.getSyllabus(fileName).getSemesters().getSemesters();
-        Course course = courseServices.getCoursesBySemesterNameAndCourseCode(semesterList, semesterName, courseCode);
+        SortedSet<Semester> semesterList = syllabusServices.getSyllabus(fileName).getSemesters().getSemesters();
+        Course course = courseServices.getCoursesBySemesterNameAndCourseCode((TreeSet<Semester>) semesterList, semesterName, courseCode);
+        courseServices.removeCourse(course, semesterName, fileName);
         course = courseServices.populateCourse(course);
 
         ModelAndView courseEditPage = new ModelAndView("syllabus/AddNewCourse");
@@ -66,6 +68,23 @@ public class CourseController {
         courseEditPage.addObject("semesterName", semesterName);
         courseEditPage.addObject("fileName", fileName);
         return courseEditPage;
+    }
+
+    @RequestMapping(value = "/deleteCourse/{courseCode}/{semesterName}/{fileName}", method = RequestMethod.GET)
+    public ModelAndView deleteCourse(@PathVariable("courseCode") String courseCode,
+                                     @PathVariable("semesterName") String semesterName,
+                                     @PathVariable("fileName") String fileName) throws JAXBException {
+        Syllabus syllabus = syllabusServices.getSyllabus(fileName);
+        SortedSet<Semester> semesterList = syllabus.getSemesters().getSemesters();
+        Course course = courseServices.getCoursesBySemesterNameAndCourseCode((TreeSet<Semester>) semesterList, semesterName, courseCode);
+        syllabus.removeCourse(course, semesterName);
+        syllabusServices.saveSyllabus(syllabus, fileName);
+
+        ModelAndView editSyllabusPage = new ModelAndView("syllabus/EditSyllabus");
+        editSyllabusPage.addObject("syllabus", syllabus);
+        editSyllabusPage.addObject("fileName", fileName);
+
+        return editSyllabusPage;
     }
 
 

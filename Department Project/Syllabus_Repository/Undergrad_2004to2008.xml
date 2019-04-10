@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Syllabus>
+    <Category>Undergrad</Category>
+    <EffectiveFrom>2004</EffectiveFrom>
+    <EffectiveTo>2008</EffectiveTo>
+    <Semesters>
+        <Semester>
+            <Courses>
+                <Course>
+                    <Books/>
+                    <CourseCode>CSE 101</CourseCode>
+                    <CourseCredit>3.0</CourseCredit>
+                    <CourseDescriptions/>
+                    <CourseObjectives/>
+                    <CourseTitle>Electronic Circuit</CourseTitle>
+                    <CourseType>Theory</CourseType>
+                    <LearningOutcomes/>
+                    <Rational></Rational>
+                </Course>
+                <Course>
+                    <Books/>
+                    <CourseCode>CSE 102</CourseCode>
+                    <CourseCredit>0.5</CourseCredit>
+                    <CourseDescriptions/>
+                    <CourseObjectives/>
+                    <CourseTitle>Electronic Circuit Laboratory</CourseTitle>
+                    <CourseType>Laboratory</CourseType>
+                    <LearningOutcomes/>
+                    <Rational></Rational>
+                </Course>
+                <Course>
+                    <Books/>
+                    <CourseCode>CSE 106</CourseCode>
+                    <CourseCredit>3.0</CourseCredit>
+                    <CourseDescriptions/>
+                    <CourseObjectives/>
+                    <CourseTitle>Structured Programming</CourseTitle>
+                    <CourseType>Theory</CourseType>
+                    <LearningOutcomes/>
+                    <Rational></Rational>
+                </Course>
+            </Courses>
+            <SemesterName>Semester 1</SemesterName>
+        </Semester>
+        <Semester>
+            <Courses/>
+            <SemesterName>Semester 2</SemesterName>
+        </Semester>
+    </Semesters>
+</Syllabus>

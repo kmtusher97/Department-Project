@@ -2,14 +2,17 @@ package org.JU.deptofCSE.Department.Project.service.syllabus;
 
 import org.JU.deptofCSE.Department.Project.model.syllabus.*;
 import org.JU.deptofCSE.Department.Project.repository.syllabus.CourseRepository;
+import org.JU.deptofCSE.Department.Project.repository.syllabus.SyllabusRepository;
 
 import javax.xml.bind.JAXBException;
 import java.util.List;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class CourseServices {
 
     CourseRepository courseRepository = new CourseRepository();
+    SyllabusRepository syllabusRepository = new SyllabusRepository();
 
     public void saveCourse(Course course) throws JAXBException {
         courseRepository.addCourse(course);
@@ -77,7 +80,7 @@ public class CourseServices {
         return course;
     }
 
-    public Course getCoursesBySemesterNameAndCourseCode(List<Semester> semesterList, String semesterName, String courseCode) {
+    public Course getCoursesBySemesterNameAndCourseCode(TreeSet<Semester> semesterList, String semesterName, String courseCode) {
         for(Semester semester : semesterList) {
             if(!semester.getName().equals(semesterName)) {
                 continue;
@@ -91,5 +94,11 @@ public class CourseServices {
             }
         }
         return null;
+    }
+
+    public void removeCourse(Course course, String semesterName, String fileName) throws JAXBException {
+        Syllabus syllabus = syllabusRepository.getSyllabus(fileName);
+        syllabus.removeCourse(course, semesterName);
+        syllabusRepository.addSyllabus(syllabus, fileName);
     }
 }

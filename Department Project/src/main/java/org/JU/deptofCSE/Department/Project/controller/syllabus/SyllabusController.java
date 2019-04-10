@@ -43,7 +43,7 @@ public class SyllabusController {
         Syllabus syllabus = syllabusServices.getSyllabus(fileName);
         Semester semester = new Semester();
 
-        semester.setName("Semester " + Integer.toString(syllabus.countOfSemesters() + 1));
+        semester.setName("Semester " + syllabus.getSemesters().getFirstMissingSemesterId());
         syllabus.addNewSemester(semester);
         syllabusServices.saveSyllabus(syllabus, fileName);
 
@@ -54,4 +54,18 @@ public class SyllabusController {
         return editSyllabusPage;
     }
 
+    @RequestMapping(value = "/deleteSemester/{semesterName}/{fileName}", method = RequestMethod.GET)
+    public ModelAndView deleteSemester(@PathVariable("semesterName") String semesterName,
+                                       @PathVariable("fileName") String fileName) throws JAXBException {
+        Syllabus syllabus = syllabusServices.getSyllabus(fileName);
+        syllabus = syllabusServices.removeSemester(semesterName, syllabus);
+        syllabusServices.saveSyllabus(syllabus, fileName);
+
+        ModelAndView editSyllabusPage = new ModelAndView("syllabus/EditSyllabus");
+        editSyllabusPage.addObject("syllabus", syllabus);
+        editSyllabusPage.addObject("fileName", fileName);
+
+        return editSyllabusPage;
+
+    }
 }

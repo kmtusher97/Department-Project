@@ -42,6 +42,10 @@ public class Courses {
         this.courses.add(course);
     }
 
+    public void removeCourse(Course course) {
+        this.courses.remove(course);
+    }
+
     @Override
     public String toString() {
         return "Courses{" +

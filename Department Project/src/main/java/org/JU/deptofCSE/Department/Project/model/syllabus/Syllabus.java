@@ -4,6 +4,8 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 
 @XmlRootElement(name = "Syllabus")
 public class Syllabus {
@@ -30,7 +32,7 @@ public class Syllabus {
         this.semesters = semesters;
     }
 
-    @XmlElement(name = "EffictiveFrom")
+    @XmlElement(name = "EffectiveFrom")
     public Integer getEffictiveFrom() {
         return effictiveFrom;
     }
@@ -39,7 +41,7 @@ public class Syllabus {
         this.effictiveFrom = effictiveFrom;
     }
 
-    @XmlElement(name = "EffictiveTo")
+    @XmlElement(name = "EffectiveTo")
     public Integer getEffictiveTo() {
         return effictiveTo;
     }
@@ -71,33 +73,13 @@ public class Syllabus {
     public Integer countOfSemesters() {
         if(this.semesters == null) {
             this.semesters = new Semesters();
-            this.semesters.setSemesters(new ArrayList<Semester>());
+            this.semesters.setSemesters(new TreeSet<Semester>());
         }
         return this.semesters.getSemesters().size();
     }
 
-    public Integer getNumberOfsemisters() {
-        if(this.category.equals("Undergrad")) {
-            return 8;
-        }
-        else if(this.category.equals("Masters")) {
-            return 4;
-        }
-        else if(this.category.equals("PMSCS")) {
-            return 4;
-        }
-        else if(this.category.equals("MPhil")) {
-            return 4;
-        }
-        else if(this.category.equals("Phd")) {
-            return 6;
-        }
-        return 0;
-    }
-
     public String makeXmlFileName() {
-        return this.category + "_" + Integer.toString(this.effictiveFrom)
-                + "to" + Integer.toString(this.getEffictiveTo() % 100);
+        return this.category + "_" + this.effictiveFrom + "to" + this.getEffictiveTo();
     }
 
     public void addNewSemester(Semester semester) {
@@ -109,6 +91,16 @@ public class Syllabus {
 
     public void addNewCourse(Course course, String semesterName) {
         this.semesters.addCourse(course, semesterName);
+    }
+
+    public void removeCourse(Course course, String semesterName) {
+        Set<Semester> semesterSet = this.semesters.getSemesters();
+        for(Semester semester : semesterSet) {
+            if(!semester.getName().equals(semesterName)) {
+                continue;
+            }
+            semester.removeCourse(course);
+        }
     }
 
     @Override
