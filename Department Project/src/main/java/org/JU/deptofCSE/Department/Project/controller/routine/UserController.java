@@ -31,14 +31,12 @@ public class UserController {
         if(requestedUser == null || !requestedUser.getPassword().equals(user.getPassword())) {
             return new ModelAndView("redirect:/login");
         }
-        ModelAndView homePage;
         if( userServices.isAdmin(requestedUser.getId()) ) {
-            homePage = new ModelAndView("routine/AdminDashboard");
+            return new ModelAndView("redirect:/admin/dashboard");
         }
         else {
-            homePage = new ModelAndView("routine/TeacherHomePage");
+            return new ModelAndView("redirect:/teacher/dashboard");
         }
-        return homePage;
     }
 
     @RequestMapping(value = "/recoverPass", method = RequestMethod.GET)

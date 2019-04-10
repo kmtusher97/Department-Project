@@ -32,6 +32,43 @@ public class Syllabus {
         this.semesters = semesters;
     }
 
+    public Syllabus(String fileName) {
+        this.effictiveFrom = 0;
+        this.effictiveTo = 0;
+        this.category = "";
+        this.semesters = new Semesters();
+
+        int index = 0;
+        for(; index < fileName.length(); index++) {
+            if(Character.isLetter(fileName.charAt(index))) {
+                this.category += fileName.charAt(index);
+            }
+            else {
+                break;
+            }
+        }
+        String yearFrom = "";
+        String yearTo = "";
+        for(index = index + 1; index < fileName.length(); index++) {
+            if(Character.isDigit(fileName.charAt(index))) {
+                yearFrom += fileName.charAt(index);
+            }
+            else {
+                break;
+            }
+        }
+        for(; index < fileName.length(); index++) {
+            if(Character.isDigit(fileName.charAt(index))) {
+                yearTo += fileName.charAt(index);
+            }
+            else {
+                continue;
+            }
+        }
+        this.effictiveFrom = Integer.parseInt(yearFrom);
+        this.effictiveTo = Integer.parseInt(yearTo);
+    }
+
     @XmlElement(name = "EffectiveFrom")
     public Integer getEffictiveFrom() {
         return effictiveFrom;

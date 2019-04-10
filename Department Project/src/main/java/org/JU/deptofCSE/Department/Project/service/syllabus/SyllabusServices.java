@@ -21,6 +21,10 @@ public class SyllabusServices {
         syllabusRepository.addSyllabus(syllabus, fileName);
     }
 
+    public boolean isTheSyllabusExists(String fileName) throws JAXBException {
+        return (syllabusRepository.getSyllabus(fileName) != null);
+    }
+
     public Syllabus checkExistance(Syllabus syllabus) throws JAXBException {
         Syllabus syllabusStored = syllabusRepository.getSyllabus(syllabus.makeXmlFileName());
 

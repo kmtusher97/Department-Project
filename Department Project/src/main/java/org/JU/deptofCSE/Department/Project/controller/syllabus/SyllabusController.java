@@ -18,54 +18,48 @@ public class SyllabusController {
 
     SyllabusServices syllabusServices = new SyllabusServices();
 
-    @RequestMapping(value = "/addSyl", method = RequestMethod.GET)
+    @RequestMapping(value = "/addNewSyll", method = RequestMethod.GET)                        // request to add a new syllabus
     public ModelAndView addNewSyllabus() {
         Syllabus syllabus = new Syllabus();
         ModelAndView addSyllabusPage = new ModelAndView("syllabus/AddNewSyllabus");
-        addSyllabusPage.addObject("syllabusForm", syllabus);
-        return addSyllabusPage;
+        addSyllabusPage.addObject("syllabusForm", syllabus);                     // send an object of syllabus class and get the
+        return addSyllabusPage;                                                               // category and session of the syllabus, then go to edit syllabus page
     }
 
-    @RequestMapping(value = "/editSyl", method = RequestMethod.POST)
-    public ModelAndView addSemesters(@ModelAttribute("syllabusForm") Syllabus syllabus) throws JAXBException {
-        syllabus = syllabusServices.checkExistance(syllabus);
-        syllabusServices.saveSyllabus(syllabus, syllabus.makeXmlFileName());
+    @RequestMapping(value = "/editSyll/{fileName}", method = RequestMethod.GET)                // request to edit a syllabus
+    public ModelAndView editSyllabus(@PathVariable("fileName") String fileName) throws JAXBException {
+        if(!syllabusServices.isTheSyllabusExists(fileName)) {                                  // if the requested syllabus does not exists
+            syllabusServices.saveSyllabus(new Syllabus(fileName), fileName);                   // add this syllabus to xml repository
+        }
 
-        ModelAndView editSyllabusPage = new ModelAndView("syllabus/EditSyllabus");
-        editSyllabusPage.addObject("syllabus", syllabus);
-        editSyllabusPage.addObject("fileName", syllabus.makeXmlFileName());
+        Syllabus syllabusFrom = syllabusServices.getSyllabus(fileName);                        // find the syllabus using the file name
 
-        return editSyllabusPage;
+        ModelAndView syllabusEditPage = new ModelAndView("syllabus/EditSyllabus");
+        syllabusEditPage.addObject("fileName", fileName);
+        syllabusEditPage.addObject("syllabus", syllabusFrom);
+
+        return syllabusEditPage;
     }
 
-    @RequestMapping(value = "/addNewSemester/{fileName}", method = RequestMethod.GET)
+    @RequestMapping(value = "/addNewSemester/{fileName}", method = RequestMethod.GET)                       // request to add a semester to a particular syllabus
     public ModelAndView addNewSemester(@PathVariable("fileName") String fileName) throws JAXBException {
-        Syllabus syllabus = syllabusServices.getSyllabus(fileName);
+        Syllabus syllabus = syllabusServices.getSyllabus(fileName);                                         // open the syllabus using the file name
         Semester semester = new Semester();
 
-        semester.setName("Semester " + syllabus.getSemesters().getFirstMissingSemesterId());
+        semester.setName("Semester " + syllabus.getSemesters().getFirstMissingSemesterId());                // set the semester name, while adding semesters add the first missing one
         syllabus.addNewSemester(semester);
-        syllabusServices.saveSyllabus(syllabus, fileName);
+        syllabusServices.saveSyllabus(syllabus, fileName);                                                  // store the changes
 
-        ModelAndView editSyllabusPage = new ModelAndView("syllabus/EditSyllabus");
-        editSyllabusPage.addObject("syllabus", syllabus);
-        editSyllabusPage.addObject("fileName", fileName);
-
-        return editSyllabusPage;
+        return new ModelAndView("redirect:/syl/editSyll/" + fileName);                            // return to the edit syllabus page
     }
 
-    @RequestMapping(value = "/deleteSemester/{semesterName}/{fileName}", method = RequestMethod.GET)
+    @RequestMapping(value = "/deleteSemester/{semesterName}/{fileName}", method = RequestMethod.GET)        // request to delete a semester using the semester name & file name
     public ModelAndView deleteSemester(@PathVariable("semesterName") String semesterName,
                                        @PathVariable("fileName") String fileName) throws JAXBException {
-        Syllabus syllabus = syllabusServices.getSyllabus(fileName);
-        syllabus = syllabusServices.removeSemester(semesterName, syllabus);
-        syllabusServices.saveSyllabus(syllabus, fileName);
+        Syllabus syllabus = syllabusServices.getSyllabus(fileName);                                         // get the syllabus using the file name
+        syllabus = syllabusServices.removeSemester(semesterName, syllabus);                                 // remove the requested semester
+        syllabusServices.saveSyllabus(syllabus, fileName);                                                  // save the changes
 
-        ModelAndView editSyllabusPage = new ModelAndView("syllabus/EditSyllabus");
-        editSyllabusPage.addObject("syllabus", syllabus);
-        editSyllabusPage.addObject("fileName", fileName);
-
-        return editSyllabusPage;
-
+        return new ModelAndView("redirect:/syl/editSyll/" + fileName);                            // return to the edit syllabus page
     }
 }

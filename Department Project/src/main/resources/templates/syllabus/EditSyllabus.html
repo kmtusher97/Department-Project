@@ -24,7 +24,7 @@
             <a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><em class="fa fa-bars"></em></a>
             <ul class="nav nav-pills flex-column sidebar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/admin/dashBoard}">
+                    <a class="nav-link" th:href="@{/admin/dashboard}">  <!-- throws to the admin dashboard page -->
                         <em class="fa fa-dashboard"></em>Dashboard
                     </a>
                 </li>
@@ -49,7 +49,7 @@
                     <div class="dropdown-menu dropdown-menu-right" style="margin-right: 1.5rem;"
                          aria-labelledby="dropdownMenuLink"><a class="dropdown-item" href="#"><em
                         class="fa fa-user-circle mr-1"></em> View Profile</a>
-                        <a class="dropdown-item" href="#"><em class="fa fa-power-off mr-1"></em> Logout</a></div>
+                        <a class="dropdown-item" th:href="@{/login}"><em class="fa fa-power-off mr-1"></em> Logout</a></div>
                 </div>
                 <div class="clear"></div>
             </header>

@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="images/favicon.ico">
-    <title>Add new Course</title>
+    <title th:text="${courseCodeDelete} != '000' ? ${courseCodeDelete} : 'Add new Course'"></title>
 
     <link th:href="@{/Asset/dist/css/bootstrap.min.css}" rel="stylesheet">
 
@@ -23,15 +23,15 @@
 
             <a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><em class="fa fa-bars"></em></a>
             <ul class="nav nav-pills flex-column sidebar-nav">
-                <li class="nav-item"><a class="nav-link" href="Dashboard.html"><em class="fa fa-dashboard"></em>
+                <li class="nav-item"><a class="nav-link" th:href="@{/admin/dashboard}"><em class="fa fa-dashboard"></em>
                     Dashboard</a></li>
             </ul>
 
-            <a href="#" class="logout-button"><em class="fa fa-power-off"></em> Signout</a></nav>
+            <a th:href="@{/login}" class="logout-button"><em class="fa fa-power-off"></em> Signout</a></nav>
         <main class="col-xs-12 col-sm-8 col-lg-9 col-xl-10 pt-3 pl-4 ml-auto">
             <header class="page-header row justify-center">
                 <div class="col-md-6 col-lg-8">
-                    <h1 class="float-left text-center text-md-left">Add New Course</h1>
+                    <h1 class="float-left text-center text-md-left" th:text="${courseCodeDelete} != '000' ? ('Edit ' + ${courseCodeDelete}) : 'Add new Course'"></h1>
                 </div>
                 <div class="dropdown user-dropdown col-md-6 col-lg-4 text-center text-md-right"><a
                     class="btn btn-stripped dropdown-toggle" href="https://example.com" id="dropdownMenuLink"
@@ -46,7 +46,7 @@
                     <div class="dropdown-menu dropdown-menu-right" style="margin-right: 1.5rem;"
                          aria-labelledby="dropdownMenuLink"><a class="dropdown-item" href="#"><em
                         class="fa fa-user-circle mr-1"></em> View Profile</a>
-                        <a class="dropdown-item" href="#"><em class="fa fa-power-off mr-1"></em> Logout</a></div>
+                        <a class="dropdown-item" th:href="@{/login}"><em class="fa fa-power-off mr-1"></em> Logout</a></div>
                 </div>
                 <div class="clear"></div>
             </header>
@@ -56,9 +56,9 @@
                         <div class="col-12">
                             <div class="card mb-4">
                                 <div class="card-block">
-                                    <h3 class="card-title">Add New Course</h3>
                                     <form class="form"
-                                          th:action="@{/syl/saveCourse/{semesterName}/{fileName} (semesterName=${semesterName}, fileName=${fileName})}"
+                                          th:action="@{/syl/saveCourse/{semesterName}/{fileName}/{courseCodeDelete}
+                                          (semesterName=${semesterName}, fileName=${fileName}, courseCodeDelete=${courseCodeDelete})}"
                                           method=post>
                                         <div class="form-group row">
                                             <label class="col-md-3 col-form-label" for="courseCode">Course Code</label>

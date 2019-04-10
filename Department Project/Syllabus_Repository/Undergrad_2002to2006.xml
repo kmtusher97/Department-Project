@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Syllabus>
     <Category>Undergrad</Category>
-    <EffectiveFrom>2018</EffectiveFrom>
-    <EffectiveTo>2022</EffectiveTo>
+    <EffectiveFrom>2002</EffectiveFrom>
+    <EffectiveTo>2006</EffectiveTo>
     <Semesters>
         <Semester>
             <Courses>
                 <Course>
                     <Books/>
-                    <CourseCode>MATH 100</CourseCode>
+                    <CourseCode>MATH 101</CourseCode>
                     <CourseCredit>3.0</CourseCredit>
                     <CourseDescriptions/>
                     <CourseObjectives>
@@ -23,34 +23,23 @@
                 </Course>
                 <Course>
                     <Books/>
-                    <CourseCode>CSE 101</CourseCode>
+                    <CourseCode>CSE 106</CourseCode>
                     <CourseCredit>3.0</CourseCredit>
                     <CourseDescriptions/>
                     <CourseObjectives/>
-                    <CourseTitle>Electronic Circuit</CourseTitle>
+                    <CourseTitle>Structured Programming</CourseTitle>
                     <CourseType>Theory</CourseType>
                     <LearningOutcomes/>
                     <Rational></Rational>
                 </Course>
                 <Course>
                     <Books/>
-                    <CourseCode>CSE 102</CourseCode>
+                    <CourseCode>CSE 107</CourseCode>
                     <CourseCredit>1.0</CourseCredit>
                     <CourseDescriptions/>
                     <CourseObjectives/>
-                    <CourseTitle>Electronic Circuit Laboratory</CourseTitle>
+                    <CourseTitle>Structured Programming Laboratory</CourseTitle>
                     <CourseType>Laboratory</CourseType>
-                    <LearningOutcomes/>
-                    <Rational></Rational>
-                </Course>
-                <Course>
-                    <Books/>
-                    <CourseCode>ENG 103</CourseCode>
-                    <CourseCredit>3.0</CourseCredit>
-                    <CourseDescriptions/>
-                    <CourseObjectives/>
-                    <CourseTitle>Communicative English</CourseTitle>
-                    <CourseType>Theory</CourseType>
                     <LearningOutcomes/>
                     <Rational></Rational>
                 </Course>
@@ -61,12 +50,12 @@
             <Courses>
                 <Course>
                     <Books/>
-                    <CourseCode>CSE 151</CourseCode>
-                    <CourseCredit>3.0</CourseCredit>
+                    <CourseCode>CSE 150</CourseCode>
+                    <CourseCredit>1.0</CourseCredit>
                     <CourseDescriptions/>
                     <CourseObjectives/>
-                    <CourseTitle>Device</CourseTitle>
-                    <CourseType>Theory</CourseType>
+                    <CourseTitle>Viva Voce</CourseTitle>
+                    <CourseType>Viva-Voce</CourseType>
                     <LearningOutcomes/>
                     <Rational></Rational>
                 </Course>
@@ -79,11 +68,11 @@
         </Semester>
         <Semester>
             <Courses/>
-            <SemesterName>Semester 5</SemesterName>
+            <SemesterName>Semester 4</SemesterName>
         </Semester>
         <Semester>
             <Courses/>
-            <SemesterName>Semester 6</SemesterName>
+            <SemesterName>Semester 5</SemesterName>
         </Semester>
     </Semesters>
 </Syllabus>
