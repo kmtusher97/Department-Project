@@ -7,7 +7,6 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import java.io.File;
-import java.util.List;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
@@ -34,7 +33,7 @@ public class SyllabusRepository {
         return syllabus;
     }
 
-    public List<String> getAllSyllabusNames() {                        // get the list of names of all stored syllabuses
+    public SortedSet<String> getAllSyllabusNames() {                        // get the list of names of all stored syllabuses
         File folder = new File("Syllabus_Repository");
         File[] listOfSyllabus = folder.listFiles();
         SortedSet<String> fileNames = new TreeSet<String>();
@@ -44,7 +43,7 @@ public class SyllabusRepository {
                 fileNames.add(listOfSyllabus[i].getName());
             }
         }
-        return (List<String>)fileNames;
+        return fileNames;
     }
 
     public void deleteSyllabus(String fileName) {

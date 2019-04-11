@@ -27,11 +27,11 @@
 					<li class="nav-item"><a class="nav-link active" th:href="@{/admin/addSyll}"><em class="fa fa-pencil-square-o"></em> Syllabus <span class="sr-only">(current)</span></a></li>
 				</ul>
 				
-				<a href="#" class="logout-button"><em class="fa fa-power-off"></em> Signout</a></nav>
+				<a th:href="@{/login}" class="logout-button"><em class="fa fa-power-off"></em> Signout</a></nav>
 			<main class="col-xs-12 col-sm-8 col-lg-9 col-xl-10 pt-3 pl-4 ml-auto">
 				<header class="page-header row justify-center">
 					<div class="col-md-6 col-lg-8" >
-						<h1 class="float-left text-center text-md-left">Add New Syllabus</h1>
+						<h1 class="float-left text-center text-md-left">Syllabus</h1>
 					</div>
 					<div class="dropdown user-dropdown col-md-6 col-lg-4 text-center text-md-right"><a class="btn btn-stripped dropdown-toggle" href="https://example.com" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						<img th:src="@{/Asset/images/Zahid-sir.jpg}" alt="profile photo" class="circle float-left profile-photo" width="50" height="auto">
@@ -147,7 +147,38 @@
 								</div>
 							</div>
 						</section>
-						
+						<section class="row">
+							<div class="col-12">
+								<div class="card mb-4">
+									<div class="card-block">
+										<h3 class="card-title">Syllabuses</h3>
+										<table class="table table-bordered">
+											<thead>
+											<tr>
+												<th>Category</th>
+												<th>Effective From</th>
+												<th>Effective To</th>
+												<th colspan="2">Action</th>
+											</tr>
+											</thead>
+											<tbody>
+											<tr th:each="syl : ${syllabusList}">
+												<td th:text="${syl.category}"></td>
+												<td th:text="${syl.effictiveFrom}"></td>
+												<td th:text="${syl.effictiveTo}"></td>
+												<td>
+													<a th:href="@{/syl/editSyll/{fileName} (fileName = ${syl.makeXmlFileName()})}">Edit</a>
+												</td>
+												<td>
+													<a th:href="@{/syl/deleteSyll/{fileName} (fileName = ${syl.makeXmlFileName()})}">Delete</a>
+												</td>
+											</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</section>
 					</div>
 				</section>
 			</main>

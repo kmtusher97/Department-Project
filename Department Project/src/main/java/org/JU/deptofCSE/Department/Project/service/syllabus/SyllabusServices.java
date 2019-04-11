@@ -1,13 +1,14 @@
 package org.JU.deptofCSE.Department.Project.service.syllabus;
 
+import org.JU.deptofCSE.Department.Project.model.syllabus.Courses;
 import org.JU.deptofCSE.Department.Project.model.syllabus.Semester;
 import org.JU.deptofCSE.Department.Project.model.syllabus.Semesters;
 import org.JU.deptofCSE.Department.Project.model.syllabus.Syllabus;
 import org.JU.deptofCSE.Department.Project.repository.syllabus.SyllabusRepository;
 
 import javax.xml.bind.JAXBException;
-import java.util.List;
 import java.util.Set;
+import java.util.SortedSet;
 import java.util.TreeSet;
 
 public class SyllabusServices {
@@ -41,11 +42,23 @@ public class SyllabusServices {
         return syllabus;
     }
 
-    public List<String> getAllSyllabusFileNames() {
+    public SortedSet<String> getAllSyllabusFileNames() {                     // get all the names of the stored syllabuses
         return syllabusRepository.getAllSyllabusNames();
     }
 
-    public void deleteSyllabus(String fileName) {
+    public Courses getCoursesOfASemesterBy(String semesterName, String fileName) throws JAXBException {   // get the courses of a semester
+        Syllabus syllabus = syllabusRepository.getSyllabus(fileName);
+        SortedSet<Semester> semesters = syllabus.getSemesters().getSemesters();
+        for(Semester semester :semesters) {
+            if(semester.getName().equals(semesterName)) {
+                return semester.getCourses();
+            }
+        }
+        return null;
+    }
+
+    public void deleteSyllabus(String fileName) {                            // delete a syllabus from xml repository
         syllabusRepository.deleteSyllabus(fileName);
     }
+
 }

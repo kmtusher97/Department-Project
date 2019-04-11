@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Syllabus>
+    <Category>Undergrad</Category>
+    <EffectiveFrom>2006</EffectiveFrom>
+    <EffectiveTo>2010</EffectiveTo>
+    <Semesters>
+        <Semester>
+            <Courses/>
+            <SemesterName>Semester 1</SemesterName>
+        </Semester>
+        <Semester>
+            <Courses/>
+            <SemesterName>Semester 2</SemesterName>
+        </Semester>
+        <Semester>
+            <Courses/>
+            <SemesterName>Semester 3</SemesterName>
+        </Semester>
+        <Semester>
+            <Courses/>
+            <SemesterName>Semester 4</SemesterName>
+        </Semester>
+        <Semester>
+            <Courses/>
+            <SemesterName>Semester 5</SemesterName>
+        </Semester>
+        <Semester>
+            <Courses/>
+            <SemesterName>Semester 6</SemesterName>
+        </Semester>
+    </Semesters>
+</Syllabus>

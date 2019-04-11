@@ -63,7 +63,7 @@
                                         <div class="form-group row">
                                             <label class="col-md-3 col-form-label" for="courseCode">Course Code</label>
                                             <div class="col-md-9">
-                                                <input type="text" name="course-code" class="form-control"
+                                                <input required type="text" name="course-code" class="form-control"
                                                        id="courseCode" th:field="${courseEditForm.courseCode}">
                                             </div>
                                         </div>
@@ -71,7 +71,7 @@
                                             <label class="col-md-3 col-form-label" for="courseTitle">Course
                                                 Title</label>
                                             <div class="col-md-9">
-                                                <input class="form-control" type="text" name="title" id="courseTitle"
+                                                <input required class="form-control" type="text" name="title" id="courseTitle"
                                                        th:field="${courseEditForm.courseTitle}">
                                             </div>
                                         </div>
@@ -118,7 +118,7 @@
                                                 <tbody>
                                                 <tr th:each="courseObj, itemStat : *{courseObjective}">
                                                     <td>
-                                                        <input class="form-control"
+                                                        <input size="100" class="form-control"
                                                                th:field="*{courseObjective[__${itemStat.index}__].objective}"/>
                                                     </td>
                                                 </tr>
@@ -135,7 +135,7 @@
                                                 <tbody>
                                                 <tr th:each="learningOut, itemStat : *{learningOutcome}">
                                                     <td>
-                                                        <input class="form-control"
+                                                        <input size="100" class="form-control"
                                                                th:field="*{learningOutcome[__${itemStat.index}__].outcome}"/>
                                                     </td>
                                                 </tr>
