@@ -20,7 +20,15 @@ public class SyllabusController {
 
     SyllabusServices syllabusServices = new SyllabusServices();
 
-    @RequestMapping(value = "/addNewSyll", method = RequestMethod.GET)                        // request to add a new syllabus
+    /**
+     * <h3>Add New Syllabus</h3>
+     * <p>
+     * This method responses for the url request "/addNewSyll".
+     * This request comes from the Admin Dashboard Page after clicking on Syllabus button.
+     * </p>
+     * @return ModelAndView This returns the AddNewSyllabus.html Page
+     */
+    @RequestMapping(value = "/addNewSyll", method = RequestMethod.GET)
     public ModelAndView addNewSyllabus() {
         Syllabus syllabus = new Syllabus();
         SortedSet<String> syllabusNames = syllabusServices.getAllSyllabusFileNames();
