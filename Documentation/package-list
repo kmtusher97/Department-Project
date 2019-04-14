@@ -1,0 +1,10 @@
+org.JU.deptofCSE.Department.Project
+org.JU.deptofCSE.Department.Project.controller
+org.JU.deptofCSE.Department.Project.controller.routine
+org.JU.deptofCSE.Department.Project.controller.syllabus
+org.JU.deptofCSE.Department.Project.model.routine
+org.JU.deptofCSE.Department.Project.model.syllabus
+org.JU.deptofCSE.Department.Project.repository.routine
+org.JU.deptofCSE.Department.Project.repository.syllabus
+org.JU.deptofCSE.Department.Project.service.routine
+org.JU.deptofCSE.Department.Project.service.syllabus
