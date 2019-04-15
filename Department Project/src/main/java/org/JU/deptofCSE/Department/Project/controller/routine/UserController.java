@@ -63,7 +63,7 @@ public class UserController {
         Teacher newTeacher = new Teacher(userServices.getByEmail(newUser.getEmail()));
         teacherServices.saveOrUpdate(newTeacher);
 
-        return new ModelAndView("redirect:/admin/addUser");
+        return new ModelAndView("redirect:/admin/addUser/" + "user_added_successfully");
     }
 
 
@@ -76,7 +76,7 @@ public class UserController {
     public ModelAndView deleteUser(@PathVariable("id") Integer id) {
         userServices.deleteUser(id);
 
-        return new ModelAndView("redirect:/admin/addUser");
+        return new ModelAndView("redirect:/admin/addUser/" + "user " + id + " deleted");
     }
 
     @RequestMapping(value = "/recoverPass", method = RequestMethod.GET)
