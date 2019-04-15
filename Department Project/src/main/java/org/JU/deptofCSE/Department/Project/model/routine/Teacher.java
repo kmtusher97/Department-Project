@@ -1,6 +1,8 @@
 package org.JU.deptofCSE.Department.Project.model.routine;
 
 import javax.persistence.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Entity
@@ -8,19 +10,18 @@ import java.util.Date;
 public class Teacher {
 
     @Id
-    @Column(name = "user_id")
     private Integer id;
 
-    @Column(name = "full_name")
+    @Column(name = "fullName", length = 200)
     private String fullName;
 
-    @Column(name = "designation")
+    @Column(name = "designation", length = 100)
     private String designation;
 
-    @Column(name = "mobileNo1")
+    @Column(name = "mobileNo1", length = 11)
     private String mobileNo1;
 
-    @Column(name = "mobileNo2")
+    @Column(name = "mobileNo2", length = 11)
     private String mobileNo2;
 
     @Column(name = "campusResident")
@@ -34,6 +35,36 @@ public class Teacher {
 
     @Column(name = "numberOfCommitteeAsMember")
     private Integer numberOfCommitteeAsMember;
+
+    /**
+     * has one to one relation with user
+     * has common primary key (userId)
+     */
+    @OneToOne
+    @MapsId
+    private User user;
+
+    public Teacher() {}
+
+    public Teacher(User user) {
+        this.user = user;
+    }
+
+    public Teacher(Integer id, String fullName, String designation,
+                   String mobileNo1, String mobileNo2, boolean campusResident,
+                   Date joiningDate, Integer numberOfCommitteeAsChairman,
+                   Integer numberOfCommitteeAsMember, User user) {
+        this.id = id;
+        this.fullName = fullName;
+        this.designation = designation;
+        this.mobileNo1 = mobileNo1;
+        this.mobileNo2 = mobileNo2;
+        this.campusResident = campusResident;
+        this.joiningDate = joiningDate;
+        this.numberOfCommitteeAsChairman = numberOfCommitteeAsChairman;
+        this.numberOfCommitteeAsMember = numberOfCommitteeAsMember;
+        this.user = user;
+    }
 
     public Integer getId() {
         return id;
@@ -105,6 +136,14 @@ public class Teacher {
 
     public void setNumberOfCommitteeAsMember(Integer numberOfCommitteeAsMember) {
         this.numberOfCommitteeAsMember = numberOfCommitteeAsMember;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     @Override
