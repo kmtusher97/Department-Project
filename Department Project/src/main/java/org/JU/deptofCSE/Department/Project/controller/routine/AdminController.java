@@ -2,6 +2,7 @@ package org.JU.deptofCSE.Department.Project.controller.routine;
 
 import org.JU.deptofCSE.Department.Project.model.routine.User;
 import org.JU.deptofCSE.Department.Project.model.syllabus.Syllabus;
+import org.JU.deptofCSE.Department.Project.service.routine.AdminServices;
 import org.JU.deptofCSE.Department.Project.service.routine.UserServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,6 +19,9 @@ public class AdminController {
 
     @Autowired
     UserServices userServices;
+
+    @Autowired
+    AdminServices adminServices;
 
     @RequestMapping(value = "/dashboard", method = RequestMethod.GET)
     public ModelAndView adminDashboard() {

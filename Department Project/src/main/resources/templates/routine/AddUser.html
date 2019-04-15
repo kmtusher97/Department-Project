@@ -87,10 +87,10 @@
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <tr th:each="user : ${userList}">
+                                        <tr th:each="user : ${userList}" th:if="${user.id} != 1001">
                                             <td th:text="${user.email}"></td>
                                             <td>
-                                                <a th:href="@{/user/delete/{id} (id = ${user.id})}" th:if="${user.id} != 1001">Delete</a>
+                                                <a th:href="@{/user/delete/{id} (id = ${user.id})}">Delete</a>
                                             </td>
                                         </tr>
                                         </tbody>
