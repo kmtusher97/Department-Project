@@ -31,12 +31,12 @@
         <main class="col-xs-12 col-sm-8 col-lg-9 col-xl-10 pt-3 pl-4 ml-auto">
             <header class="page-header row justify-center">
                 <div class="col-md-6 col-lg-8">
-                    <h1 class="float-left text-center text-md-left" th:text="${courseCodeDelete} != '000' ? ('Edit ' + ${courseCodeDelete}) : 'Add new Course'"></h1>
+                    <h4 class="float-left text-center text-md-left" th:text="${course.courseCode}"></h4>
                 </div>
                 <div class="dropdown user-dropdown col-md-6 col-lg-4 text-center text-md-right"><a
                     class="btn btn-stripped dropdown-toggle" href="https://example.com" id="dropdownMenuLink"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img src="" alt="profile photo"
+                    <img th:src="@{/Asset/images/Zahid-sir.jpg}" alt="profile photo"
                          class="circle float-left profile-photo" width="50" height="auto">
                     <div class="username mt-1">
                         <h4 class="mb-1">Username</h4>
@@ -55,7 +55,7 @@
                         <div class="col-12">
                             <div class="card mb-4">
                                 <div class="card-block">
-
+                                    <h4 th:text="'Course Title: ' + ${course.courseTitle}"></h4>
                                 </div>
                             </div>
                         </div>

@@ -22,6 +22,8 @@ public class Course {
 
     private CourseDescriptions courseDescriptions;
 
+    private LaboratoryRequirements laboratoryRequirements;
+
     private Books books;
 
 
@@ -34,13 +36,15 @@ public class Course {
         this.courseObjectives = new CourseObjectives();
         this.learningOutcomes = new LearningOutcomes();
         this.courseDescriptions = new CourseDescriptions();
+        this.laboratoryRequirements = new LaboratoryRequirements();
         this.books = new Books();
     }
 
     public Course(String courseCode, String courseTitle,
                   String courseType, Float courseCredit, String rational,
                   CourseObjectives courseObjectives, LearningOutcomes learningOutcomes,
-                  CourseDescriptions courseDescriptions, Books books) {
+                  CourseDescriptions courseDescriptions,
+                  LaboratoryRequirements laboratoryRequirements, Books books) {
         this.courseCode = courseCode;
         this.courseTitle = courseTitle;
         this.courseType = courseType;
@@ -49,6 +53,7 @@ public class Course {
         this.courseObjectives = courseObjectives;
         this.learningOutcomes = learningOutcomes;
         this.courseDescriptions = courseDescriptions;
+        this.laboratoryRequirements = laboratoryRequirements;
         this.books = books;
     }
 
@@ -124,6 +129,15 @@ public class Course {
         this.courseDescriptions = courseDescriptions;
     }
 
+    @XmlElement(name = "LaboratoryRequirements")
+    public LaboratoryRequirements getLaboratoryRequirements() {
+        return laboratoryRequirements;
+    }
+
+    public void setLaboratoryRequirements(LaboratoryRequirements laboratoryRequirements) {
+        this.laboratoryRequirements = laboratoryRequirements;
+    }
+
     @XmlElement(name = "Books")
     public Books getBooks() {
         return books;
@@ -162,6 +176,13 @@ public class Course {
         this.courseObjectives.addCourseObjective(courseObjective);
     }
 
+    public void addNewLaboratoryRequirement(LaboratoryRequirement laboratoryRequirement) {
+        if(this.laboratoryRequirements == null) {
+            this.laboratoryRequirements = new LaboratoryRequirements();
+        }
+        this.laboratoryRequirements.addLaboratoryRequirement(laboratoryRequirement);
+    }
+
     public Integer getCountOfBooks() {
         return this.books.getCount();
     }
@@ -176,6 +197,10 @@ public class Course {
 
     public Integer getCountOfCourseObjectives() {
         return this.courseObjectives.getCount();
+    }
+
+    public Integer getCountOfLaboratoryRequirements() {
+        return  this.laboratoryRequirements.getCount();
     }
 
 

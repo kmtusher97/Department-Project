@@ -1,10 +1,112 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" th:href="@{/Asset/images/favicon.ico}">
+
+    <title th:text="${fileName}"></title>
+
+    <link th:href="@{/Asset/dist/css/bootstrap.min.css}" rel="stylesheet">
+
+    <link th:href="@{/Asset/css/font-awesome.css}" rel="stylesheet">
+
+    <link th:href="@{/Asset/css/style.css}" rel="stylesheet">
 </head>
 <body>
-<p>Syllabus</p>
+<div class="container-fluid" id="wrapper">
+    <div class="row">
+        <nav class="sidebar col-xs-12 col-sm-4 col-lg-3 col-xl-2">
+            <h1 class="site-title"><a href="index.html"><em class="fa fa-rocket"></em>Welcome Admin</a></h1>
+
+            <a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><em class="fa fa-bars"></em></a>
+            <ul class="nav nav-pills flex-column sidebar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/admin/dashboard}">  <!-- throws to the admin dashboard page -->
+                        <em class="fa fa-dashboard"></em>Dashboard
+                    </a>
+                </li>
+            </ul>
+
+            <a th:href="@{/login}" class="logout-button"><em class="fa fa-power-off"></em> Signout</a></nav>
+        <main class="col-xs-12 col-sm-8 col-lg-9 col-xl-10 pt-3 pl-4 ml-auto">
+            <header class="page-header row justify-center">
+                <div class="col-md-6 col-lg-8">
+                    <h1 class="float-left text-center text-md-left">View Syllabus</h1>
+                </div>
+                <div class="dropdown user-dropdown col-md-6 col-lg-4 text-center text-md-right"><a
+                    class="btn btn-stripped dropdown-toggle" href="https://example.com" id="dropdownMenuLink"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img th:src="@{/Asset/images/Zahid-sir.jpg}" alt="profile photo"
+                         class="circle float-left profile-photo" width="50" height="auto">
+                    <div class="username mt-1">
+                        <h4 class="mb-1">Username</h4>
+                    </div>
+                </a>
+                    <div class="dropdown-menu dropdown-menu-right" style="margin-right: 1.5rem;"
+                         aria-labelledby="dropdownMenuLink"><a class="dropdown-item" href="#"><em
+                        class="fa fa-user-circle mr-1"></em> View Profile</a>
+                        <a class="dropdown-item" th:href="@{/login}"><em class="fa fa-power-off mr-1"></em> Logout</a></div>
+                </div>
+                <div class="clear"></div>
+            </header>
+            <section class="row">
+                <div class="col-sm-12">
+                    <section class="row">
+                        <div class="col-12">
+                            <div class="card mb-4">
+                                <div class="card-block">
+                                    <h3 class="card-title" th:text="${syllabus.category} + ' syllabus ' + ${syllabus.effictiveFrom} +
+                                              ' to ' + ${syllabus.effictiveTo}"></h3>
+                                    <table class="table table-bordered">
+                                        <thead>
+                                        <tr>
+                                            <th>Semester</th>
+                                            <th>Courses Code</th>
+                                            <th>Title</th>
+                                            <th>Credit</th>
+                                            <th>Action</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <div th:remove="tag" th:each="semester : ${syllabus.semesters.semesters}"
+                                             th:with="courseCount=${semester.courses.courses.size()}">
+                                            <tr>
+                                                <td th:rowspan="${#sets.size(semester.courses.courses)} > 0 ? ${#sets.size(semester.courses.courses)} : ${1}"
+                                                    th:text="${semester.name}"></td>
+                                                <td th:text="${courseCount > 0} ? ${semester.courses.courses[0].courseCode} : ''"></td>
+                                                <td th:text="${courseCount > 0} ? ${semester.courses.courses[0].courseTitle} : ''"></td>
+                                                <td th:text="${courseCount > 0} ? ${semester.courses.courses[0].courseCredit} : ''"></td>
+                                                <td>
+                                                    <a th:if="${courseCount > 0}" th:href="@{/syl/viewCourse/{courseCode}/{semesterName}/{fileName}
+                                                              (courseCode=${semester.courses.courses[0].courseCode}, semesterName=${semester.name}, fileName=${fileName})}"
+                                                       th:role="button">View</a>
+                                                </td>
+                                            </tr>
+                                            <tr th:each="course, stats : ${semester.courses.courses}"
+                                                th:if="${!stats.first}">
+                                                <td th:text="${course.courseCode}"></td>
+                                                <td th:text="${course.courseTitle}"></td>
+                                                <td th:text="${course.courseCredit}"></td>
+                                                <td>
+                                                    <a th:href="@{/syl/viewCourse/{courseCode}/{semesterName}/{fileName}
+                                                                (courseCode=${course.courseCode}, semesterName=${semester.name}, fileName=${fileName})}"
+                                                       th:role="button">View</a>
+                                                </td>
+                                            </tr>
+                                        </div>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </section>
+        </main>
+    </div>
+</div>
 </body>
 </html>

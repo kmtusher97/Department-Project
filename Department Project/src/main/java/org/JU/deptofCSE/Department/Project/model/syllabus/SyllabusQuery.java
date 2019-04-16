@@ -32,6 +32,46 @@ public class SyllabusQuery {
         this.courseCode = courseCode;
     }
 
+    /**
+     * Generate an object of Syllabus class with the xml file name
+     * @param fileName
+     */
+    public SyllabusQuery(String fileName) {
+        this.from = 0;
+        this.to = 0;
+        this.category = "";
+
+        int index = 0;
+        for(; index < fileName.length(); index++) {
+            if(Character.isLetter(fileName.charAt(index))) {
+                this.category += fileName.charAt(index);
+            }
+            else {
+                break;
+            }
+        }
+        String yearFrom = "";
+        String yearTo = "";
+        for(index = index + 1; index < fileName.length(); index++) {
+            if(Character.isDigit(fileName.charAt(index))) {
+                yearFrom += fileName.charAt(index);
+            }
+            else {
+                break;
+            }
+        }
+        for(; index < fileName.length(); index++) {
+            if(Character.isDigit(fileName.charAt(index))) {
+                yearTo += fileName.charAt(index);
+            }
+            else {
+                continue;
+            }
+        }
+        this.from = Integer.parseInt(yearFrom);
+        this.to = Integer.parseInt(yearTo);
+    }
+
     public String getCategory() {
         return category;
     }
@@ -80,16 +120,13 @@ public class SyllabusQuery {
         this.courseCode = courseCode;
     }
 
-    @Override
-    public String toString() {
-        return "SyllabusQuery{" +
-                "category='" + category + '\'' +
-                ", from=" + from +
-                ", to=" + to +
-                ", year=" + year +
-                ", semester=" + semester +
-                ", courseCode='" + courseCode + '\'' +
-                '}';
+
+    /**
+     * Makes the xml file name for the object
+     * @return xml file name
+     */
+    public String makeXmlFileName() {
+        return this.category + "_" + Integer.toString(this.from) + "to" + Integer.toString(this.to);
     }
 
     public int getSemesterNoByYearAndSemester() {
@@ -105,4 +142,16 @@ public class SyllabusQuery {
         return ret;
     }
 
+
+    @Override
+    public String toString() {
+        return "SyllabusQuery{" +
+                "category='" + category + '\'' +
+                ", from=" + from +
+                ", to=" + to +
+                ", year=" + year +
+                ", semester=" + semester +
+                ", courseCode='" + courseCode + '\'' +
+                '}';
+    }
 }

@@ -12,35 +12,52 @@ import java.util.TreeSet;
 public class CourseServices {
 
     CourseRepository courseRepository = new CourseRepository();
+
     SyllabusRepository syllabusRepository = new SyllabusRepository();
 
-    public void saveCourse(Course course) throws JAXBException {
-        courseRepository.addCourse(course);
-    }
-
+    /**
+     * Get Course Object.
+     * @return Course Object
+     * @throws JAXBException
+     */
     public Course getCourse() throws JAXBException {
         return courseRepository.getCourse();
     }
 
+    /**
+     * Initially fill the List fields with null objects.
+     * @param course
+     * @return populate object of the Course
+     */
     public Course populateCourse(Course course) {
-        for(int i = course.getCountOfBooks(); i < 5; i++) {
+        for(int i = course.getCountOfBooks(); i < 6; i++) {
             course.addNewBook(new Book());
         }
 
-        for(int i = course.getCountOfCourseObjectives(); i < 10; i++) {
+        for(int i = course.getCountOfCourseObjectives(); i < 11; i++) {
             course.addNewCourseObjective(new CourseObjective());
         }
 
-        for(int i = course.getCountOfLearningOutComes(); i < 10; i++) {
+        for(int i = course.getCountOfLearningOutComes(); i < 11; i++) {
             course.addNewLearningOutcome(new LearningOutcome());
         }
 
-        for(int i = course.getCountOfCourseDescriptions(); i < 10; i++) {
+        for(int i = course.getCountOfCourseDescriptions(); i < 11; i++) {
             course.addNewCourseDescription(new CourseDescription());
         }
+
+        for(int i = course.getCountOfLaboratoryRequirements(); i < 5; i++) {
+            course.addNewLaboratoryRequirement(new LaboratoryRequirement());
+        }
+
         return course;
     }
 
+    /**
+     * Remove the null objects from the List fields.
+     * @param course
+     * @return null object free Course Object
+     */
     public Course removeNullValues(Course course) {
         List<Book> bookList = course.getBooks().getBooks();
         course.setBooks(new Books());
@@ -72,14 +89,31 @@ public class CourseServices {
         List<CourseDescription> courseDescriptionList = course.getCourseDescriptions().getCourseDescription();
         course.setCourseDescriptions(new CourseDescriptions());
         for(CourseDescription courseDescription : courseDescriptionList) {
-            if(courseDescription.getTitle().length() == 0 || courseDescription.getDescription().length() == 0) {
+            if(courseDescription.getTitle().length() == 0 && courseDescription.getDescription().length() == 0) {
                 continue;
             }
             course.addNewCourseDescription(courseDescription);
         }
+
+        List<LaboratoryRequirement> laboratoryRequirementList = course.getLaboratoryRequirements().getLaboratoryRequirement();
+        course.setLaboratoryRequirements(new LaboratoryRequirements());
+        for(LaboratoryRequirement laboratoryRequirement : laboratoryRequirementList) {
+            if(laboratoryRequirement.getTitle().length() == 0 && laboratoryRequirement.getRequirement().length() == 0) {
+                continue;
+            }
+            course.addNewLaboratoryRequirement(laboratoryRequirement);
+        }
+
         return course;
     }
 
+    /**
+     * Get Course By Semester Name And Course Code
+     * @param semesterList
+     * @param semesterName
+     * @param courseCode
+     * @return Requested Course
+     */
     public Course getCoursesBySemesterNameAndCourseCode(TreeSet<Semester> semesterList, String semesterName, String courseCode) {
         for(Semester semester : semesterList) {
             if(!semester.getName().equals(semesterName)) {
@@ -96,6 +130,13 @@ public class CourseServices {
         return null;
     }
 
+    /**
+     * Delete the requested Course from syllabus
+     * @param course
+     * @param semesterName
+     * @param fileName
+     * @throws JAXBException
+     */
     public void removeCourse(Course course, String semesterName, String fileName) throws JAXBException {
         Syllabus syllabus = syllabusRepository.getSyllabus(fileName);
         syllabus.removeCourse(course, semesterName);

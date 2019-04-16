@@ -52,7 +52,7 @@
                     <CourseTitle>Communicative English</CourseTitle>
                     <CourseType>Theory</CourseType>
                     <LearningOutcomes/>
-                    <Rational></Rational>
+                    <Rational>Something Rational</Rational>
                 </Course>
             </Courses>
             <SemesterName>Semester 1</SemesterName>
@@ -74,7 +74,19 @@
             <SemesterName>Semester 2</SemesterName>
         </Semester>
         <Semester>
-            <Courses/>
+            <Courses>
+                <Course>
+                    <Books/>
+                    <CourseCode>CSE 243</CourseCode>
+                    <CourseCredit>0.5</CourseCredit>
+                    <CourseDescriptions/>
+                    <CourseObjectives/>
+                    <CourseTitle>Software </CourseTitle>
+                    <CourseType>Theory</CourseType>
+                    <LearningOutcomes/>
+                    <Rational></Rational>
+                </Course>
+            </Courses>
             <SemesterName>Semester 3</SemesterName>
         </Semester>
         <Semester>

@@ -14,18 +14,26 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.xml.bind.JAXBException;
-import java.util.List;
 import java.util.SortedSet;
 import java.util.TreeSet;
+
 
 @Controller
 @RequestMapping(value = "/syl")
 public class CourseController {
 
     CourseServices courseServices = new CourseServices();
+
     SyllabusServices syllabusServices = new SyllabusServices();
 
-    @RequestMapping(value = "/addNewCourse/{semesterName}/{fileName}", method = RequestMethod.GET)   // request to add a new course, in requested semester of requested syllabus
+    /**
+     * Provide the course edit form to update or add data for a course.
+     *
+     * @param semesterName
+     * @param fileName
+     * @return Course Edit Form page
+     */
+    @RequestMapping(value = "/addNewCourse/{semesterName}/{fileName}", method = RequestMethod.GET)
     public ModelAndView addNewCourse(@PathVariable("semesterName") String semesterName,
                                      @PathVariable("fileName") String fileName) {
         Course course = new Course();
@@ -40,13 +48,24 @@ public class CourseController {
         return courseEditPage;
     }
 
-    @RequestMapping(value = "/saveCourse/{semesterName}/{fileName}/{courseCodeDelete}", method = RequestMethod.POST)   // request to save the course after editing info
+
+    /**
+     * Save edited course to xml repository.
+     *
+     * @param course
+     * @param semesterName
+     * @param fileName
+     * @param courseCodeDelete
+     * @return redirect to Edit Syllabus Page
+     * @throws JAXBException
+     */
+    @RequestMapping(value = "/saveCourse/{semesterName}/{fileName}/{courseCodeDelete}", method = RequestMethod.POST)
     public ModelAndView saveOrUpdateCourse(@ModelAttribute("courseEditForm") Course course,
                                            @PathVariable("semesterName") String semesterName,
                                            @PathVariable("fileName") String fileName,
                                            @PathVariable("courseCodeDelete") String courseCodeDelete) throws JAXBException {
         System.err.println(courseCodeDelete);
-        if(!courseCodeDelete.equals("000")) {
+        if (!courseCodeDelete.equals("000")) {
             SortedSet<Semester> semesterList = syllabusServices.getSyllabus(fileName).getSemesters().getSemesters();     // get the semesters of the syllabus
             Course courseDelete = courseServices.getCoursesBySemesterNameAndCourseCode((TreeSet<Semester>) semesterList, semesterName, courseCodeDelete); // get the course from the semester list
             courseServices.removeCourse(courseDelete, semesterName, fileName);                           // delete the previous instance of the course
@@ -60,7 +79,17 @@ public class CourseController {
         return new ModelAndView("redirect:/syl/editSyll/" + fileName);                     // return to the edit syllabus page
     }
 
-    @RequestMapping(value = "/updateCourse/{courseCode}/{semesterName}/{fileName}", method = RequestMethod.GET)      // request to update a course
+
+    /**
+     * Provide the Course Edit From to update the requested course.
+     *
+     * @param courseCode
+     * @param semesterName
+     * @param fileName
+     * @return Course Edit Form Page
+     * @throws JAXBException
+     */
+    @RequestMapping(value = "/updateCourse/{courseCode}/{semesterName}/{fileName}", method = RequestMethod.GET)
     public ModelAndView updateCourse(@PathVariable("courseCode") String courseCode,
                                      @PathVariable("semesterName") String semesterName,
                                      @PathVariable("fileName") String fileName) throws JAXBException {
@@ -76,7 +105,39 @@ public class CourseController {
         return courseEditPage;
     }
 
-    @RequestMapping(value = "/deleteCourse/{courseCode}/{semesterName}/{fileName}", method = RequestMethod.GET) // request to delete a course
+    /**
+     * Show detail of a requested course.
+     *
+     * @param courseCode
+     * @param semesterName
+     * @param fileName
+     * @return Course View Page, that displays a course
+     * @throws JAXBException
+     */
+    @RequestMapping(value = "/viewCourse/{courseCode}/{semesterName}/{fileName}", method = RequestMethod.GET)
+    // request to update a course
+    public ModelAndView viewCourse(@PathVariable("courseCode") String courseCode,
+                                   @PathVariable("semesterName") String semesterName,
+                                   @PathVariable("fileName") String fileName) throws JAXBException {
+        SortedSet<Semester> semesterList = syllabusServices.getSyllabus(fileName).getSemesters().getSemesters();     // get the semesters of the syllabus
+        Course course = courseServices.getCoursesBySemesterNameAndCourseCode((TreeSet<Semester>) semesterList, semesterName, courseCode); // get the course from the semester list
+
+        ModelAndView courseView = new ModelAndView("syllabus/ViewCourse");
+        courseView.addObject("course", course);
+
+        return courseView;
+    }
+
+    /**
+     * Delete requested course by course code
+     *
+     * @param courseCode
+     * @param semesterName
+     * @param fileName
+     * @return redirect to Edit Syllabus Page
+     * @throws JAXBException
+     */
+    @RequestMapping(value = "/deleteCourse/{courseCode}/{semesterName}/{fileName}", method = RequestMethod.GET)
     public ModelAndView deleteCourse(@PathVariable("courseCode") String courseCode,
                                      @PathVariable("semesterName") String semesterName,
                                      @PathVariable("fileName") String fileName) throws JAXBException {
@@ -89,13 +150,5 @@ public class CourseController {
         return new ModelAndView("redirect:/syl/editSyll/" + fileName);                                // return to the edit syllabus page
     }
 
-
-    @RequestMapping(value = "/read", method = RequestMethod.GET)
-    public ModelAndView readCourse() throws JAXBException {
-        ModelAndView modelAndView = new ModelAndView("syllabus/SyllabusView");
-        Course course = courseServices.getCourse();
-        System.err.println(course);
-        return modelAndView;
-    }
 
 }

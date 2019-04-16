@@ -18,6 +18,7 @@
                     </CourseObjectives>
                     <CourseTitle>Mathematics I (Matrix, Differential Calculus and Coordinate Geometry)</CourseTitle>
                     <CourseType>Theory</CourseType>
+                    <LaboratoryRequirements/>
                     <LearningOutcomes/>
                     <Rational></Rational>
                 </Course>
@@ -29,6 +30,7 @@
                     <CourseObjectives/>
                     <CourseTitle>Structured Programming</CourseTitle>
                     <CourseType>Theory</CourseType>
+                    <LaboratoryRequirements/>
                     <LearningOutcomes/>
                     <Rational></Rational>
                 </Course>
@@ -40,6 +42,24 @@
                     <CourseObjectives/>
                     <CourseTitle>Structured Programming Laboratory</CourseTitle>
                     <CourseType>Laboratory</CourseType>
+                    <LaboratoryRequirements/>
+                    <LearningOutcomes/>
+                    <Rational></Rational>
+                </Course>
+                <Course>
+                    <Books/>
+                    <CourseCode>CSE 108</CourseCode>
+                    <CourseCredit>1.0</CourseCredit>
+                    <CourseDescriptions/>
+                    <CourseObjectives/>
+                    <CourseTitle>Structured Programming Laboratory</CourseTitle>
+                    <CourseType>Laboratory</CourseType>
+                    <LaboratoryRequirements>
+                        <LaboratoryRequirement>
+                            <Requirement>Core i5</Requirement>
+                            <Title>Harware</Title>
+                        </LaboratoryRequirement>
+                    </LaboratoryRequirements>
                     <LearningOutcomes/>
                     <Rational></Rational>
                 </Course>
@@ -56,6 +76,7 @@
                     <CourseObjectives/>
                     <CourseTitle>Viva Voce</CourseTitle>
                     <CourseType>Viva-Voce</CourseType>
+                    <LaboratoryRequirements/>
                     <LearningOutcomes/>
                     <Rational></Rational>
                 </Course>

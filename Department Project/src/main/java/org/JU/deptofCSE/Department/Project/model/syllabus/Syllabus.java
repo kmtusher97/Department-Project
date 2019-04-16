@@ -32,6 +32,10 @@ public class Syllabus {
         this.semesters = semesters;
     }
 
+    /**
+     * Generate an object of Syllabus class with the xml file name
+     * @param fileName
+     */
     public Syllabus(String fileName) {
         this.effictiveFrom = 0;
         this.effictiveTo = 0;
@@ -115,6 +119,10 @@ public class Syllabus {
         return this.semesters.getSemesters().size();
     }
 
+    /**
+     * Makes the xml file name for the object
+     * @return xml file name
+     */
     public String makeXmlFileName() {
         return this.category + "_" + Integer.toString(this.effictiveFrom) + "to" + Integer.toString(this.getEffictiveTo());
     }
