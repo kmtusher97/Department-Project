@@ -22,7 +22,7 @@
                     <LaboratoryRequirements/>
                     <LearningOutcomes/>
                     <Prerequisite>None</Prerequisite>
-                    <Rational>Rationale</Rational>
+                    <Rationale></Rationale>
                 </Course>
                 <Course>
                     <Books/>
@@ -36,7 +36,7 @@
                     <LaboratoryRequirements/>
                     <LearningOutcomes/>
                     <Prerequisite></Prerequisite>
-                    <Rational></Rational>
+                    <Rationale></Rationale>
                 </Course>
                 <Course>
                     <Books/>
@@ -50,7 +50,7 @@
                     <LaboratoryRequirements/>
                     <LearningOutcomes/>
                     <Prerequisite></Prerequisite>
-                    <Rational></Rational>
+                    <Rationale></Rationale>
                 </Course>
                 <Course>
                     <Books/>
@@ -69,7 +69,7 @@
                     </LaboratoryRequirements>
                     <LearningOutcomes/>
                     <Prerequisite></Prerequisite>
-                    <Rational></Rational>
+                    <Rationale></Rationale>
                 </Course>
             </Courses>
             <SemesterName>Semester 1</SemesterName>
@@ -88,7 +88,7 @@
                     <LaboratoryRequirements/>
                     <LearningOutcomes/>
                     <Prerequisite>None</Prerequisite>
-                    <Rational></Rational>
+                    <Rationale></Rationale>
                 </Course>
             </Courses>
             <SemesterName>Semester 2</SemesterName>
@@ -104,6 +104,10 @@
         <Semester>
             <Courses/>
             <SemesterName>Semester 5</SemesterName>
+        </Semester>
+        <Semester>
+            <Courses/>
+            <SemesterName>Semester 6</SemesterName>
         </Semester>
     </Semesters>
 </Syllabus>
