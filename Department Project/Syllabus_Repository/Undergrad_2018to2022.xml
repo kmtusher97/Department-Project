@@ -7,87 +7,115 @@
         <Semester>
             <Courses>
                 <Course>
-                    <Books/>
-                    <CourseCode>MATH 100</CourseCode>
+                    <Books>
+                        <Book>
+                            <Authors>Marvin L. Bittinger, David J. Ellenbogen and Scott A. Surgent</Authors>
+                            <BookName>Calculus and its applications</BookName>
+                            <Edition>10th</Edition>
+                            <PublishYear>2012</PublishYear>
+                            <Publisher>Pearson</Publisher>
+                        </Book>
+                        <Book>
+                            <Authors>Ahsan Akhtar &amp; Sabiha Ahsan</Authors>
+                            <BookName>Textbook of Differential Calculus</BookName>
+                            <Edition>2nd</Edition>
+                            <PublishYear>2009</PublishYear>
+                            <Publisher>PHI</Publisher>
+                        </Book>
+                        <Book>
+                            <Authors>N. P. Bali</Authors>
+                            <BookName>Golden Co-ordinate Geometry</BookName>
+                            <Edition>2nd</Edition>
+                            <PublishYear>2008</PublishYear>
+                            <Publisher>LUXMI</Publisher>
+                        </Book>
+                    </Books>
+                    <ContactHours></ContactHours>
+                    <CourseCode>MATH 101</CourseCode>
                     <CourseCredit>3.0</CourseCredit>
-                    <CourseDescriptions/>
+                    <CourseDescriptions>
+                        <CourseDescription>
+                            <Description>Definition of matrix; Different types of matrices; Algebra of matrices; Adjoint and inverse of a matrix; Elementary transformations of matrices; Matrix polynomials; Calay-Hamilton theory with uses of rank and nullity; Normal and canonical forms; Solution of linear equations; Eigenvalues and eigenvectors.</Description>
+                            <Title>Matrices</Title>
+                        </CourseDescription>
+                        <CourseDescription>
+                            <Description>Graphs and Equations: Functions and Models, Finding Domain and Range, Slope and Linear Functions, Nonlinear Functions and Models, Mathematical Modeling and Curve Fitting, Limits: A Numerical and Graphical Approach, Algebraic Limits and Continuity, Average Rates of Change, Differentiation Using Limits of, Difference Quotients, Differentiation Techniques: The Power and Sum–Difference Rules, Differentiation Techniques: The Product and Quotient Rules, The Chain Rule, Higher-Order Derivatives</Description>
+                            <Title>Basic differentiation</Title>
+                        </CourseDescription>
+                        <CourseDescription>
+                            <Description>Using First Derivatives to Find Maximum and Minimum Values and Sketch Graphs, Using Second Derivatives to Find Maximum and Minimum Values and Sketch Graphs, Graph Sketching: Asymptotes and Rational Functions, Using Derivatives to Find Absolute Maximum and Minimum Values, Maximum–Minimum Problems; Business and Economics Applications, Marginals and Differentials, Implicit Differentiation and Related Rates</Description>
+                            <Title>Application of Differentiation</Title>
+                        </CourseDescription>
+                        <CourseDescription>
+                            <Description>Exponential Functions, Logarithmic Functions, Applications: Uninhibited and Limited Growth Models, Applications: Decay, The Derivatives of and ax and logax, Economics Applications</Description>
+                            <Title>Exponential and logarithmic Differentiation</Title>
+                        </CourseDescription>
+                        <CourseDescription>
+                            <Description>Change of axes: transformation of coordinates. Simplification of equations of the curves. Pair of straight lines: Homogeneous second degree equations. Conditions for general second degree equations to represent a pair of straight lines. Angle between the lines. Pair of straight lines joining the origin to the points of intersection of the curve and a line.</Description>
+                            <Title>2D Co-ordinate Geometry-1</Title>
+                        </CourseDescription>
+                        <CourseDescription>
+                            <Description>Circles and system of circles: Tangents and normals. Pair of tangents. Chord of contact. Orthogonal circles. Radical axis and its properties. Parametric coordinates</Description>
+                            <Title>2D Co-ordinate Geometry-2</Title>
+                        </CourseDescription>
+                        <CourseDescription>
+                            <Description>Rectangular coordinates. Direction cosines and angle between two lines. The plane and the straight lines. The equation of a sphere. The standard forms of equations of the central conicoids, cones and cylinders.</Description>
+                            <Title>3D Co-ordinate Geometry</Title>
+                        </CourseDescription>
+                    </CourseDescriptions>
                     <CourseObjectives>
                         <CourseObjective>
                             <Objective>To learn about matrix, determinant and its application to the solution of systems of linear equations.</Objective>
                         </CourseObjective>
+                        <CourseObjective>
+                            <Objective>To analyze functions and their graphs. It will be shown how calculus and graphing utilities, working together, can provide most of the important information about their behavior of functions.</Objective>
+                        </CourseObjective>
+                        <CourseObjective>
+                            <Objective>To provide students with a good understanding of the concepts two dimensional geometry.</Objective>
+                        </CourseObjective>
+                        <CourseObjective>
+                            <Objective>To Students will learn about co-ordinate, translation and rotation of axis, conic, conic section for two dimension</Objective>
+                        </CourseObjective>
+                        <CourseObjective>
+                            <Objective>To learn about two/ three dimensional co-ordinate, conicoid i.e. sphere, cone, cylinder, parpabolid, ellipsoid, hyperboid</Objective>
+                        </CourseObjective>
                     </CourseObjectives>
                     <CourseTitle>Mathematics I (Matrix, Differential Calculus and Coordinate Geometry)</CourseTitle>
                     <CourseType>Theory</CourseType>
-                    <LearningOutcomes/>
-                    <Rational></Rational>
+                    <LaboratoryRequirements/>
+                    <LearningOutcomes>
+                        <LearningOutcome>
+                            <Outcome>Use matrix to the solution of systems of linear equations.</Outcome>
+                        </LearningOutcome>
+                        <LearningOutcome>
+                            <Outcome>Analyze functions and their graphs and how calculus and graphing utilities, working together, can provide most of the important information about their behavior of functions</Outcome>
+                        </LearningOutcome>
+                        <LearningOutcome>
+                            <Outcome>Understand co-ordinate and its translation and rotation, point, line, mid-point, distance and vector in two-dimensional space</Outcome>
+                        </LearningOutcome>
+                        <LearningOutcome>
+                            <Outcome>Solve two/ three dimensional co-ordinate, conicoid i.e. sphere, cone, cylinder, parpabolid, ellipsoid, hyperboid problems</Outcome>
+                        </LearningOutcome>
+                    </LearningOutcomes>
+                    <Prerequisite></Prerequisite>
+                    <Rationale></Rationale>
                 </Course>
                 <Course>
                     <Books/>
-                    <CourseCode>CSE 101</CourseCode>
-                    <CourseCredit>3.0</CourseCredit>
-                    <CourseDescriptions/>
-                    <CourseObjectives/>
-                    <CourseTitle>Electronic Circuit</CourseTitle>
-                    <CourseType>Theory</CourseType>
-                    <LearningOutcomes/>
-                    <Rational></Rational>
-                </Course>
-                <Course>
-                    <Books/>
-                    <CourseCode>CSE 102</CourseCode>
-                    <CourseCredit>1.0</CourseCredit>
-                    <CourseDescriptions/>
-                    <CourseObjectives/>
-                    <CourseTitle>Electronic Circuit Laboratory</CourseTitle>
-                    <CourseType>Laboratory</CourseType>
-                    <LearningOutcomes/>
-                    <Rational></Rational>
-                </Course>
-                <Course>
-                    <Books/>
+                    <ContactHours>0</ContactHours>
                     <CourseCode>ENG 103</CourseCode>
                     <CourseCredit>3.0</CourseCredit>
                     <CourseDescriptions/>
                     <CourseObjectives/>
                     <CourseTitle>Communicative English</CourseTitle>
                     <CourseType>Theory</CourseType>
+                    <LaboratoryRequirements/>
                     <LearningOutcomes/>
-                    <Rational></Rational>
+                    <Prerequisite>None</Prerequisite>
+                    <Rationale></Rationale>
                 </Course>
             </Courses>
             <SemesterName>Semester 1</SemesterName>
-        </Semester>
-        <Semester>
-            <Courses>
-                <Course>
-                    <Books/>
-                    <CourseCode>CSE 151</CourseCode>
-                    <CourseCredit>3.0</CourseCredit>
-                    <CourseDescriptions/>
-                    <CourseObjectives/>
-                    <CourseTitle>Device</CourseTitle>
-                    <CourseType>Theory</CourseType>
-                    <LearningOutcomes/>
-                    <Rational></Rational>
-                </Course>
-            </Courses>
-            <SemesterName>Semester 2</SemesterName>
-        </Semester>
-        <Semester>
-            <Courses/>
-            <SemesterName>Semester 3</SemesterName>
-        </Semester>
-        <Semester>
-            <Courses/>
-            <SemesterName>Semester 4</SemesterName>
-        </Semester>
-        <Semester>
-            <Courses/>
-            <SemesterName>Semester 5</SemesterName>
-        </Semester>
-        <Semester>
-            <Courses/>
-            <SemesterName>Semester 6</SemesterName>
         </Semester>
     </Semesters>
 </Syllabus>

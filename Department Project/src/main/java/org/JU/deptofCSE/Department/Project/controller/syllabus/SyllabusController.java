@@ -20,13 +20,20 @@ public class SyllabusController {
 
     SyllabusServices syllabusServices = new SyllabusServices();
 
-    @RequestMapping(value = "/addNewSyll", method = RequestMethod.GET)                        // request to add a new syllabus
+    /**
+     * Add New Syllabus
+     * This method responses for the url request "/addNewSyll".
+     * This request comes from the Admin Dashboard Page after clicking on Syllabus button.
+     *
+     * @return ModelAndView This returns the AddNewSyllabus.html Page
+     */
+    @RequestMapping(value = "/addNewSyll", method = RequestMethod.GET)
     public ModelAndView addNewSyllabus() {
         Syllabus syllabus = new Syllabus();
         SortedSet<String> syllabusNames = syllabusServices.getAllSyllabusFileNames();
         List<Syllabus> syllabusList = new ArrayList<Syllabus>();
 
-        for(String syllabusName : syllabusNames) {
+        for (String syllabusName : syllabusNames) {
             syllabusList.add(new Syllabus(syllabusName));
         }
 
@@ -37,10 +44,16 @@ public class SyllabusController {
     }
 
 
-
-    @RequestMapping(value = "/editSyll/{fileName}", method = RequestMethod.GET)                // request to edit a syllabus
+    /**
+     * Allow to edit syllabus by admin
+     *
+     * @param fileName
+     * @return Edit Syllabus Page
+     * @throws JAXBException
+     */
+    @RequestMapping(value = "/editSyll/{fileName}", method = RequestMethod.GET)
     public ModelAndView editSyllabus(@PathVariable("fileName") String fileName) throws JAXBException {
-        if(!syllabusServices.isTheSyllabusExists(fileName)) {                                  // if the requested syllabus does not exists
+        if (!syllabusServices.isTheSyllabusExists(fileName)) {                                  // if the requested syllabus does not exists
             syllabusServices.saveSyllabus(new Syllabus(fileName), fileName);                   // add this syllabus to xml repository
         }
 
@@ -54,8 +67,14 @@ public class SyllabusController {
     }
 
 
-
-    @RequestMapping(value = "/addNewSemester/{fileName}", method = RequestMethod.GET)                       // request to add a semester to a particular syllabus
+    /**
+     * Add a new semester to the syllabus.
+     *
+     * @param fileName
+     * @return redirect to Edit Syllabus Page.
+     * @throws JAXBException
+     */
+    @RequestMapping(value = "/addNewSemester/{fileName}", method = RequestMethod.GET)
     public ModelAndView addNewSemester(@PathVariable("fileName") String fileName) throws JAXBException {
         Syllabus syllabus = syllabusServices.getSyllabus(fileName);                                         // open the syllabus using the file name
         Semester semester = new Semester();
@@ -68,8 +87,13 @@ public class SyllabusController {
     }
 
 
-
-    @RequestMapping(value = "/search/{error}", method = RequestMethod.GET)                            // request to search syllabus
+    /**
+     * Search a syllabus with session
+     *
+     * @param error
+     * @return Syllabus Search form
+     */
+    @RequestMapping(value = "/search/{error}", method = RequestMethod.GET)
     public ModelAndView searchSyllabus(@PathVariable("error") String error) {
         SyllabusQuery syllabusQuery = new SyllabusQuery();
 
@@ -81,45 +105,56 @@ public class SyllabusController {
     }
 
 
-    @RequestMapping(value = "/viewSyll", method = RequestMethod.POST)                         // request to view a particular syllabus
+    /**
+     * If the requested session is invalid redirect to Syllabus Search page.
+     * If the session is found in some syllabus the redirect to Show Syllabus Page
+     *
+     * @param syllabusQuery
+     * @param message
+     * @return Syllabus Search page or Show Syllabus Page
+     * @throws JAXBException
+     */
+    @RequestMapping(value = "/viewSyll", method = RequestMethod.POST)
     public ModelAndView viewSyllabus(@ModelAttribute("syllabusQuery") SyllabusQuery syllabusQuery,
                                      @ModelAttribute("message") String message) throws JAXBException {
-        Syllabus syllabus = new Syllabus();
-        syllabus.setCategory(syllabusQuery.getCategory());
-        syllabus.setEffictiveFrom(syllabusQuery.getFrom());
-        syllabus.setEffictiveTo(syllabusQuery.getTo());
+        String syllabusName = syllabusServices.getSyllabusNameBySession(syllabusQuery.getFrom(), syllabusQuery.getTo());
 
-        String fileName = syllabus.makeXmlFileName();                       // get the xml file name
-
-        if(!syllabusServices.isTheSyllabusExists(fileName)) {               // if the requested syllabus does not exist or the parameters are invalid
+        if (syllabusName == null) {                                               // if the requested syllabus does not exist or the parameters are invalid
             return new ModelAndView("redirect:/syl/search/" + "error");
         }
 
-        String semseterName = "Semester " + Integer.toString(syllabusQuery.getSemesterNoByYearAndSemester()); // get semester name
-
-        if(syllabusQuery.getCourseCode().length() == 0) {
-            return new ModelAndView("redirect:/syl/viewSylBy/" + semseterName + "/" + fileName);    // view the whole semester
-        }
-
-        return null;
+        return new ModelAndView("redirect:/syl/showSyll/" + syllabusName);
     }
 
 
+    /**
+     * Shows the syllabus in a table
+     *
+     * @param fileName
+     * @return Show Syllabus page
+     * @throws JAXBException
+     */
+    @RequestMapping(value = "/showSyll/{fileName}", method = RequestMethod.GET)
+    public ModelAndView showSyllabus(@PathVariable("fileName") String fileName) throws JAXBException {
+        Syllabus syllabus = syllabusServices.getSyllabus(fileName);
 
-    @RequestMapping(value = "/viewSylBy/{semseterName}/{fileName}", method = RequestMethod.GET)              // request to view the syllabus of a semester
-    public ModelAndView viewSyllabusBySemester(@PathVariable("semesterName") String semesterName,
-                                               @PathVariable("fileName") String fileName) throws JAXBException {
-        Courses courses = syllabusServices.getCoursesOfASemesterBy(semesterName, fileName);                  // get the courses
+        ModelAndView syllabusView = new ModelAndView("syllabus/SyllabusView");
+        syllabusView.addObject("syllabus", syllabus);
+        syllabusView.addObject("fileName", syllabus.makeXmlFileName());
 
-        ModelAndView viewSemester = new ModelAndView("syllabus/ViewSemester");
-        viewSemester.addObject("courses", courses);                                             // send the courses to view semester page
-
-        return viewSemester;
+        return syllabusView;
     }
 
 
-
-    @RequestMapping(value = "/deleteSemester/{semesterName}/{fileName}", method = RequestMethod.GET)        // request to delete a semester using the semester name & file name
+    /**
+     * Delete a semester by semester name.
+     *
+     * @param semesterName
+     * @param fileName
+     * @return redirect to Edit Syllabus Page.
+     * @throws JAXBException
+     */
+    @RequestMapping(value = "/deleteSemester/{semesterName}/{fileName}", method = RequestMethod.GET)
     public ModelAndView deleteSemester(@PathVariable("semesterName") String semesterName,
                                        @PathVariable("fileName") String fileName) throws JAXBException {
         Syllabus syllabus = syllabusServices.getSyllabus(fileName);                                         // get the syllabus using the file name
@@ -130,8 +165,13 @@ public class SyllabusController {
     }
 
 
-
-    @RequestMapping(value = "/deleteSyll/{fileName}", method = RequestMethod.GET)                           // request to delete a stored syllabus form xml repository
+    /**
+     * Delete the syllabus
+     *
+     * @param fileName
+     * @return redirect to Add Syllabus Page.
+     */
+    @RequestMapping(value = "/deleteSyll/{fileName}", method = RequestMethod.GET)
     public ModelAndView deleteSyllabus(@PathVariable("fileName") String fileName) {
         syllabusServices.deleteSyllabus(fileName);
         return new ModelAndView("redirect:/admin/addSyll");

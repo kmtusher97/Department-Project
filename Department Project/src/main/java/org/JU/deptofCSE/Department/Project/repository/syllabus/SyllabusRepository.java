@@ -33,6 +33,10 @@ public class SyllabusRepository {
         return syllabus;
     }
 
+    /**
+     * Get all the names of the syllabuses previously added
+     * @return SortedSet<String> xml file names
+     */
     public SortedSet<String> getAllSyllabusNames() {                        // get the list of names of all stored syllabuses
         File folder = new File("Syllabus_Repository");
         File[] listOfSyllabus = folder.listFiles();
@@ -40,7 +44,9 @@ public class SyllabusRepository {
 
         for (int i = 0; i < listOfSyllabus.length; i++) {
             if(listOfSyllabus[i].isFile()) {
-                fileNames.add(listOfSyllabus[i].getName());
+                String nameOfFile = listOfSyllabus[i].getName();
+                String[] parsedName = nameOfFile.split(".xml");
+                fileNames.add(parsedName[0]);
             }
         }
         return fileNames;

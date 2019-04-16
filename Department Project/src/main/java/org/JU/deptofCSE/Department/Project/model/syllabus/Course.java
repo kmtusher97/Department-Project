@@ -1,6 +1,5 @@
 package org.JU.deptofCSE.Department.Project.model.syllabus;
 
-
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -15,6 +14,10 @@ public class Course {
 
     private double courseCredit;
 
+    private String prerequisite;
+
+    private String contactHours;
+
     private String rational;
 
     private CourseObjectives courseObjectives;
@@ -22,6 +25,8 @@ public class Course {
     private LearningOutcomes learningOutcomes;
 
     private CourseDescriptions courseDescriptions;
+
+    private LaboratoryRequirements laboratoryRequirements;
 
     private Books books;
 
@@ -31,25 +36,32 @@ public class Course {
         this.courseTitle = "";
         this.courseType = "";
         this.courseCredit = 0.0;
+        this.prerequisite = "";
+        this.contactHours = "";
         this.rational = "";
         this.courseObjectives = new CourseObjectives();
         this.learningOutcomes = new LearningOutcomes();
         this.courseDescriptions = new CourseDescriptions();
+        this.laboratoryRequirements = new LaboratoryRequirements();
         this.books = new Books();
     }
 
-    public Course(String courseCode, String courseTitle,
-                  String courseType, Float courseCredit, String rational,
+    public Course(String courseCode, String courseTitle, String courseType,
+                  Float courseCredit, String rational, String prerequisite, String contactHours,
                   CourseObjectives courseObjectives, LearningOutcomes learningOutcomes,
-                  CourseDescriptions courseDescriptions, Books books) {
+                  CourseDescriptions courseDescriptions, LaboratoryRequirements laboratoryRequirements,
+                  Books books) {
         this.courseCode = courseCode;
         this.courseTitle = courseTitle;
         this.courseType = courseType;
         this.courseCredit = courseCredit;
+        this.prerequisite = prerequisite;
+        this.contactHours = contactHours;
         this.rational = rational;
         this.courseObjectives = courseObjectives;
         this.learningOutcomes = learningOutcomes;
         this.courseDescriptions = courseDescriptions;
+        this.laboratoryRequirements = laboratoryRequirements;
         this.books = books;
     }
 
@@ -89,7 +101,25 @@ public class Course {
         this.courseCredit = courseCredit;
     }
 
-    @XmlElement(name = "Rational")
+    @XmlElement(name = "Prerequisite")
+    public String getPrerequisite() {
+        return prerequisite;
+    }
+
+    public void setPrerequisite(String prerequisite) {
+        this.prerequisite = prerequisite;
+    }
+
+    @XmlElement(name = "ContactHours")
+    public String getContactHours() {
+        return contactHours;
+    }
+
+    public void setContactHours(String contactHours) {
+        this.contactHours = contactHours;
+    }
+
+    @XmlElement(name = "Rationale")
     public String getRational() {
         return rational;
     }
@@ -125,6 +155,15 @@ public class Course {
         this.courseDescriptions = courseDescriptions;
     }
 
+    @XmlElement(name = "LaboratoryRequirements")
+    public LaboratoryRequirements getLaboratoryRequirements() {
+        return laboratoryRequirements;
+    }
+
+    public void setLaboratoryRequirements(LaboratoryRequirements laboratoryRequirements) {
+        this.laboratoryRequirements = laboratoryRequirements;
+    }
+
     @XmlElement(name = "Books")
     public Books getBooks() {
         return books;
@@ -136,31 +175,38 @@ public class Course {
 
 
     public void addNewBook(Book book) {
-        if(this.books == null) {
+        if (this.books == null) {
             this.books = new Books();
         }
         this.books.addBook(book);
     }
 
     public void addNewCourseDescription(CourseDescription courseDescription) {
-        if(this.courseDescriptions == null) {
+        if (this.courseDescriptions == null) {
             this.courseDescriptions = new CourseDescriptions();
         }
         this.courseDescriptions.addCourseDescription(courseDescription);
     }
 
     public void addNewLearningOutcome(LearningOutcome learningOutcome) {
-        if(this.learningOutcomes == null) {
+        if (this.learningOutcomes == null) {
             this.learningOutcomes = new LearningOutcomes();
         }
         this.learningOutcomes.addLearningOutcome(learningOutcome);
     }
 
     public void addNewCourseObjective(CourseObjective courseObjective) {
-        if(this.courseObjectives == null) {
+        if (this.courseObjectives == null) {
             this.courseObjectives = new CourseObjectives();
         }
         this.courseObjectives.addCourseObjective(courseObjective);
+    }
+
+    public void addNewLaboratoryRequirement(LaboratoryRequirement laboratoryRequirement) {
+        if (this.laboratoryRequirements == null) {
+            this.laboratoryRequirements = new LaboratoryRequirements();
+        }
+        this.laboratoryRequirements.addLaboratoryRequirement(laboratoryRequirement);
     }
 
     public Integer getCountOfBooks() {
@@ -179,16 +225,19 @@ public class Course {
         return this.courseObjectives.getCount();
     }
 
+    public Integer getCountOfLaboratoryRequirements() {
+        return this.laboratoryRequirements.getCount();
+    }
+
 
     public Integer getCourseCodeNumber() {
         Integer codeNumner = 0, powerOf10 = 1;
-        for(int i = this.courseCode.length() - 1; i >= 0; i--) {
+        for (int i = this.courseCode.length() - 1; i >= 0; i--) {
             char ch = this.courseCode.charAt(i);
-            if(ch >= '0' && ch <= '9') {
+            if (ch >= '0' && ch <= '9') {
                 codeNumner += ((ch - '0') * powerOf10);
                 powerOf10 *= 10;
-            }
-            else {
+            } else {
                 break;
             }
         }
