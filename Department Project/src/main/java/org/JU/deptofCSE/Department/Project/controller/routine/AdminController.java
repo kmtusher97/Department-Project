@@ -1,5 +1,6 @@
 package org.JU.deptofCSE.Department.Project.controller.routine;
 
+import org.JU.deptofCSE.Department.Project.model.routine.Teacher;
 import org.JU.deptofCSE.Department.Project.model.routine.User;
 import org.JU.deptofCSE.Department.Project.model.syllabus.Syllabus;
 import org.JU.deptofCSE.Department.Project.service.routine.AdminServices;
@@ -49,10 +50,13 @@ public class AdminController {
     @RequestMapping(value = "/addUser/{error}", method = RequestMethod.GET)
     public ModelAndView addNewUser() {
         User user = new User();
+        Teacher teacher = new Teacher();
+
         List<User> userList = userServices.getAllUser();
 
         ModelAndView addUserPage = new ModelAndView("routine/AddUser");
         addUserPage.addObject("userForm", user);
+        addUserPage.addObject("teacher", teacher);
         addUserPage.addObject("userList", userList);
         return addUserPage;
     }

@@ -53,6 +53,9 @@ public class SyllabusServices {
      * @return the syllabus of the requested session
      */
     public String getSyllabusNameBySession(Integer from, Integer to) throws JAXBException {
+        if( to - from != 1 ) {
+            return null;
+        }
         SortedSet<String> syllabusNames = syllabusRepository.getAllSyllabusNames();
         for(String syllabusName : syllabusNames) {
             SyllabusQuery temporarySyllabus = new SyllabusQuery(syllabusName);

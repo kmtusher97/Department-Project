@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 public class UserController {
@@ -34,14 +35,13 @@ public class UserController {
     public ModelAndView authenticateLogin(@ModelAttribute("userForm") User user) {
         User requestedUser = userServices.getByEmail(user.getEmail());
 
-        if(requestedUser == null || !requestedUser.getPassword().equals(user.getPassword())) {
+        if (requestedUser == null || !requestedUser.getPassword().equals(user.getPassword())) {
             return new ModelAndView("redirect:/login");
         }
-        if( userServices.isAdmin(requestedUser.getId()) ) {
+        if (userServices.isAdmin(requestedUser.getId())) {
             return new ModelAndView("redirect:/admin/dashboard");
-        }
-        else {
-            return new ModelAndView("redirect:/teacher/dashboard");
+        } else {
+            return new ModelAndView("redirect:/teacher/login/" + requestedUser.getEmail());
         }
     }
 
@@ -50,17 +50,20 @@ public class UserController {
      * If the requested email already exists then resend admin to the beginning
      * Saves the newly add user to database
      * Also creates an object of Teacher Class and stores it to database
+     *
      * @param newUser html form input
      * @return Add User page
      */
     @RequestMapping(value = "/user/save", method = RequestMethod.POST)
-    public ModelAndView saveUser(@ModelAttribute("userForm") User newUser) {
-        if(userServices.getByEmail(newUser.getEmail()) != null) {
+    public ModelAndView saveUser(@ModelAttribute("userForm") User newUser,
+                                 @ModelAttribute("teacher") Teacher teacher) {
+        if (userServices.getByEmail(newUser.getEmail()) != null) {
             return new ModelAndView("redirect:/admin/addUser/" + "error");
         }
         userServices.saveOrUpdateUser(newUser);
 
         Teacher newTeacher = new Teacher(userServices.getByEmail(newUser.getEmail()));
+        newTeacher.setFullName(teacher.getFullName());
         teacherServices.saveOrUpdate(newTeacher);
 
         return new ModelAndView("redirect:/admin/addUser/" + "user_added_successfully");
@@ -69,6 +72,7 @@ public class UserController {
 
     /**
      * Deletes an user from database
+     *
      * @param id path variable primary key
      * @return Add User page
      */

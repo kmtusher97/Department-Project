@@ -1,11 +1,16 @@
 package org.JU.deptofCSE.Department.Project.controller.syllabus;
 
+import org.JU.deptofCSE.Department.Project.model.routine.Teacher;
+import org.JU.deptofCSE.Department.Project.model.routine.User;
 import org.JU.deptofCSE.Department.Project.model.syllabus.Course;
 
 import org.JU.deptofCSE.Department.Project.model.syllabus.Semester;
 import org.JU.deptofCSE.Department.Project.model.syllabus.Syllabus;
+import org.JU.deptofCSE.Department.Project.service.routine.TeacherServices;
+import org.JU.deptofCSE.Department.Project.service.routine.UserServices;
 import org.JU.deptofCSE.Department.Project.service.syllabus.CourseServices;
 import org.JU.deptofCSE.Department.Project.service.syllabus.SyllabusServices;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,6 +30,12 @@ public class CourseController {
     CourseServices courseServices = new CourseServices();
 
     SyllabusServices syllabusServices = new SyllabusServices();
+
+    @Autowired
+    UserServices userServices;
+
+    @Autowired
+    TeacherServices teacherServices;
 
     /**
      * Provide the course edit form to update or add data for a course.
@@ -114,16 +125,22 @@ public class CourseController {
      * @return Course View Page, that displays a course
      * @throws JAXBException
      */
-    @RequestMapping(value = "/viewCourse/{courseCode}/{semesterName}/{fileName}", method = RequestMethod.GET)
+    @RequestMapping(value = "/viewCourse/{courseCode}/{semesterName}/{fileName}/{userEmail}", method = RequestMethod.GET)
     // request to update a course
     public ModelAndView viewCourse(@PathVariable("courseCode") String courseCode,
                                    @PathVariable("semesterName") String semesterName,
-                                   @PathVariable("fileName") String fileName) throws JAXBException {
+                                   @PathVariable("fileName") String fileName,
+                                   @PathVariable("userEmail") String userEmail) throws JAXBException {
         SortedSet<Semester> semesterList = syllabusServices.getSyllabus(fileName).getSemesters().getSemesters();     // get the semesters of the syllabus
         Course course = courseServices.getCoursesBySemesterNameAndCourseCode((TreeSet<Semester>) semesterList, semesterName, courseCode); // get the course from the semester list
 
+        User user = userServices.getByEmail(userEmail);
+        Teacher teacher = teacherServices.getTeacherById(user.getId());
+
         ModelAndView courseView = new ModelAndView("syllabus/ViewCourse");
         courseView.addObject("course", course);
+        courseView.addObject("user", user);
+        courseView.addObject("teacher", teacher);
 
         return courseView;
     }

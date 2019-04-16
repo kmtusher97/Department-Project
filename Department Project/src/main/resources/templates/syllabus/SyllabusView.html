@@ -24,7 +24,8 @@
             <a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><em class="fa fa-bars"></em></a>
             <ul class="nav nav-pills flex-column sidebar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/admin/dashboard}">  <!-- throws to the admin dashboard page -->
+                    <a class="nav-link" th:href="@{'/teacher/login/' + ${user.email}}">
+                        <!-- throws to the admin dashboard page -->
                         <em class="fa fa-dashboard"></em>Dashboard
                     </a>
                 </li>
@@ -39,16 +40,17 @@
                 <div class="dropdown user-dropdown col-md-6 col-lg-4 text-center text-md-right"><a
                     class="btn btn-stripped dropdown-toggle" href="https://example.com" id="dropdownMenuLink"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img th:src="@{/Asset/images/Zahid-sir.jpg}" alt="profile photo"
+                    <img th:src="@{/Asset/images/profilePic.png}" alt="profile photo"
                          class="circle float-left profile-photo" width="50" height="auto">
                     <div class="username mt-1">
-                        <h4 class="mb-1">Username</h4>
+                        <h4 class="mb-1" th:text="${teacher.fullName}"></h4>
                     </div>
                 </a>
                     <div class="dropdown-menu dropdown-menu-right" style="margin-right: 1.5rem;"
                          aria-labelledby="dropdownMenuLink"><a class="dropdown-item" href="#"><em
                         class="fa fa-user-circle mr-1"></em> View Profile</a>
-                        <a class="dropdown-item" th:href="@{/login}"><em class="fa fa-power-off mr-1"></em> Logout</a></div>
+                        <a class="dropdown-item" th:href="@{/login}"><em class="fa fa-power-off mr-1"></em> Logout</a>
+                    </div>
                 </div>
                 <div class="clear"></div>
             </header>
@@ -80,8 +82,8 @@
                                                 <td th:text="${courseCount > 0} ? ${semester.courses.courses[0].courseTitle} : ''"></td>
                                                 <td th:text="${courseCount > 0} ? ${semester.courses.courses[0].courseCredit} : ''"></td>
                                                 <td>
-                                                    <a th:if="${courseCount > 0}" th:href="@{/syl/viewCourse/{courseCode}/{semesterName}/{fileName}
-                                                              (courseCode=${semester.courses.courses[0].courseCode}, semesterName=${semester.name}, fileName=${fileName})}"
+                                                    <a th:if="${courseCount > 0}" th:href="@{/syl/viewCourse/{courseCode}/{semesterName}/{fileName}/{userEmail}
+                                                              (courseCode=${semester.courses.courses[0].courseCode}, semesterName=${semester.name}, fileName=${fileName}, userEmail=${user.email})}"
                                                        th:role="button">View</a>
                                                 </td>
                                             </tr>
@@ -91,8 +93,8 @@
                                                 <td th:text="${course.courseTitle}"></td>
                                                 <td th:text="${course.courseCredit}"></td>
                                                 <td>
-                                                    <a th:href="@{/syl/viewCourse/{courseCode}/{semesterName}/{fileName}
-                                                                (courseCode=${course.courseCode}, semesterName=${semester.name}, fileName=${fileName})}"
+                                                    <a th:href="@{/syl/viewCourse/{courseCode}/{semesterName}/{fileName}/{userEmail}
+                                                                (courseCode=${course.courseCode}, semesterName=${semester.name}, fileName=${fileName}, userEmail=${user.email})}"
                                                        th:role="button">View</a>
                                                 </td>
                                             </tr>

@@ -30,7 +30,7 @@
                             <Publisher>LUXMI</Publisher>
                         </Book>
                     </Books>
-                    <ContactHours></ContactHours>
+                    <ContactHours>0</ContactHours>
                     <CourseCode>MATH 101</CourseCode>
                     <CourseCredit>3.0</CourseCredit>
                     <CourseDescriptions>
@@ -97,8 +97,10 @@
                             <Outcome>Solve two/ three dimensional co-ordinate, conicoid i.e. sphere, cone, cylinder, parpabolid, ellipsoid, hyperboid problems</Outcome>
                         </LearningOutcome>
                     </LearningOutcomes>
-                    <Prerequisite></Prerequisite>
-                    <Rationale></Rationale>
+                    <Prerequisite>None</Prerequisite>
+                    <Rationale>The solution of systems of linear equations can be solved by Matrix. Differential calculus concerned with finding&#xD;
+tangent lines and rates of change. Algebraic problem can be solved by geometry. So Matrix, Differential calculus and&#xD;
+Coordinate geometry is essential for CSE graduates.</Rationale>
                 </Course>
                 <Course>
                     <Books/>
