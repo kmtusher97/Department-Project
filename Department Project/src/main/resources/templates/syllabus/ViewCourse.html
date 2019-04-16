@@ -23,7 +23,8 @@
 
             <a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><em class="fa fa-bars"></em></a>
             <ul class="nav nav-pills flex-column sidebar-nav">
-                <li class="nav-item"><a class="nav-link" th:href="@{/teacher/dashboard}"><em class="fa fa-dashboard"></em>
+                <li class="nav-item"><a class="nav-link" th:href="@{/teacher/dashboard}"><em
+                    class="fa fa-dashboard"></em>
                     Dashboard</a></li>
             </ul>
 
@@ -31,7 +32,7 @@
         <main class="col-xs-12 col-sm-8 col-lg-9 col-xl-10 pt-3 pl-4 ml-auto">
             <header class="page-header row justify-center">
                 <div class="col-md-6 col-lg-8">
-                    <h4 class="float-left text-center text-md-left" th:text="${course.courseCode}"></h4>
+                    <h4 class="float-left text-center text-md-left">Course Detail</h4>
                 </div>
                 <div class="dropdown user-dropdown col-md-6 col-lg-4 text-center text-md-right"><a
                     class="btn btn-stripped dropdown-toggle" href="https://example.com" id="dropdownMenuLink"
@@ -45,7 +46,8 @@
                     <div class="dropdown-menu dropdown-menu-right" style="margin-right: 1.5rem;"
                          aria-labelledby="dropdownMenuLink"><a class="dropdown-item" href="#"><em
                         class="fa fa-user-circle mr-1"></em> View Profile</a>
-                        <a class="dropdown-item" th:href="@{/login}"><em class="fa fa-power-off mr-1"></em> Logout</a></div>
+                        <a class="dropdown-item" th:href="@{/login}"><em class="fa fa-power-off mr-1"></em> Logout</a>
+                    </div>
                 </div>
                 <div class="clear"></div>
             </header>
@@ -55,12 +57,186 @@
                         <div class="col-12">
                             <div class="card mb-4">
                                 <div class="card-block">
-                                    <h4 th:text="'Course Title: ' + ${course.courseTitle}"></h4>
+                                    <table class="table table-bordered table-striped">
+                                        <tr class="table-warning">
+                                            <td><b>Course Code</b></td>
+                                            <td><b>:</b></td>
+                                            <td th:text="${course.courseCode}"></td>
+                                            <td><b>Credit</b></td>
+                                            <td><b>:</b></td>
+                                            <td th:text="${course.courseCredit}"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>Title</b></td>
+                                            <td><b>:</b></td>
+                                            <td th:text="${course.courseTitle}"></td>
+                                            <td><b>Prerequisite</b></td>
+                                            <td><b>:</b></td>
+                                            <td th:text="${course.prerequisite}"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>Type</b></td>
+                                            <td><b>:</b></td>
+                                            <td th:text="${course.courseType}"></td>
+                                            <td><b>Contact Hours</b></td>
+                                            <td><b>:</b></td>
+                                            <td th:text="${course.contactHours}"></td>
+                                        </tr>
+                                    </table>
                                 </div>
                             </div>
                         </div>
                     </section>
-
+                    <section class="row" th:if="${#strings.length(course.rational)} > 0">
+                        <div class="col-12">
+                            <div class="card mb-4">
+                                <div class="card-block">
+                                    <table class="table table-bordered table-striped">
+                                        <thead>
+                                        <tr>
+                                            <th>Rationale</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td th:text="${course.rational}"></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="row" th:if="${course.courseObjectives.getCount()} > 0">
+                        <div class="col-12">
+                            <div class="card mb-4">
+                                <div class="card-block">
+                                    <table class="table table-bordered table-striped">
+                                        <thead>
+                                        <tr>
+                                            <th th:text="(${course.courseType} == 'Laboratory' ? 'Lab' : 'Course') + ' Objectives'"></th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>
+                                                <ul th:each="courseObj : ${course.courseObjectives.courseObjective}">
+                                                    <li th:text="${courseObj.objective}"></li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="row" th:if="${course.learningOutcomes.getCount()} > 0">
+                        <div class="col-12">
+                            <div class="card mb-4">
+                                <div class="card-block">
+                                    <table class="table table-bordered table-striped">
+                                        <thead>
+                                        <tr>
+                                            <th th:text="(${course.courseType} == 'Laboratory' ? 'Lab' : 'Course') + ' Outcomes'"></th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>
+                                                <p>After successful completion of this course, students will be able
+                                                    to-</p>
+                                                <ul th:each="learningOutcome : ${course.learningOutcomes.learningOutcome}">
+                                                    <li th:text="${learningOutcome.outcome}"></li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="row" th:if="${course.courseDescriptions.getCount()} > 0">
+                        <div class="col-12">
+                            <div class="card mb-4">
+                                <div class="card-block">
+                                    <table class="table table-bordered table-striped">
+                                        <thead>
+                                        <tr>
+                                            <th th:text="(${course.courseType} == 'Laboratory' ? 'Lab Course' : 'Course') + ' Description'"></th>
+                                        </tr>
+                                        <tr>
+                                            <th th:text="'Title and Descriptions'"></th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td th:each="courseDescription : ${course.courseDescriptions.courseDescription}">
+                                                <h4 th:text="${courseDescription.title}"
+                                                    th:if="${#strings.length(courseDescription.title)} > 0"></h4>
+                                                <p th:text="${courseDescription.description}"
+                                                   th:if="${#strings.length(courseDescription.description)} > 0"></p>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="row" th:if="${course.laboratoryRequirements.getCount()} > 0">
+                        <div class="col-12">
+                            <div class="card mb-4">
+                                <div class="card-block">
+                                    <table class="table table-bordered table-striped">
+                                        <thead>
+                                        <tr>
+                                            <th th:text="'Hardware and Software Requirements'"></th>
+                                        </tr>
+                                        <tr>
+                                            <th th:text="'H/W Requirements'"></th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td th:each="laboratoryRequirements : ${course.laboratoryRequirements.laboratoryRequirement}">
+                                                <h4 th:text="${laboratoryRequirements.title}"
+                                                    th:if="${#strings.length(laboratoryRequirements.title)} > 0"></h4>
+                                                <p th:text="${laboratoryRequirements.requirement}"
+                                                   th:if="${#strings.length(laboratoryRequirements.requirement)} > 0"></p>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="row" th:if="${course.books.getCount()} > 0">
+                        <div class="col-12">
+                            <div class="card mb-4">
+                                <div class="card-block">
+                                    <table class="table table-bordered table-striped">
+                                        <thead>
+                                        <tr>
+                                            <th colspan="5" th:text="'Recommended Books'"></th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr th:each="book : ${course.books.books}">
+                                            <td th:text="${book.bookName}"></td>
+                                            <td th:text="${book.authors}"></td>
+                                            <td th:text="${book.edition}"></td>
+                                            <td th:text="${book.publisher}"></td>
+                                            <td th:text="${book.publishYear}"></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                 </div>
             </section>
         </main>

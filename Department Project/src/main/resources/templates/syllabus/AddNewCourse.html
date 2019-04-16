@@ -63,15 +63,16 @@
                                           (semesterName=${semesterName}, fileName=${fileName}, courseCodeDelete=${courseCodeDelete})}"
                                           method=post>
                                         <div class="form-group row">
-                                            <label class="col-md-3 col-form-label" for="courseCode">Course Code</label>
+                                            <label class="col-md-3 col-form-label" for="courseCode"><b>Course
+                                                Code</b></label>
                                             <div class="col-md-9">
                                                 <input required type="text" name="course-code" class="form-control"
                                                        id="courseCode" th:field="${courseEditForm.courseCode}">
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-md-3 col-form-label" for="courseTitle">Course
-                                                Title</label>
+                                            <label class="col-md-3 col-form-label" for="courseTitle"><b>Course
+                                                Title</b></label>
                                             <div class="col-md-9">
                                                 <input required class="form-control" type="text" name="title"
                                                        id="courseTitle"
@@ -79,7 +80,8 @@
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-md-3 col-form-label" for="courseType">Course Type</label>
+                                            <label class="col-md-3 col-form-label" for="courseType"><b>Course
+                                                Type</b></label>
                                             <div class="col-md-9">
                                                 <select class="custom-select form-control" id="courseType"
                                                         th:field="${courseEditForm.courseType}">
@@ -90,8 +92,8 @@
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-md-3 col-form-label" for="courseCredit">Course
-                                                Credit</label>
+                                            <label class="col-md-3 col-form-label" for="courseCredit"><b>Course
+                                                Credit</b></label>
                                             <div class="col-md-9">
                                                 <select class="custom-select form-control" id="courseCredit"
                                                         th:field="${courseEditForm.courseCredit}">
@@ -105,7 +107,227 @@
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-md-3 col-form-label" for="rational">Rationale</label>
+                                            <label class="col-md-3 col-form-label" for="ContactHours"><b>Contact
+                                                Hours</b></label>
+                                            <div class="col-md-9">
+                                                <select class="custom-select form-control" id="contactHours"
+                                                        th:field="${courseEditForm.contactHours}">
+                                                    <option th:value="0">None</option>
+                                                    <option th:value="1">1</option>
+                                                    <option th:value="2">2</option>
+                                                    <option th:value="3">3</option>
+                                                    <option th:value="4">4</option>
+                                                    <option th:value="5">5</option>
+                                                    <option th:value="6">6</option>
+                                                    <option th:value="7">7</option>
+                                                    <option th:value="8">8</option>
+                                                    <option th:value="9">9</option>
+                                                    <option th:value="10">10</option>
+                                                    <option th:value="11">11</option>
+                                                    <option th:value="12">12</option>
+                                                    <option th:value="13">13</option>
+                                                    <option th:value="14">14</option>
+                                                    <option th:value="15">15</option>
+                                                    <option th:value="16">16</option>
+                                                    <option th:value="17">17</option>
+                                                    <option th:value="18">18</option>
+                                                    <option th:value="19">19</option>
+                                                    <option th:value="20">20</option>
+                                                    <option th:value="21">21</option>
+                                                    <option th:value="22">22</option>
+                                                    <option th:value="23">23</option>
+                                                    <option th:value="24">24</option>
+                                                    <option th:value="25">25</option>
+                                                    <option th:value="26">26</option>
+                                                    <option th:value="27">27</option>
+                                                    <option th:value="28">28</option>
+                                                    <option th:value="29">29</option>
+                                                    <option th:value="30">30</option>
+                                                    <option th:value="31">31</option>
+                                                    <option th:value="32">32</option>
+                                                    <option th:value="33">33</option>
+                                                    <option th:value="34">34</option>
+                                                    <option th:value="35">35</option>
+                                                    <option th:value="36">36</option>
+                                                    <option th:value="37">37</option>
+                                                    <option th:value="38">38</option>
+                                                    <option th:value="39">39</option>
+                                                    <option th:value="40">40</option>
+                                                    <option th:value="41">41</option>
+                                                    <option th:value="42">42</option>
+                                                    <option th:value="43">43</option>
+                                                    <option th:value="44">44</option>
+                                                    <option th:value="45">45</option>
+                                                    <option th:value="46">46</option>
+                                                    <option th:value="47">47</option>
+                                                    <option th:value="48">48</option>
+                                                    <option th:value="49">49</option>
+                                                    <option th:value="50">50</option>
+                                                    <option th:value="51">51</option>
+                                                    <option th:value="52">52</option>
+                                                    <option th:value="53">53</option>
+                                                    <option th:value="54">54</option>
+                                                    <option th:value="55">55</option>
+                                                    <option th:value="56">56</option>
+                                                    <option th:value="57">57</option>
+                                                    <option th:value="58">58</option>
+                                                    <option th:value="59">59</option>
+                                                    <option th:value="60">60</option>
+                                                    <option th:value="61">61</option>
+                                                    <option th:value="62">62</option>
+                                                    <option th:value="63">63</option>
+                                                    <option th:value="64">64</option>
+                                                    <option th:value="65">65</option>
+                                                    <option th:value="66">66</option>
+                                                    <option th:value="67">67</option>
+                                                    <option th:value="68">68</option>
+                                                    <option th:value="69">69</option>
+                                                    <option th:value="70">70</option>
+                                                    <option th:value="71">71</option>
+                                                    <option th:value="72">72</option>
+                                                    <option th:value="73">73</option>
+                                                    <option th:value="74">74</option>
+                                                    <option th:value="75">75</option>
+                                                    <option th:value="76">76</option>
+                                                    <option th:value="77">77</option>
+                                                    <option th:value="78">78</option>
+                                                    <option th:value="79">79</option>
+                                                    <option th:value="80">80</option>
+                                                    <option th:value="81">81</option>
+                                                    <option th:value="82">82</option>
+                                                    <option th:value="83">83</option>
+                                                    <option th:value="84">84</option>
+                                                    <option th:value="85">85</option>
+                                                    <option th:value="86">86</option>
+                                                    <option th:value="87">87</option>
+                                                    <option th:value="88">88</option>
+                                                    <option th:value="89">89</option>
+                                                    <option th:value="90">90</option>
+                                                    <option th:value="91">91</option>
+                                                    <option th:value="92">92</option>
+                                                    <option th:value="93">93</option>
+                                                    <option th:value="94">94</option>
+                                                    <option th:value="95">95</option>
+                                                    <option th:value="96">96</option>
+                                                    <option th:value="97">97</option>
+                                                    <option th:value="98">98</option>
+                                                    <option th:value="99">99</option>
+                                                    <option th:value="100">100</option>
+                                                    <option th:value="101">101</option>
+                                                    <option th:value="102">102</option>
+                                                    <option th:value="103">103</option>
+                                                    <option th:value="104">104</option>
+                                                    <option th:value="105">105</option>
+                                                    <option th:value="106">106</option>
+                                                    <option th:value="107">107</option>
+                                                    <option th:value="108">108</option>
+                                                    <option th:value="109">109</option>
+                                                    <option th:value="110">110</option>
+                                                    <option th:value="111">111</option>
+                                                    <option th:value="112">112</option>
+                                                    <option th:value="113">113</option>
+                                                    <option th:value="114">114</option>
+                                                    <option th:value="115">115</option>
+                                                    <option th:value="116">116</option>
+                                                    <option th:value="117">117</option>
+                                                    <option th:value="118">118</option>
+                                                    <option th:value="119">119</option>
+                                                    <option th:value="120">120</option>
+                                                    <option th:value="121">121</option>
+                                                    <option th:value="122">122</option>
+                                                    <option th:value="123">123</option>
+                                                    <option th:value="124">124</option>
+                                                    <option th:value="125">125</option>
+                                                    <option th:value="126">126</option>
+                                                    <option th:value="127">127</option>
+                                                    <option th:value="128">128</option>
+                                                    <option th:value="129">129</option>
+                                                    <option th:value="130">130</option>
+                                                    <option th:value="131">131</option>
+                                                    <option th:value="132">132</option>
+                                                    <option th:value="133">133</option>
+                                                    <option th:value="134">134</option>
+                                                    <option th:value="135">135</option>
+                                                    <option th:value="136">136</option>
+                                                    <option th:value="137">137</option>
+                                                    <option th:value="138">138</option>
+                                                    <option th:value="139">139</option>
+                                                    <option th:value="140">140</option>
+                                                    <option th:value="141">141</option>
+                                                    <option th:value="142">142</option>
+                                                    <option th:value="143">143</option>
+                                                    <option th:value="144">144</option>
+                                                    <option th:value="145">145</option>
+                                                    <option th:value="146">146</option>
+                                                    <option th:value="147">147</option>
+                                                    <option th:value="148">148</option>
+                                                    <option th:value="149">149</option>
+                                                    <option th:value="150">150</option>
+                                                    <option th:value="151">151</option>
+                                                    <option th:value="152">152</option>
+                                                    <option th:value="153">153</option>
+                                                    <option th:value="154">154</option>
+                                                    <option th:value="155">155</option>
+                                                    <option th:value="156">156</option>
+                                                    <option th:value="157">157</option>
+                                                    <option th:value="158">158</option>
+                                                    <option th:value="159">159</option>
+                                                    <option th:value="160">160</option>
+                                                    <option th:value="161">161</option>
+                                                    <option th:value="162">162</option>
+                                                    <option th:value="163">163</option>
+                                                    <option th:value="164">164</option>
+                                                    <option th:value="165">165</option>
+                                                    <option th:value="166">166</option>
+                                                    <option th:value="167">167</option>
+                                                    <option th:value="168">168</option>
+                                                    <option th:value="169">169</option>
+                                                    <option th:value="170">170</option>
+                                                    <option th:value="171">171</option>
+                                                    <option th:value="172">172</option>
+                                                    <option th:value="173">173</option>
+                                                    <option th:value="174">174</option>
+                                                    <option th:value="175">175</option>
+                                                    <option th:value="176">176</option>
+                                                    <option th:value="177">177</option>
+                                                    <option th:value="178">178</option>
+                                                    <option th:value="179">179</option>
+                                                    <option th:value="180">180</option>
+                                                    <option th:value="181">181</option>
+                                                    <option th:value="182">182</option>
+                                                    <option th:value="183">183</option>
+                                                    <option th:value="184">184</option>
+                                                    <option th:value="185">185</option>
+                                                    <option th:value="186">186</option>
+                                                    <option th:value="187">187</option>
+                                                    <option th:value="188">188</option>
+                                                    <option th:value="189">189</option>
+                                                    <option th:value="190">190</option>
+                                                    <option th:value="191">191</option>
+                                                    <option th:value="192">192</option>
+                                                    <option th:value="193">193</option>
+                                                    <option th:value="194">194</option>
+                                                    <option th:value="195">195</option>
+                                                    <option th:value="196">196</option>
+                                                    <option th:value="197">197</option>
+                                                    <option th:value="198">198</option>
+                                                    <option th:value="199">199</option>
+                                                    <option th:value="200">200</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-3 col-form-label"
+                                                   for="rational"><b>Prerequisite</b></label>
+                                            <div class="col-md-9">
+                                                <input type="text" name="rationale" class="form-control"
+                                                       id="prerequisite"
+                                                       th:field="${courseEditForm.prerequisite}"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-3 col-form-label"
+                                                   for="rational"><b>Rationale</b></label>
                                             <div class="col-md-9">
                                                 <textarea type="text" name="rationale" class="form-control"
                                                           id="rational"

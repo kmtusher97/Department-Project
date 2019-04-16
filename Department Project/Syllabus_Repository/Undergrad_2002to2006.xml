@@ -8,6 +8,7 @@
             <Courses>
                 <Course>
                     <Books/>
+                    <ContactHours>36</ContactHours>
                     <CourseCode>MATH 101</CourseCode>
                     <CourseCredit>3.0</CourseCredit>
                     <CourseDescriptions/>
@@ -20,10 +21,12 @@
                     <CourseType>Theory</CourseType>
                     <LaboratoryRequirements/>
                     <LearningOutcomes/>
-                    <Rational></Rational>
+                    <Prerequisite>None</Prerequisite>
+                    <Rational>Rationale</Rational>
                 </Course>
                 <Course>
                     <Books/>
+                    <ContactHours></ContactHours>
                     <CourseCode>CSE 106</CourseCode>
                     <CourseCredit>3.0</CourseCredit>
                     <CourseDescriptions/>
@@ -32,10 +35,12 @@
                     <CourseType>Theory</CourseType>
                     <LaboratoryRequirements/>
                     <LearningOutcomes/>
+                    <Prerequisite></Prerequisite>
                     <Rational></Rational>
                 </Course>
                 <Course>
                     <Books/>
+                    <ContactHours></ContactHours>
                     <CourseCode>CSE 107</CourseCode>
                     <CourseCredit>1.0</CourseCredit>
                     <CourseDescriptions/>
@@ -44,10 +49,12 @@
                     <CourseType>Laboratory</CourseType>
                     <LaboratoryRequirements/>
                     <LearningOutcomes/>
+                    <Prerequisite></Prerequisite>
                     <Rational></Rational>
                 </Course>
                 <Course>
                     <Books/>
+                    <ContactHours></ContactHours>
                     <CourseCode>CSE 108</CourseCode>
                     <CourseCredit>1.0</CourseCredit>
                     <CourseDescriptions/>
@@ -61,6 +68,7 @@
                         </LaboratoryRequirement>
                     </LaboratoryRequirements>
                     <LearningOutcomes/>
+                    <Prerequisite></Prerequisite>
                     <Rational></Rational>
                 </Course>
             </Courses>
@@ -70,6 +78,7 @@
             <Courses>
                 <Course>
                     <Books/>
+                    <ContactHours>0</ContactHours>
                     <CourseCode>CSE 151</CourseCode>
                     <CourseCredit>1.0</CourseCredit>
                     <CourseDescriptions/>
@@ -78,6 +87,7 @@
                     <CourseType>Viva-Voce</CourseType>
                     <LaboratoryRequirements/>
                     <LearningOutcomes/>
+                    <Prerequisite>None</Prerequisite>
                     <Rational></Rational>
                 </Course>
             </Courses>

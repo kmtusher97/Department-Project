@@ -7,10 +7,24 @@
         <Semester>
             <Courses>
                 <Course>
-                    <Books/>
+                    <Books>
+                        <Book>
+                            <Authors>Marvin L. Bittinger, David J.Ellenbogen and Scott A. Surgent</Authors>
+                            <BookName>Calculus and its applications</BookName>
+                            <Edition>10th</Edition>
+                            <PublishYear>2012</PublishYear>
+                            <Publisher>Pearson</Publisher>
+                        </Book>
+                    </Books>
+                    <ContactHours>0</ContactHours>
                     <CourseCode>MATH 100</CourseCode>
                     <CourseCredit>3.0</CourseCredit>
-                    <CourseDescriptions/>
+                    <CourseDescriptions>
+                        <CourseDescription>
+                            <Description>Definition of matrix; Different types of matrices; Algebra of matrices; Adjoint and inverse of a matrix; Elementary transformations of matrices; Matrix polynomials; Calay-Hamilton theory with uses of rank and nullity; Normal and canonical forms; Solution of linear equations; Eigenvalues and eigenvectors.</Description>
+                            <Title>Matrices</Title>
+                        </CourseDescription>
+                    </CourseDescriptions>
                     <CourseObjectives>
                         <CourseObjective>
                             <Objective>To learn about matrix, determinant and its application to the solution of systems of linear equations.</Objective>
@@ -18,41 +32,67 @@
                     </CourseObjectives>
                     <CourseTitle>Mathematics I (Matrix, Differential Calculus and Coordinate Geometry)</CourseTitle>
                     <CourseType>Theory</CourseType>
-                    <LearningOutcomes/>
-                    <Rational></Rational>
+                    <LaboratoryRequirements/>
+                    <LearningOutcomes>
+                        <LearningOutcome>
+                            <Outcome>Solve problems step by step and design computer programs</Outcome>
+                        </LearningOutcome>
+                    </LearningOutcomes>
+                    <Prerequisite></Prerequisite>
+                    <Rationale>The solution of systems of linear equations can be solved by Matrix. Differential calculus concerned with finding&#xD;
+tangent lines and rates of change. Algebraic problem can be solved by geometry. So Matrix, Differential calculus and&#xD;
+Coordinate geometry is essential for CSE graduates.</Rationale>
                 </Course>
                 <Course>
                     <Books/>
+                    <ContactHours></ContactHours>
                     <CourseCode>CSE 101</CourseCode>
                     <CourseCredit>3.0</CourseCredit>
                     <CourseDescriptions/>
                     <CourseObjectives/>
                     <CourseTitle>Electronic Circuit</CourseTitle>
                     <CourseType>Theory</CourseType>
+                    <LaboratoryRequirements/>
                     <LearningOutcomes/>
-                    <Rational></Rational>
+                    <Prerequisite></Prerequisite>
+                    <Rationale></Rationale>
                 </Course>
                 <Course>
                     <Books/>
+                    <ContactHours>0</ContactHours>
                     <CourseCode>CSE 102</CourseCode>
                     <CourseCredit>1.0</CourseCredit>
                     <CourseDescriptions/>
-                    <CourseObjectives/>
+                    <CourseObjectives>
+                        <CourseObjective>
+                            <Objective>To introduce students to give practical experience on basic programming principles, good programming style, design and solve the problems in a structured approach.</Objective>
+                        </CourseObjective>
+                    </CourseObjectives>
                     <CourseTitle>Electronic Circuit Laboratory</CourseTitle>
                     <CourseType>Laboratory</CourseType>
+                    <LaboratoryRequirements>
+                        <LaboratoryRequirement>
+                            <Requirement>Voltmeter</Requirement>
+                            <Title>Harware</Title>
+                        </LaboratoryRequirement>
+                    </LaboratoryRequirements>
                     <LearningOutcomes/>
-                    <Rational></Rational>
+                    <Prerequisite>None</Prerequisite>
+                    <Rationale>Something Rational</Rationale>
                 </Course>
                 <Course>
                     <Books/>
+                    <ContactHours>0</ContactHours>
                     <CourseCode>ENG 103</CourseCode>
                     <CourseCredit>3.0</CourseCredit>
                     <CourseDescriptions/>
                     <CourseObjectives/>
                     <CourseTitle>Communicative English</CourseTitle>
                     <CourseType>Theory</CourseType>
+                    <LaboratoryRequirements/>
                     <LearningOutcomes/>
-                    <Rational>Something Rational</Rational>
+                    <Prerequisite>None</Prerequisite>
+                    <Rationale></Rationale>
                 </Course>
             </Courses>
             <SemesterName>Semester 1</SemesterName>
@@ -61,14 +101,17 @@
             <Courses>
                 <Course>
                     <Books/>
+                    <ContactHours></ContactHours>
                     <CourseCode>CSE 151</CourseCode>
                     <CourseCredit>3.0</CourseCredit>
                     <CourseDescriptions/>
                     <CourseObjectives/>
                     <CourseTitle>Device</CourseTitle>
                     <CourseType>Theory</CourseType>
+                    <LaboratoryRequirements/>
                     <LearningOutcomes/>
-                    <Rational></Rational>
+                    <Prerequisite></Prerequisite>
+                    <Rationale></Rationale>
                 </Course>
             </Courses>
             <SemesterName>Semester 2</SemesterName>
@@ -77,14 +120,17 @@
             <Courses>
                 <Course>
                     <Books/>
+                    <ContactHours></ContactHours>
                     <CourseCode>CSE 243</CourseCode>
                     <CourseCredit>0.5</CourseCredit>
                     <CourseDescriptions/>
                     <CourseObjectives/>
                     <CourseTitle>Software </CourseTitle>
                     <CourseType>Theory</CourseType>
+                    <LaboratoryRequirements/>
                     <LearningOutcomes/>
-                    <Rational></Rational>
+                    <Prerequisite></Prerequisite>
+                    <Rationale></Rationale>
                 </Course>
             </Courses>
             <SemesterName>Semester 3</SemesterName>
