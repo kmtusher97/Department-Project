@@ -199,8 +199,8 @@
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <tr>
-                                            <td th:each="laboratoryRequirements : ${course.laboratoryRequirements.laboratoryRequirement}">
+                                        <tr th:each="laboratoryRequirements : ${course.laboratoryRequirements.laboratoryRequirement}">
+                                            <td>
                                                 <h4 th:text="${laboratoryRequirements.title}"
                                                     th:if="${#strings.length(laboratoryRequirements.title)} > 0"></h4>
                                                 <p th:text="${laboratoryRequirements.requirement}"

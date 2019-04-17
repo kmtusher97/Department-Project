@@ -58,7 +58,7 @@ courses so that students have ability to face viva-board confidently in their pr
                             <Publisher>LUXMI</Publisher>
                         </Book>
                     </Books>
-                    <ContactHours>39</ContactHours>
+                    <ContactHours></ContactHours>
                     <CourseCode>MATH 101</CourseCode>
                     <CourseCredit>3.0</CourseCredit>
                     <CourseDescriptions>
@@ -125,10 +125,8 @@ courses so that students have ability to face viva-board confidently in their pr
                             <Outcome>Solve two/ three dimensional co-ordinate, conicoid i.e. sphere, cone, cylinder, parpabolid, ellipsoid, hyperboid problems</Outcome>
                         </LearningOutcome>
                     </LearningOutcomes>
-                    <Prerequisite>None</Prerequisite>
-                    <Rationale>The solution of systems of linear equations can be solved by Matrix. Differential calculus concerned with finding&#xD;
-tangent lines and rates of change. Algebraic problem can be solved by geometry. So Matrix, Differential calculus and&#xD;
-Coordinate geometry is essential for CSE graduates.</Rationale>
+                    <Prerequisite></Prerequisite>
+                    <Rationale></Rationale>
                 </Course>
                 <Course>
                     <Books/>
@@ -673,8 +671,253 @@ and charge, electric filed, force on a current, dispersion and electrical and me
                     <Rationale>Viva-Voce is used to measure and evaluate the students through oral examination on their previous taught/learned&#xD;
 courses so that students have ability to face viva-board confidently in their professional life</Rationale>
                 </Course>
+                <Course>
+                    <Books/>
+                    <ContactHours>0</ContactHours>
+                    <CourseCode>CSE 155</CourseCode>
+                    <CourseCredit>3.0</CourseCredit>
+                    <CourseDescriptions/>
+                    <CourseObjectives/>
+                    <CourseTitle>Data Sturcture</CourseTitle>
+                    <CourseType>Theory</CourseType>
+                    <LaboratoryRequirements/>
+                    <LearningOutcomes/>
+                    <Prerequisite>None</Prerequisite>
+                    <Rationale></Rationale>
+                </Course>
+                <Course>
+                    <Books/>
+                    <ContactHours>0</ContactHours>
+                    <CourseCode>CSE 156</CourseCode>
+                    <CourseCredit>1.0</CourseCredit>
+                    <CourseDescriptions/>
+                    <CourseObjectives/>
+                    <CourseTitle>Data Sturcture Lab</CourseTitle>
+                    <CourseType>Laboratory</CourseType>
+                    <LaboratoryRequirements/>
+                    <LearningOutcomes/>
+                    <Prerequisite></Prerequisite>
+                    <Rationale></Rationale>
+                </Course>
             </Courses>
             <SemesterName>Semester 2</SemesterName>
+        </Semester>
+        <Semester>
+            <Courses>
+                <Course>
+                    <Books>
+                        <Book>
+                            <Authors>George E. Hay </Authors>
+                            <BookName>Vector and Tensor Analysis </BookName>
+                            <Edition>1st</Edition>
+                            <PublishYear>2012 </PublishYear>
+                            <Publisher>Dover Publications </Publisher>
+                        </Book>
+                        <Book>
+                            <Authors>Schaum's Outline Complex Variables </Authors>
+                            <BookName>Schaum's Outline Complex Variables </BookName>
+                            <Edition>2nd</Edition>
+                            <PublishYear>2009</PublishYear>
+                            <Publisher>McGraw-Hill</Publisher>
+                        </Book>
+                        <Book>
+                            <Authors>Gerald B. Folland</Authors>
+                            <BookName>Fourier Analysis and Its Applications</BookName>
+                            <Edition>2nd</Edition>
+                            <PublishYear>2009</PublishYear>
+                            <Publisher>American Mathematical Society</Publisher>
+                        </Book>
+                        <Book>
+                            <Authors>Phil Dyke </Authors>
+                            <BookName>An Introduction to Laplace Transforms and Fourier Series </BookName>
+                            <Edition>2nd</Edition>
+                            <PublishYear>2014 </PublishYear>
+                            <Publisher>Springer</Publisher>
+                        </Book>
+                    </Books>
+                    <ContactHours>39</ContactHours>
+                    <CourseCode>MATH 201 </CourseCode>
+                    <CourseCredit>3.0</CourseCredit>
+                    <CourseDescriptions>
+                        <CourseDescription>
+                            <Description>Definition and properties, subspaces, basis and dimension, change of basis; Linear Transformation (LT): definition and properties, linear operator matrix, geometry of LT, standard plane LT</Description>
+                            <Title>Vector Spaces </Title>
+                        </CourseDescription>
+                        <CourseDescription>
+                            <Description>Differentiation and integration of vectors together with elementary applications; Definition of line, surface and volume integrals; Gradient, divergence and curl of point functions, various formulae, Gauss’s theorem, Stoke’s theorem, Green’s theorem. </Description>
+                            <Title>Vector Calculus </Title>
+                        </CourseDescription>
+                        <CourseDescription>
+                            <Description>Complex number system; General functions of a complex variable; Limits and continuity of a function of complex variable and related theorems; Complex differentiation and the Cauchy’s Riemann Equations; Mapping by elementary functions</Description>
+                            <Title>Complex Variable </Title>
+                        </CourseDescription>
+                        <CourseDescription>
+                            <Description>Line integral of a complex function; Cauchy’s Integral Theorem; Cauchy’s Integral Formula; Liouville’s Theorem; Taylor’s Theorem and Laurent’s Theorem. Singular points; Residue; Cauchy’s Residue Theorem. Evaluation of residues; Contour integration; Conformal mapping</Description>
+                            <Title>Integral Theorem </Title>
+                        </CourseDescription>
+                        <CourseDescription>
+                            <Description>Real and complex form of Fourier series; Finite transform; Fourier Integral; Fourier transforms and their uses in solving boundary value problems of wave equations</Description>
+                            <Title>Fourier Analysis </Title>
+                        </CourseDescription>
+                        <CourseDescription>
+                            <Description>Definition; Laplace transforms of some elementary functions; Sufficient conditions for existence of Laplace transforms; Inverse Laplace transforms; Laplace transforms of derivatives. </Description>
+                            <Title>Laplace Transforms </Title>
+                        </CourseDescription>
+                        <CourseDescription>
+                            <Description>The unit step function; Periodic function; Some special theorems on Laplace transforms; Partial fraction; Solutions of differential equations by Laplace transforms; Evaluation of improper integrals</Description>
+                            <Title></Title>
+                        </CourseDescription>
+                    </CourseDescriptions>
+                    <CourseObjectives>
+                        <CourseObjective>
+                            <Objective> Introduce and develop the methods of vector analysis</Objective>
+                        </CourseObjective>
+                        <CourseObjective>
+                            <Objective>Introduce vector spaces and linear transformations, and their applications to a variety of problems</Objective>
+                        </CourseObjective>
+                        <CourseObjective>
+                            <Objective>Introduce complex number system in details</Objective>
+                        </CourseObjective>
+                        <CourseObjective>
+                            <Objective>Provide basic concept of Fourier series, Fourier integral, Fourier transforms, Laplace Transforms and Inverse Laplace Transforms of different functions</Objective>
+                        </CourseObjective>
+                    </CourseObjectives>
+                    <CourseTitle>Mathematics III (Vector, Complex Variable, Fourier Analysis and Laplace Transformation) </CourseTitle>
+                    <CourseType>Theory</CourseType>
+                    <LaboratoryRequirements/>
+                    <LearningOutcomes>
+                        <LearningOutcome>
+                            <Outcome>Explain the basic concepts of vector spaces and subspaces</Outcome>
+                        </LearningOutcome>
+                        <LearningOutcome>
+                            <Outcome>Demonstrate an understanding of the fundamental concepts of complex analysis</Outcome>
+                        </LearningOutcome>
+                        <LearningOutcome>
+                            <Outcome>Apply theorems and rules in problem analysis. </Outcome>
+                        </LearningOutcome>
+                        <LearningOutcome>
+                            <Outcome>Calculate Fourier and Laplace Transforms and Inverse Laplace Transforms. </Outcome>
+                        </LearningOutcome>
+                        <LearningOutcome>
+                            <Outcome>Solve boundary problems for using Fourier Transform</Outcome>
+                        </LearningOutcome>
+                        <LearningOutcome>
+                            <Outcome>Classify Laplace Transforms, Definition, existence and basic properties, differential function, periodic function etc</Outcome>
+                        </LearningOutcome>
+                        <LearningOutcome>
+                            <Outcome>Describe different types Inverse Laplace Transform with the help of partial fraction, evaluation of integrals</Outcome>
+                        </LearningOutcome>
+                    </LearningOutcomes>
+                    <Prerequisite>None</Prerequisite>
+                    <Rationale>Vector spaces are widely used in Data Science. Complex numbers are used to encode geometric information through algebra. The Laplace transform has a number of properties that make it useful for analyzing linear dynamical systems. Most of the works of image matching, face recognition, 3-D map creation, video-processing, sound processing are done using Fourier Transform, Laplace Transform. Fourier series help to better analyze a signal in another domain rather in the original domain. </Rationale>
+                </Course>
+            </Courses>
+            <SemesterName>Semester 3</SemesterName>
+        </Semester>
+        <Semester>
+            <Courses>
+                <Course>
+                    <Books/>
+                    <ContactHours>26</ContactHours>
+                    <CourseCode>CSE-206</CourseCode>
+                    <CourseCredit>1.0</CourseCredit>
+                    <CourseDescriptions>
+                        <CourseDescription>
+                            <Description></Description>
+                            <Title>Implementation of Bisection Method.</Title>
+                        </CourseDescription>
+                        <CourseDescription>
+                            <Description></Description>
+                            <Title>Implementation of False Position Method.</Title>
+                        </CourseDescription>
+                        <CourseDescription>
+                            <Description></Description>
+                            <Title>Implementation of Newton-Raphson Method.</Title>
+                        </CourseDescription>
+                    </CourseDescriptions>
+                    <CourseObjectives>
+                        <CourseObjective>
+                            <Objective>To provide a basic knowledge of programming in C and MATLAB.</Objective>
+                        </CourseObjective>
+                        <CourseObjective>
+                            <Objective>To give a practical experience of how to implement different numerical methods.</Objective>
+                        </CourseObjective>
+                        <CourseObjective>
+                            <Objective>To prepare students for future laboratory-oriented courses.</Objective>
+                        </CourseObjective>
+                    </CourseObjectives>
+                    <CourseTitle>Numerical Methods Laboratory</CourseTitle>
+                    <CourseType>Theory</CourseType>
+                    <LaboratoryRequirements>
+                        <LaboratoryRequirement>
+                            <Requirement>PCs</Requirement>
+                            <Title>H/W Requirements</Title>
+                        </LaboratoryRequirement>
+                        <LaboratoryRequirement>
+                            <Requirement>C/C++ /MATLAB and MS Excel.</Requirement>
+                            <Title>S/W Requirements</Title>
+                        </LaboratoryRequirement>
+                    </LaboratoryRequirements>
+                    <LearningOutcomes>
+                        <LearningOutcome>
+                            <Outcome>Write algorithms and flowcharts of different numerical methods.</Outcome>
+                        </LearningOutcome>
+                        <LearningOutcome>
+                            <Outcome>Write programs in C and MATLAB to implement numerical methods for solving real life problems.</Outcome>
+                        </LearningOutcome>
+                    </LearningOutcomes>
+                    <Prerequisite>None</Prerequisite>
+                    <Rationale></Rationale>
+                </Course>
+                <Course>
+                    <Books/>
+                    <ContactHours>0</ContactHours>
+                    <CourseCode>CSe-207 </CourseCode>
+                    <CourseCredit>0.5</CourseCredit>
+                    <CourseDescriptions/>
+                    <CourseObjectives/>
+                    <CourseTitle>Electronic Devices and Circuits-II</CourseTitle>
+                    <CourseType>Theory</CourseType>
+                    <LaboratoryRequirements/>
+                    <LearningOutcomes/>
+                    <Prerequisite></Prerequisite>
+                    <Rationale></Rationale>
+                </Course>
+            </Courses>
+            <SemesterName>Semester 4</SemesterName>
+        </Semester>
+        <Semester>
+            <Courses>
+                <Course>
+                    <Books/>
+                    <ContactHours>0</ContactHours>
+                    <CourseCode>CSE 250 </CourseCode>
+                    <CourseCredit>1.0</CourseCredit>
+                    <CourseDescriptions/>
+                    <CourseObjectives/>
+                    <CourseTitle>CSE 250</CourseTitle>
+                    <CourseType>Viva-Voce</CourseType>
+                    <LaboratoryRequirements/>
+                    <LearningOutcomes/>
+                    <Prerequisite>None</Prerequisite>
+                    <Rationale></Rationale>
+                </Course>
+                <Course>
+                    <Books/>
+                    <ContactHours>0</ContactHours>
+                    <CourseCode>STAT 251              </CourseCode>
+                    <CourseCredit>3.0</CourseCredit>
+                    <CourseDescriptions/>
+                    <CourseObjectives/>
+                    <CourseTitle>Introduction to Probability and Statistics</CourseTitle>
+                    <CourseType>Theory</CourseType>
+                    <LaboratoryRequirements/>
+                    <LearningOutcomes/>
+                    <Prerequisite>None</Prerequisite>
+                    <Rationale></Rationale>
+                </Course>
+            </Courses>
+            <SemesterName>Semester 5</SemesterName>
         </Semester>
     </Semesters>
 </Syllabus>
