@@ -46,7 +46,7 @@ public class CourseServices {
             course.addNewCourseDescription(new CourseDescription());
         }
 
-        for(int i = course.getCountOfLaboratoryRequirements(); i < 7; i++) {
+        for(int i = course.getCountOfLaboratoryRequirements(); i < 15; i++) {
             course.addNewLaboratoryRequirement(new LaboratoryRequirement());
         }
 
