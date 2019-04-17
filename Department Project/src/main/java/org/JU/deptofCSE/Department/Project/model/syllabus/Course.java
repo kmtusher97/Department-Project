@@ -237,7 +237,7 @@ public class Course {
             if (ch >= '0' && ch <= '9') {
                 codeNumber += ((ch - '0') * powerOf10);
                 powerOf10 *= 10;
-            } 
+            }
         }
         return codeNumber;
     }

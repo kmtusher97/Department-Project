@@ -645,6 +645,46 @@ and charge, electric filed, force on a current, dispersion and electrical and me
             <Courses>
                 <Course>
                     <Books/>
+<<<<<<< HEAD
+                    <ContactHours>26</ContactHours>
+                    <CourseCode>CSE 156 </CourseCode>
+                    <CourseCredit>1.0</CourseCredit>
+                    <CourseDescriptions/>
+                    <CourseObjectives>
+                        <CourseObjective>
+                            <Objective>To help students to find problem definition </Objective>
+                        </CourseObjective>
+                        <CourseObjective>
+                            <Objective>To help students to find algorithm design </Objective>
+                        </CourseObjective>
+                        <CourseObjective>
+                            <Objective>To develop computer program based on theory course CSE-155 either in C or C++ or Java language </Objective>
+                        </CourseObjective>
+                    </CourseObjectives>
+                    <CourseTitle>Data Structures Laboratory </CourseTitle>
+                    <CourseType>Laboratory</CourseType>
+                    <LaboratoryRequirements/>
+                    <LearningOutcomes>
+                        <LearningOutcome>
+                            <Outcome>Understand and apply basic data structures for storage and retrieval of ordered and unordered data</Outcome>
+                        </LearningOutcome>
+                        <LearningOutcome>
+                            <Outcome>Implement and characterize algorithms for creation and manipulation of data structures like stacks, queues, linked list, etc. </Outcome>
+                        </LearningOutcome>
+                        <LearningOutcome>
+                            <Outcome> Interpret and apply appropriate data structures for implementing problem solving algorithms such as searching, insertion, deletion, traversing mechanism, etc., on various data structures</Outcome>
+                        </LearningOutcome>
+                        <LearningOutcome>
+                            <Outcome>Compute and characterize the efficiency of data structures for complex problem-solving algorithms; perform and demonstrate this knowledge and write report for realistic problem solving</Outcome>
+                        </LearningOutcome>
+                    </LearningOutcomes>
+                    <Prerequisite>C / C++ / Java </Prerequisite>
+                    <Rationale>In order to develop efficient software systems, it is essential that efficient algorithms and appropriate data structures are used. This course will help the students to develop efficient data structures and algorithms in a systematic manner.  </Rationale>
+                </Course>
+                <Course>
+                    <Books/>
+=======
+>>>>>>> d8155ed01002febdd62a3347a8c05ccfe69a60f7
                     <ContactHours>0</ContactHours>
                     <CourseCode>CSE 150</CourseCode>
                     <CourseCredit>1.0</CourseCredit>
@@ -702,6 +742,10 @@ courses so that students have ability to face viva-board confidently in their pr
             </Courses>
             <SemesterName>Semester 2</SemesterName>
         </Semester>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 9aeee8055ab32f0decc35034aec16a6acebed9c4
         <Semester>
             <Courses>
                 <Course>
@@ -814,6 +858,7 @@ courses so that students have ability to face viva-board confidently in their pr
             </Courses>
             <SemesterName>Semester 3</SemesterName>
         </Semester>
+<<<<<<< HEAD
         <Semester>
             <Courses>
                 <Course>
@@ -919,5 +964,9 @@ courses so that students have ability to face viva-board confidently in their pr
             </Courses>
             <SemesterName>Semester 5</SemesterName>
         </Semester>
+=======
+=======
+>>>>>>> d8155ed01002febdd62a3347a8c05ccfe69a60f7
+>>>>>>> 9aeee8055ab32f0decc35034aec16a6acebed9c4
     </Semesters>
 </Syllabus>
