@@ -1,20 +1,25 @@
 package org.JU.deptofCSE.Department.Project.model.routine;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "Admin")
 public class Admin {
 
     @Id
-    @Column(name = "user_id")
     private Integer id;
 
-    @Column(name = "fullName")
+    @Column(name = "fullName", unique = false, length = 200, nullable = false)
     private String fullName;
+
+    /**
+     * has one to one relationship with user
+     * have common primary key
+     */
+    @OneToOne
+    @JoinColumn
+    @MapsId
+    private User user;
 
     public Integer getId() {
         return id;
@@ -32,11 +37,4 @@ public class Admin {
         this.fullName = fullName;
     }
 
-    @Override
-    public String toString() {
-        return "Admin{" +
-                "id=" + id +
-                ", fullName='" + fullName + '\'' +
-                '}';
-    }
 }

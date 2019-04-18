@@ -1,7 +1,12 @@
 package org.JU.deptofCSE.Department.Project.controller.syllabus;
 
+import org.JU.deptofCSE.Department.Project.model.routine.Teacher;
+import org.JU.deptofCSE.Department.Project.model.routine.User;
 import org.JU.deptofCSE.Department.Project.model.syllabus.*;
+import org.JU.deptofCSE.Department.Project.service.routine.TeacherServices;
+import org.JU.deptofCSE.Department.Project.service.routine.UserServices;
 import org.JU.deptofCSE.Department.Project.service.syllabus.SyllabusServices;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,6 +22,12 @@ import java.util.SortedSet;
 @Controller
 @RequestMapping(value = "syl")
 public class SyllabusController {
+
+    @Autowired
+    UserServices userServices;
+
+    @Autowired
+    TeacherServices teacherServices;
 
     SyllabusServices syllabusServices = new SyllabusServices();
 
@@ -89,17 +100,23 @@ public class SyllabusController {
 
     /**
      * Search a syllabus with session
-     *
+     * Shows the user searching the syllabus
      * @param error
      * @return Syllabus Search form
      */
-    @RequestMapping(value = "/search/{error}", method = RequestMethod.GET)
-    public ModelAndView searchSyllabus(@PathVariable("error") String error) {
+    @RequestMapping(value = "/search/{userEmail}/{error}", method = RequestMethod.GET)
+    public ModelAndView searchSyllabus(@PathVariable("userEmail") String userEmail,
+                                       @PathVariable("error") String error) {
         SyllabusQuery syllabusQuery = new SyllabusQuery();
+
+        User user = userServices.getByEmail(userEmail);
+        Teacher teacher = teacherServices.getTeacherById(user.getId());
 
         ModelAndView searchSyllabusPage = new ModelAndView("syllabus/SyllabusQueryPage");
         searchSyllabusPage.addObject("syllabusQuery", syllabusQuery);
         searchSyllabusPage.addObject("message", error);
+        searchSyllabusPage.addObject("user", user);
+        searchSyllabusPage.addObject("teacher", teacher);
 
         return searchSyllabusPage;
     }
@@ -114,16 +131,17 @@ public class SyllabusController {
      * @return Syllabus Search page or Show Syllabus Page
      * @throws JAXBException
      */
-    @RequestMapping(value = "/viewSyll", method = RequestMethod.POST)
+    @RequestMapping(value = "/viewSyll/{userEmail}", method = RequestMethod.POST)
     public ModelAndView viewSyllabus(@ModelAttribute("syllabusQuery") SyllabusQuery syllabusQuery,
-                                     @ModelAttribute("message") String message) throws JAXBException {
+                                     @ModelAttribute("message") String message,
+                                     @PathVariable("userEmail") String userEmail) throws JAXBException {
         String syllabusName = syllabusServices.getSyllabusNameBySession(syllabusQuery.getFrom(), syllabusQuery.getTo());
 
         if (syllabusName == null) {                                               // if the requested syllabus does not exist or the parameters are invalid
-            return new ModelAndView("redirect:/syl/search/" + "error");
+            return new ModelAndView("redirect:/syl/search/" + userEmail + "/error");
         }
 
-        return new ModelAndView("redirect:/syl/showSyll/" + syllabusName);
+        return new ModelAndView("redirect:/syl/showSyll/" + syllabusName + "/" + userEmail);
     }
 
 
@@ -134,13 +152,19 @@ public class SyllabusController {
      * @return Show Syllabus page
      * @throws JAXBException
      */
-    @RequestMapping(value = "/showSyll/{fileName}", method = RequestMethod.GET)
-    public ModelAndView showSyllabus(@PathVariable("fileName") String fileName) throws JAXBException {
+    @RequestMapping(value = "/showSyll/{fileName}/{userEmail}", method = RequestMethod.GET)
+    public ModelAndView showSyllabus(@PathVariable("fileName") String fileName,
+                                     @PathVariable("userEmail") String userEmail) throws JAXBException {
         Syllabus syllabus = syllabusServices.getSyllabus(fileName);
+
+        User user = userServices.getByEmail(userEmail);
+        Teacher teacher = teacherServices.getTeacherById(user.getId());
 
         ModelAndView syllabusView = new ModelAndView("syllabus/SyllabusView");
         syllabusView.addObject("syllabus", syllabus);
         syllabusView.addObject("fileName", syllabus.makeXmlFileName());
+        syllabusView.addObject("user", user);
+        syllabusView.addObject("teacher", teacher);
 
         return syllabusView;
     }

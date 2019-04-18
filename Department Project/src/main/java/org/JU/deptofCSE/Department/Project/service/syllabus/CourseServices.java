@@ -34,19 +34,19 @@ public class CourseServices {
             course.addNewBook(new Book());
         }
 
-        for(int i = course.getCountOfCourseObjectives(); i < 11; i++) {
+        for(int i = course.getCountOfCourseObjectives(); i < 15; i++) {
             course.addNewCourseObjective(new CourseObjective());
         }
 
-        for(int i = course.getCountOfLearningOutComes(); i < 11; i++) {
+        for(int i = course.getCountOfLearningOutComes(); i < 15; i++) {
             course.addNewLearningOutcome(new LearningOutcome());
         }
 
-        for(int i = course.getCountOfCourseDescriptions(); i < 11; i++) {
+        for(int i = course.getCountOfCourseDescriptions(); i < 15; i++) {
             course.addNewCourseDescription(new CourseDescription());
         }
 
-        for(int i = course.getCountOfLaboratoryRequirements(); i < 5; i++) {
+        for(int i = course.getCountOfLaboratoryRequirements(); i < 15; i++) {
             course.addNewLaboratoryRequirement(new LaboratoryRequirement());
         }
 

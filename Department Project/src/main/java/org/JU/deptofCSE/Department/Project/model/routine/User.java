@@ -8,15 +8,27 @@ import javax.persistence.*;
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "user_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "userId")
     private Integer id;
 
-    @Column(name = "email")
+    @Column(name = "email", unique = true, length = 200, nullable = false)
     private String email;
 
-    @Column(name = "password")
+    @Column(name = "password", unique = false, length = 50, nullable = false)
     private String password;
+
+    /**
+     * has one to one relationship with admin
+     */
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+    private Admin admin;
+
+    /**
+     * has one to one relationship with teacher
+     */
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+    private Teacher teacher;
 
     public Integer getId() {
         return id;

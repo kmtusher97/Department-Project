@@ -19,19 +19,26 @@
 <div class="container-fluid" id="wrapper">
     <div class="row">
         <nav class="sidebar col-xs-12 col-sm-4 col-lg-3 col-xl-2">
-            <h1 class="site-title"><a href="index.html"><em class="fa fa-rocket"></em>Welcome Mr.</a></h1>
+            <h1 class="site-title"><a href="index.html"><em class="fa fa-rocket"></em>Welcome</a></h1>
 
             <a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><em class="fa fa-bars"></em></a>
             <ul class="nav nav-pills flex-column sidebar-nav">
-                <li class="nav-item"><a class="nav-link active" href="Dashboard.html"><em class="fa fa-dashboard"></em>
+                <li class="nav-item"><a class="nav-link active"
+                                        th:href="@{'/teacher/login/' + ${user.email}}"><em
+                    class="fa fa-dashboard"></em>
                     Dashboard <span class="sr-only">(current)</span></a></li>
                 <li class="nav-item">
-                    <a class="nav-link" href="Routine.html">
-                        <em class="fa fa-pencil-square-o"></em> Syllabus
+                    <a class="nav-link" th:href="@{'/teacher/updateInfo/' + ${teacher.id}}"><em
+                        class="fa fa-user"></em> Update Profile <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{'/syl/search/' + ${user.email} + '/q'}"><em
+                        class="fa fa-search"></em> Syllabus <span class="sr-only">(current)</span>
                     </a>
                 </li>
             </ul>
-            <a href="login.html" class="logout-button"><em class="fa fa-power-off"></em> Signout</a>
+            <a th:href="@{/login}" class="logout-button"><em class="fa fa-power-off"></em> Signout</a>
         </nav>
         <main class="col-xs-12 col-sm-8 col-lg-9 col-xl-10 pt-3 pl-4 ml-auto">
             <header class="page-header row justify-center">
@@ -41,17 +48,17 @@
                 <div class="dropdown user-dropdown col-md-6 col-lg-4 text-center text-md-right"><a
                     class="btn btn-stripped dropdown-toggle" href="#" id="dropdownMenuLink" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
-                    <img th:src="@{/Asset/images/farzana.jpg}" alt="profile photo" class="circle float-left profile-photo" width="50"
+                    <img th:src="@{/Asset/images/profilePic.png}" alt="profile photo"
+                         class="circle float-left profile-photo" width="50"
                          height="auto">
                     <div class="username mt-1">
-                        <h4 class="mb-1">Teacher name</h4>
-                        <h6 class="text-muted">General User</h6>
+                        <h4 class="mb-1" th:text="${teacher.fullName}"></h4>
                     </div>
                 </a>
                     <div class="dropdown-menu dropdown-menu-right" style="margin-right: 1.5rem;"
                          aria-labelledby="dropdownMenuLink"><a class="dropdown-item" href="#"><em
                         class="fa fa-user-circle mr-1"></em> View Profile</a>
-                        <a class="dropdown-item" href="#"><em class="fa fa-power-off mr-1"></em> Logout</a></div>
+                        <a class="dropdown-item" href=""><em class="fa fa-power-off mr-1"></em> Logout</a></div>
                 </div>
                 <div class="clear"></div>
             </header>
@@ -60,16 +67,6 @@
                     <section class="row">
                         <div class="col-md-12 col-lg-8">
 
-                        </div>
-                        <div class="col-md-12 col-lg-4">
-                            <div class="card mb-4">
-                                <div class="card-block">
-                                    <h3 class="card-title">Calender</h3>
-                                    <div class="user-progress justify-center">
-                                        <div id="calendar"></div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </section>
                 </div>

@@ -33,6 +33,11 @@
                         <em class="fa fa-pencil-square-o"></em> Syllabus
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/admin/addUser/{error} (error=${'+'})}">
+                        <em class="fa fa-users"></em> Add User
+                    </a>
+                </li>
             </ul>
             <a th:href="@{/login}" class="logout-button"><em class="fa fa-power-off"></em> Signout</a>
         </nav>
@@ -96,6 +101,5 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
         integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
         crossorigin="anonymous"></script>
-
 </body>
 </html>
