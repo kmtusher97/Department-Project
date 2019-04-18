@@ -7,6 +7,34 @@
         <Semester>
             <Courses>
                 <Course>
+                    <Books/>
+                    <ContactHours>0</ContactHours>
+                    <CourseCode>CSE 100</CourseCode>
+                    <CourseCredit>1.0</CourseCredit>
+                    <CourseDescriptions>
+                        <CourseDescription>
+                            <Description></Description>
+                            <Title>The viva-voce will be held on all the courses of first year first semester.</Title>
+                        </CourseDescription>
+                    </CourseDescriptions>
+                    <CourseObjectives>
+                        <CourseObjective>
+                            <Objective>Measure and evaluate the students through oral examination on their previous taught/learned courses</Objective>
+                        </CourseObjective>
+                    </CourseObjectives>
+                    <CourseTitle>Viva-Voce</CourseTitle>
+                    <CourseType>Viva-Voce</CourseType>
+                    <LaboratoryRequirements/>
+                    <LearningOutcomes>
+                        <LearningOutcome>
+                            <Outcome>Expose their views orally in different situations on diverse fields of Computer Science and Engineering</Outcome>
+                        </LearningOutcome>
+                    </LearningOutcomes>
+                    <Prerequisite>None</Prerequisite>
+                    <Rationale>Viva-Voce is used to measure and evaluate the students through oral examination on their previous taught/learned&#xD;
+courses so that students have ability to face viva-board confidently in their professional life.</Rationale>
+                </Course>
+                <Course>
                     <Books>
                         <Book>
                             <Authors>Marvin L. Bittinger, David J. Ellenbogen and Scott A. Surgent</Authors>
@@ -114,8 +142,686 @@
                     <Prerequisite>None</Prerequisite>
                     <Rationale></Rationale>
                 </Course>
+                <Course>
+                    <Books>
+                        <Book>
+                            <Authors>Herbert Schildt</Authors>
+                            <BookName>Teach yourself C</BookName>
+                            <Edition>3rd</Edition>
+                            <PublishYear>1997</PublishYear>
+                            <Publisher>McGraw-Hill</Publisher>
+                        </Book>
+                        <Book>
+                            <Authors>E. Balagurusamy</Authors>
+                            <BookName>Programming in ANSI C</BookName>
+                            <Edition>7th</Edition>
+                            <PublishYear>2016</PublishYear>
+                            <Publisher>Tata Mcgraw-Hill</Publisher>
+                        </Book>
+                        <Book>
+                            <Authors>Herbert Schildt</Authors>
+                            <BookName>C: The Complete Reference</BookName>
+                            <Edition>4th</Edition>
+                            <PublishYear>2000</PublishYear>
+                            <Publisher>McGraw-Hill</Publisher>
+                        </Book>
+                        <Book>
+                            <Authors>Paul Deitel and Harvey Deitel</Authors>
+                            <BookName>C-How to Program</BookName>
+                            <Edition>7th</Edition>
+                            <PublishYear>2017</PublishYear>
+                            <Publisher>Prentice Hall</Publisher>
+                        </Book>
+                    </Books>
+                    <ContactHours>39</ContactHours>
+                    <CourseCode>CSE 105</CourseCode>
+                    <CourseCredit>3.0</CourseCredit>
+                    <CourseDescriptions>
+                        <CourseDescription>
+                            <Description>C overviews, History and Features, Basic Structure of C Program and Hello World Program, C Program Development Environment</Description>
+                            <Title>Structured Programming Language fundamentals</Title>
+                        </CourseDescription>
+                        <CourseDescription>
+                            <Description>Declaring variables and assigning values, input from keyboard, add comments, Arithmetic Operators, Relational Operators, Logical Operators, Assignment Operators, Increment and Decrement Operators, Conditional Operators, Bitwise Operators, Special Operators, Arithmetic Expressions, Evaluation of Expressions, Type Conversions in Expressions, Operator Precedence and Associativity</Description>
+                            <Title>Variables, Constants, Data Types, Operators &amp; Expression</Title>
+                        </CourseDescription>
+                        <CourseDescription>
+                            <Description>Decision Making Statements: if-else statement, switch statement; Looping Statements: for loop, while loop, nested if, do while loop, nested loop; Jump Statements: continue, break</Description>
+                            <Title>Program control statements</Title>
+                        </CourseDescription>
+                        <CourseDescription>
+                            <Description>Function prototype, recursion, parameters, arguments, scope rules and storage classes.</Description>
+                            <Title>Functions</Title>
+                        </CourseDescription>
+                        <CourseDescription>
+                            <Description>One and Multi-dimensional arrays, Character Arrays and Strings, Basic of Pointer, pointer expression, pointer arrays.</Description>
+                            <Title>Arrays and Pointer</Title>
+                        </CourseDescription>
+                        <CourseDescription>
+                            <Description>Structures, Unions, Enumerations, Standard input and output, Formatted input and output, File access; Variable length argument list; Command line parameters; Error Handling; Graphics; Linking; Library functions</Description>
+                            <Title>User defined data types and Input/ Output</Title>
+                        </CourseDescription>
+                        <CourseDescription>
+                            <Description>Dynamic Memory Allocation and Linked List, Macro substitution, File inclusion, Compiler Control Directives</Description>
+                            <Title>Memory manipulation and Preprocessor</Title>
+                        </CourseDescription>
+                    </CourseDescriptions>
+                    <CourseObjectives>
+                        <CourseObjective>
+                            <Objective>To make students familiar with basic programming principles, good programming style, structured approach to program design, development, testing and documentation</Objective>
+                        </CourseObjective>
+                    </CourseObjectives>
+                    <CourseTitle>Structured Programming</CourseTitle>
+                    <CourseType>Theory</CourseType>
+                    <LaboratoryRequirements/>
+                    <LearningOutcomes>
+                        <LearningOutcome>
+                            <Outcome>Formulate problems step by step and design computer programs in a structured way</Outcome>
+                        </LearningOutcome>
+                        <LearningOutcome>
+                            <Outcome>Identify programming data structures and describe programming methodologies</Outcome>
+                        </LearningOutcome>
+                        <LearningOutcome>
+                            <Outcome>Apply fundamental programming concepts using high-level programming language to solve problems</Outcome>
+                        </LearningOutcome>
+                    </LearningOutcomes>
+                    <Prerequisite>None</Prerequisite>
+                    <Rationale>This course is designed to introduce students in the algorithmic way of thinking and problem solving by computers. Students learn the fundamental principles of structured programming. Typical characteristics and mechanisms of a structured programming language are introduced and students are introduced to the design and development of structured programs in this language. C programming language is used as the course basis. Lectures are completed by lab practice where theoretical knowledge is applied in an appropriate software environment.</Rationale>
+                </Course>
+                <Course>
+                    <Books/>
+                    <ContactHours>26</ContactHours>
+                    <CourseCode>CSE 106</CourseCode>
+                    <CourseCredit>1.0</CourseCredit>
+                    <CourseDescriptions>
+                        <CourseDescription>
+                            <Description>Code::Block or Dev-C++ or Visual C++ - How to write, save, compile and run a C program</Description>
+                            <Title>Introduction:</Title>
+                        </CourseDescription>
+                        <CourseDescription>
+                            <Description></Description>
+                            <Title>Variables, Constants, Data Types, Operators &amp; Expression (PART-I)</Title>
+                        </CourseDescription>
+                        <CourseDescription>
+                            <Description></Description>
+                            <Title>Variables, Constants, Data Types, Operators &amp; Expression (PART-II)</Title>
+                        </CourseDescription>
+                        <CourseDescription>
+                            <Description></Description>
+                            <Title>Managing Input and Output Operations and Conditional Statements</Title>
+                        </CourseDescription>
+                        <CourseDescription>
+                            <Description></Description>
+                            <Title>Looping Statements</Title>
+                        </CourseDescription>
+                        <CourseDescription>
+                            <Description></Description>
+                            <Title>Arrays and String</Title>
+                        </CourseDescription>
+                        <CourseDescription>
+                            <Description></Description>
+                            <Title>Search and Sorting</Title>
+                        </CourseDescription>
+                        <CourseDescription>
+                            <Description></Description>
+                            <Title>User-defined Functions</Title>
+                        </CourseDescription>
+                        <CourseDescription>
+                            <Description></Description>
+                            <Title>Recursion</Title>
+                        </CourseDescription>
+                        <CourseDescription>
+                            <Description></Description>
+                            <Title>Pointer</Title>
+                        </CourseDescription>
+                        <CourseDescription>
+                            <Description></Description>
+                            <Title>Structure and Union and File processing</Title>
+                        </CourseDescription>
+                    </CourseDescriptions>
+                    <CourseObjectives>
+                        <CourseObjective>
+                            <Objective>To introduce students to give practical experience on basic programming principles, good programming style, design and solve the problems in a structured approach</Objective>
+                        </CourseObjective>
+                    </CourseObjectives>
+                    <CourseTitle>Structured Programming Laboratory</CourseTitle>
+                    <CourseType>Laboratory</CourseType>
+                    <LaboratoryRequirements>
+                        <LaboratoryRequirement>
+                            <Requirement>Core i5, 1.8 GHz, 4 GB RAM, 500 MB disk space</Requirement>
+                            <Title>H/W Requirements</Title>
+                        </LaboratoryRequirement>
+                        <LaboratoryRequirement>
+                            <Requirement>Code::Block/ Microsoft Visual Studio Community</Requirement>
+                            <Title>S/W Requirements</Title>
+                        </LaboratoryRequirement>
+                    </LaboratoryRequirements>
+                    <LearningOutcomes>
+                        <LearningOutcome>
+                            <Outcome>Solve problems step by step and design computer programs</Outcome>
+                        </LearningOutcome>
+                        <LearningOutcome>
+                            <Outcome>Apply fundamental programming concepts using high-level programming language</Outcome>
+                        </LearningOutcome>
+                    </LearningOutcomes>
+                    <Prerequisite>None</Prerequisite>
+                    <Rationale>This lab course is designed for the students to achieve a hands on experience on basic programming. C programming language is used as the course basis. Theoretical lectures are completed by lab practice where theoretical knowledge is applied in an appropriate software environment</Rationale>
+                </Course>
+                <Course>
+                    <Books>
+                        <Book>
+                            <Authors>R. L. Boylestad</Authors>
+                            <BookName>Introductory Circuit Analysis</BookName>
+                            <Edition>10th</Edition>
+                            <PublishYear>2010</PublishYear>
+                            <Publisher>Prentice Hall</Publisher>
+                        </Book>
+                        <Book>
+                            <Authors>R. M. Kerchner, G. F. Corcoran</Authors>
+                            <BookName>Alternating Current Circuits</BookName>
+                            <Edition>7th</Edition>
+                            <PublishYear>2010</PublishYear>
+                            <Publisher>Wiley</Publisher>
+                        </Book>
+                        <Book>
+                            <Authors>K. C. A. Smith, R. E. Alley</Authors>
+                            <BookName>Electrical Circuits: An Introduction</BookName>
+                            <Edition>2nd</Edition>
+                            <PublishYear>1992</PublishYear>
+                            <Publisher>University of Cambridge</Publisher>
+                        </Book>
+                        <Book>
+                            <Authors>D. P. Kothari, I. J. Nagrath</Authors>
+                            <BookName>Electric Machines</BookName>
+                            <Edition>4th</Edition>
+                            <PublishYear>2004</PublishYear>
+                            <Publisher>Tata McGraw-Hill</Publisher>
+                        </Book>
+                    </Books>
+                    <ContactHours>39</ContactHours>
+                    <CourseCode>CSE 107</CourseCode>
+                    <CourseCredit>3.0</CourseCredit>
+                    <CourseDescriptions>
+                        <CourseDescription>
+                            <Description>Voltage sources; Voltage sources in parallel; Open and short circuits; Current sources in series and parallel; Mesh analysis; Nodal analysis; Star-delta and delta-star conversion</Description>
+                            <Title>Network sources and Analysis</Title>
+                        </CourseDescription>
+                        <CourseDescription>
+                            <Description>Resistors, inductors and capacitors in series and parallel; Transient response in capacitive networks; Charging and discharging phases; R-L transients; Storage cycle, Decay phase.</Description>
+                            <Title>Basic Passive Elements</Title>
+                        </CourseDescription>
+                        <CourseDescription>
+                            <Description>Superposition theorem; Thevenin’s theorem; Norton’s theorem</Description>
+                            <Title>Network Theorems 01</Title>
+                        </CourseDescription>
+                        <CourseDescription>
+                            <Description>Maximum power transfer theorem; Millman’s theorem; Substitution theorem; Reciprocity theorem</Description>
+                            <Title>Network Theorems 02</Title>
+                        </CourseDescription>
+                        <CourseDescription>
+                            <Description>Fundamentals of AC and the Basic elements and Phasors: Generation of alternating voltage &amp; currents; Sine wave; General format of sinusoidal voltage and currents; Phase &amp; algebraic representations of sinusoids; Average &amp; RMS (effective) values;</Description>
+                            <Title>AC: Part I</Title>
+                        </CourseDescription>
+                        <CourseDescription>
+                            <Description>Response of basic R,L,C elements to a sinusoidal voltage &amp; currents; frequency response of basic elements; Resonance; Average power &amp; power factor; Complex numbers: Rectangular &amp; polar form: Active &amp; reactive power; Series &amp; parallel resonance circuit; Qualify factor, Selectivity.</Description>
+                            <Title>AC: Part II</Title>
+                        </CourseDescription>
+                        <CourseDescription>
+                            <Description>Construction and features of transformer; Transformer on no- load and on load; emf-equation; Phasor diagram; Equivalent circuits; Losses and efficiency</Description>
+                            <Title>Transformer</Title>
+                        </CourseDescription>
+                    </CourseDescriptions>
+                    <CourseObjectives>
+                        <CourseObjective>
+                            <Objective>To use basic circuit theory to solve problems in electrical engineering and analyze/design simple circuits</Objective>
+                        </CourseObjective>
+                        <CourseObjective>
+                            <Objective>To use laboratory equipment such as voltmeter, ammeter, oscilloscope and signal generator</Objective>
+                        </CourseObjective>
+                        <CourseObjective>
+                            <Objective>To describe the most important components and functioning of the power distribution network</Objective>
+                        </CourseObjective>
+                        <CourseObjective>
+                            <Objective>To have knowledge about the energy production using, e.g., solar cells, and basic DC motors/generators</Objective>
+                        </CourseObjective>
+                    </CourseObjectives>
+                    <CourseTitle>Electrical Circuits</CourseTitle>
+                    <CourseType>Theory</CourseType>
+                    <LaboratoryRequirements/>
+                    <LearningOutcomes>
+                        <LearningOutcome>
+                            <Outcome>understand the basic theory and mathematical relationships in circuit analysis</Outcome>
+                        </LearningOutcome>
+                        <LearningOutcome>
+                            <Outcome>understand basic terms and results from the theory about circuits with resistances, capacitances and inductance components, as well as basic semiconductor components</Outcome>
+                        </LearningOutcome>
+                        <LearningOutcome>
+                            <Outcome>know the principles for ideal circuits and power grid components</Outcome>
+                        </LearningOutcome>
+                    </LearningOutcomes>
+                    <Prerequisite>None</Prerequisite>
+                    <Rationale>The course gives an introduction to electrical circuit theory. It provides a fundament for understanding and designing simple circuits and systems built with analog electrical circuit elements</Rationale>
+                </Course>
+                <Course>
+                    <Books/>
+                    <ContactHours>26</ContactHours>
+                    <CourseCode>CSE 108</CourseCode>
+                    <CourseCredit>1.0</CourseCredit>
+                    <CourseDescriptions>
+                        <CourseDescription>
+                            <Description>3</Description>
+                            <Title>Familiar with Electrical Lab components and Equipment</Title>
+                        </CourseDescription>
+                        <CourseDescription>
+                            <Description>3</Description>
+                            <Title>Measurement of DC Voltage and Current</Title>
+                        </CourseDescription>
+                        <CourseDescription>
+                            <Description>3</Description>
+                            <Title>Computer Analysis of Electrical Circuit</Title>
+                        </CourseDescription>
+                        <CourseDescription>
+                            <Description>3</Description>
+                            <Title>Measurement of Instrument Characteristics</Title>
+                        </CourseDescription>
+                        <CourseDescription>
+                            <Description>3</Description>
+                            <Title>Δ/Y Conversions and the Wheatstone Bridge</Title>
+                        </CourseDescription>
+                        <CourseDescription>
+                            <Description>3</Description>
+                            <Title>Network Theorems-I</Title>
+                        </CourseDescription>
+                        <CourseDescription>
+                            <Description>3</Description>
+                            <Title>Network Theorems-II</Title>
+                        </CourseDescription>
+                        <CourseDescription>
+                            <Description>3</Description>
+                            <Title>Investigation of Digital Oscilloscope and Measurement</Title>
+                        </CourseDescription>
+                        <CourseDescription>
+                            <Description>3</Description>
+                            <Title>Observation of RC and RL circuit</Title>
+                        </CourseDescription>
+                    </CourseDescriptions>
+                    <CourseObjectives>
+                        <CourseObjective>
+                            <Objective>to use laboratory equipment such as voltmeter, ammeter, oscilloscope and signal generator</Objective>
+                        </CourseObjective>
+                        <CourseObjective>
+                            <Objective>to describe the most important components and functioning of the power distribution network by experiment</Objective>
+                        </CourseObjective>
+                        <CourseObjective>
+                            <Objective>To have knowledge about the energy production using, e.g., solar cells, and basic DC motors/generators</Objective>
+                        </CourseObjective>
+                    </CourseObjectives>
+                    <CourseTitle>Electrical Circuits laboratory</CourseTitle>
+                    <CourseType>Laboratory</CourseType>
+                    <LaboratoryRequirements>
+                        <LaboratoryRequirement>
+                            <Requirement>Ammeter, Voltmeter, Oscilloscope, Power Supply, Pcs, Registers, Capacitors, Inductors, Transformers</Requirement>
+                            <Title>H/W Requirements</Title>
+                        </LaboratoryRequirement>
+                        <LaboratoryRequirement>
+                            <Requirement>OrCad software</Requirement>
+                            <Title>S/W Requirements</Title>
+                        </LaboratoryRequirement>
+                    </LaboratoryRequirements>
+                    <LearningOutcomes>
+                        <LearningOutcome>
+                            <Outcome>After successful completion of this lab, the students should be able to:</Outcome>
+                        </LearningOutcome>
+                    </LearningOutcomes>
+                    <Prerequisite>None</Prerequisite>
+                    <Rationale>Through examples and laboratory exercises the students should achieve a practical knowledge of analog electronic&#xD;
+circuit elements, exercise in use of basic laboratory equipment and an introduction to writing laboratory reports</Rationale>
+                </Course>
+                <Course>
+                    <Books>
+                        <Book>
+                            <Authors>DavidHalliday, Robert Resnick</Authors>
+                            <BookName>Physics Part-II</BookName>
+                            <Edition>2nd</Edition>
+                            <PublishYear>1992</PublishYear>
+                            <Publisher>Wiley Eastern Limited</Publisher>
+                        </Book>
+                        <Book>
+                            <Authors>Edward M. Purcell, David J. Morin</Authors>
+                            <BookName>Electricity and Magnetism</BookName>
+                            <Edition>3rd</Edition>
+                            <PublishYear>2013</PublishYear>
+                            <Publisher>Cambridge University Press</Publisher>
+                        </Book>
+                        <Book>
+                            <Authors>Grant R. Fowles</Authors>
+                            <BookName>Introduction to Modern Optics</BookName>
+                            <Edition>2nd</Edition>
+                            <PublishYear>1989</PublishYear>
+                            <Publisher>Dover Publications</Publisher>
+                        </Book>
+                        <Book>
+                            <Authors>Wayne M. Saslow</Authors>
+                            <BookName>Electricity, Magnetism, and Light</BookName>
+                            <Edition>1st</Edition>
+                            <PublishYear>2004</PublishYear>
+                            <Publisher>Academic Press</Publisher>
+                        </Book>
+                    </Books>
+                    <ContactHours>39</ContactHours>
+                    <CourseCode>PHY 109</CourseCode>
+                    <CourseCredit>3.0</CourseCredit>
+                    <CourseDescriptions>
+                        <CourseDescription>
+                            <Description>Simple phenomena in electrostatics; Electrostatic induction and charge density; Coulomb's law; Electric field &amp; field strength; Point charge in an electric field</Description>
+                            <Title>Charge, Electric field &amp; Gauss's Law-I</Title>
+                        </CourseDescription>
+                        <CourseDescription>
+                            <Description>Dipole in an electric field; Electric flux; Gauss's law and some applications; Electric potential; Potential due to a point charge; Equipotential surfaces; Potential energy; Potential gradient; Capacitance and its calculation; Parallel plate capacitor with dielectric; Dielectric &amp; Gauss's law; Electric vectors; Energy stored in an electric field</Description>
+                            <Title>Charge, Electric field &amp; Gauss's Law-II</Title>
+                        </CourseDescription>
+                        <CourseDescription>
+                            <Description>Current and Ohm's law; E.M.F. and potentiaFdifference; Kirehhoffs laws; Whetstone bridge; Single loop &amp; multi loop circuits; Simple RC and RL circuits, Kirchhoff's laws.</Description>
+                            <Title>Electric current, Simple circuits and Electrical Measurements-I</Title>
+                        </CourseDescription>
+                        <CourseDescription>
+                            <Description>The potentiometer; Moving coil Galvanometer; Ammeter; Voltmeter; Multimeter; Wattmeter &amp; Energy meter; Measurements of Voltage, Current, Resistance, Inductance, Capacitance, Power and Energy.</Description>
+                            <Title>Electric current, Simple circuits and Electrical Measurements-II</Title>
+                        </CourseDescription>
+                        <CourseDescription>
+                            <Description>Coulomb's law; Magnetic field and field strength; Magnetic force on current; Ampere's law; Directions of current and field; Maxwell's cork screw rule; Fleming's left hand rule; Magnetic field near long wire; Magnetic field for solenoid; Biot-savart law. Faraday's law of electromagnetic induction; Fleming's right hand rule; Lenz's law.</Description>
+                            <Title>Magnetic Field &amp; Force on Current</Title>
+                        </CourseDescription>
+                        <CourseDescription>
+                            <Description>Poles and dipoles; Coulomb's law for magnets &amp; Gauss's theorem of magnetism; Dia-magnetism, Paramagnetism and Ferro-magnetism; Magnetomotive force and field intensity; Concept of self and mutual inductance; Coefficient of magnetic coupling; Rise of current and decay of current in Inductive circuit; Energy in magnetic field; Inductance in series and parallel; Hysteresis and eddy current losses.</Description>
+                            <Title>Magnetic properties of matter</Title>
+                        </CourseDescription>
+                        <CourseDescription>
+                            <Description>Refraction and total internal reflection; Group velocity and Phase velocity of light; Dispersion; Interference; Holography; Fresnel and Fraunhofer diffraction; Polarization of light wave</Description>
+                            <Title>Optics</Title>
+                        </CourseDescription>
+                    </CourseDescriptions>
+                    <CourseObjectives>
+                        <CourseObjective>
+                            <Objective>To use basic circuit theory of charge, electric field and laws of electrical simple circuits</Objective>
+                        </CourseObjective>
+                        <CourseObjective>
+                            <Objective>To use laboratory equipment such as voltmeter, ammeter, oscilloscope and signal generator</Objective>
+                        </CourseObjective>
+                        <CourseObjective>
+                            <Objective>To describe the basic circuit theory of Magnetic field, force on current and magnetic properties of matter.</Objective>
+                        </CourseObjective>
+                    </CourseObjectives>
+                    <CourseTitle>Physics</CourseTitle>
+                    <CourseType>Theory</CourseType>
+                    <LaboratoryRequirements/>
+                    <LearningOutcomes>
+                        <LearningOutcome>
+                            <Outcome>understand basic circuit theory of charge, electric field and laws of electrical simple circuits</Outcome>
+                        </LearningOutcome>
+                        <LearningOutcome>
+                            <Outcome>understand the basic circuit theory of Magnetic field, force on current and magnetic properties of matter</Outcome>
+                        </LearningOutcome>
+                        <LearningOutcome>
+                            <Outcome>know the principles of optics</Outcome>
+                        </LearningOutcome>
+                    </LearningOutcomes>
+                    <Prerequisite>None</Prerequisite>
+                    <Rationale>The course gives an introduction to electricity and magnetism and optics. It provides a fundament for understanding&#xD;
+and charge, electric filed, force on a current, dispersion and electrical and mechanical measurement</Rationale>
+                </Course>
+                <Course>
+                    <Books/>
+                    <ContactHours>26</ContactHours>
+                    <CourseCode>URP 112</CourseCode>
+                    <CourseCredit>1.0</CourseCredit>
+                    <CourseDescriptions>
+                        <CourseDescription>
+                            <Description></Description>
+                            <Title>Getting familiar with the Auto CAD Environment. Toolbars, working area, sub menus, working modes. Starting with some basic commands</Title>
+                        </CourseDescription>
+                        <CourseDescription>
+                            <Description></Description>
+                            <Title>Study addressing schemes with different commands</Title>
+                        </CourseDescription>
+                        <CourseDescription>
+                            <Description></Description>
+                            <Title>Studying basic objects and their commands e.g. circle, donut rectangle, arc, ellipse, polygon</Title>
+                        </CourseDescription>
+                        <CourseDescription>
+                            <Description></Description>
+                            <Title>Studying commands that duplicate objects e.g. array, offset and modify commands e.g. trim, break, chamfer, fillet</Title>
+                        </CourseDescription>
+                        <CourseDescription>
+                            <Description></Description>
+                            <Title>Studying Mirror, hatch, ltype, adding toolbars and object snap, zoom, text</Title>
+                        </CourseDescription>
+                        <CourseDescription>
+                            <Description></Description>
+                            <Title>Making Isometric objects with isometric settings</Title>
+                        </CourseDescription>
+                        <CourseDescription>
+                            <Description></Description>
+                            <Title>Applying dimensions (Aligned, Radius, Diameter, Angular, Leaders). Increasing / Decreasing working area, changing measuring scales</Title>
+                        </CourseDescription>
+                        <CourseDescription>
+                            <Description></Description>
+                            <Title>Changing properties of dimensions through style. Modifying properties of objects. Changing dimensions using stretch and extend</Title>
+                        </CourseDescription>
+                        <CourseDescription>
+                            <Description></Description>
+                            <Title>Changing views for 3d drawings, studying Solids and 3d objects box, sphere, cylinder, cone, wedge, torus, extrude, revolve</Title>
+                        </CourseDescription>
+                    </CourseDescriptions>
+                    <CourseObjectives>
+                        <CourseObjective>
+                            <Objective>To enable students to produce 2D and 3D engineering drawings using CAD tools</Objective>
+                        </CourseObjective>
+                    </CourseObjectives>
+                    <CourseTitle>Computer Aided Engineering Drawing Laboratory</CourseTitle>
+                    <CourseType>Laboratory</CourseType>
+                    <LaboratoryRequirements>
+                        <LaboratoryRequirement>
+                            <Requirement>PCs</Requirement>
+                            <Title>H/W Requirements</Title>
+                        </LaboratoryRequirement>
+                        <LaboratoryRequirement>
+                            <Requirement>AutoCAD software</Requirement>
+                            <Title>S/W Requirements</Title>
+                        </LaboratoryRequirement>
+                    </LaboratoryRequirements>
+                    <LearningOutcomes>
+                        <LearningOutcome>
+                            <Outcome>Produce 2D and 3D engineering drawings using CAD tools</Outcome>
+                        </LearningOutcome>
+                    </LearningOutcomes>
+                    <Prerequisite>None</Prerequisite>
+                    <Rationale></Rationale>
+                </Course>
             </Courses>
             <SemesterName>Semester 1</SemesterName>
+        </Semester>
+        <Semester>
+            <Courses>
+                <Course>
+                    <Books/>
+                    <ContactHours>26</ContactHours>
+                    <CourseCode>CSE 156 </CourseCode>
+                    <CourseCredit>1.0</CourseCredit>
+                    <CourseDescriptions/>
+                    <CourseObjectives>
+                        <CourseObjective>
+                            <Objective>To help students to find problem definition </Objective>
+                        </CourseObjective>
+                        <CourseObjective>
+                            <Objective>To help students to find algorithm design </Objective>
+                        </CourseObjective>
+                        <CourseObjective>
+                            <Objective>To develop computer program based on theory course CSE-155 either in C or C++ or Java language </Objective>
+                        </CourseObjective>
+                    </CourseObjectives>
+                    <CourseTitle>Data Structures Laboratory </CourseTitle>
+                    <CourseType>Laboratory</CourseType>
+                    <LaboratoryRequirements/>
+                    <LearningOutcomes>
+                        <LearningOutcome>
+                            <Outcome>Understand and apply basic data structures for storage and retrieval of ordered and unordered data</Outcome>
+                        </LearningOutcome>
+                        <LearningOutcome>
+                            <Outcome>Implement and characterize algorithms for creation and manipulation of data structures like stacks, queues, linked list, etc. </Outcome>
+                        </LearningOutcome>
+                        <LearningOutcome>
+                            <Outcome> Interpret and apply appropriate data structures for implementing problem solving algorithms such as searching, insertion, deletion, traversing mechanism, etc., on various data structures</Outcome>
+                        </LearningOutcome>
+                        <LearningOutcome>
+                            <Outcome>Compute and characterize the efficiency of data structures for complex problem-solving algorithms; perform and demonstrate this knowledge and write report for realistic problem solving</Outcome>
+                        </LearningOutcome>
+                    </LearningOutcomes>
+                    <Prerequisite>C / C++ / Java </Prerequisite>
+                    <Rationale>In order to develop efficient software systems, it is essential that efficient algorithms and appropriate data structures are used. This course will help the students to develop efficient data structures and algorithms in a systematic manner.  </Rationale>
+                </Course>
+                <Course>
+                    <Books/>
+                    <ContactHours>0</ContactHours>
+                    <CourseCode>CSE 150</CourseCode>
+                    <CourseCredit>1.0</CourseCredit>
+                    <CourseDescriptions>
+                        <CourseDescription>
+                            <Description></Description>
+                            <Title>The viva-voce will be held on all the courses of first year second semester</Title>
+                        </CourseDescription>
+                    </CourseDescriptions>
+                    <CourseObjectives>
+                        <CourseObjective>
+                            <Objective>Measure and evaluate the students through oral examination on their previous taught/learned courses</Objective>
+                        </CourseObjective>
+                    </CourseObjectives>
+                    <CourseTitle>Viva-Voce</CourseTitle>
+                    <CourseType>Viva-Voce</CourseType>
+                    <LaboratoryRequirements/>
+                    <LearningOutcomes>
+                        <LearningOutcome>
+                            <Outcome>After successful completion of this course, students should be able to:  Expose their views orally in different situations on diverse fields of Computer Science and Engineering</Outcome>
+                        </LearningOutcome>
+                    </LearningOutcomes>
+                    <Prerequisite>None</Prerequisite>
+                    <Rationale>Viva-Voce is used to measure and evaluate the students through oral examination on their previous taught/learned&#xD;
+courses so that students have ability to face viva-board confidently in their professional life</Rationale>
+                </Course>
+            </Courses>
+            <SemesterName>Semester 2</SemesterName>
+        </Semester>
+        <Semester>
+            <Courses>
+                <Course>
+                    <Books>
+                        <Book>
+                            <Authors>George E. Hay </Authors>
+                            <BookName>Vector and Tensor Analysis </BookName>
+                            <Edition>1st</Edition>
+                            <PublishYear>2012 </PublishYear>
+                            <Publisher>Dover Publications </Publisher>
+                        </Book>
+                        <Book>
+                            <Authors>Schaum's Outline Complex Variables </Authors>
+                            <BookName>Schaum's Outline Complex Variables </BookName>
+                            <Edition>2nd</Edition>
+                            <PublishYear>2009</PublishYear>
+                            <Publisher>McGraw-Hill</Publisher>
+                        </Book>
+                        <Book>
+                            <Authors>Gerald B. Folland</Authors>
+                            <BookName>Fourier Analysis and Its Applications</BookName>
+                            <Edition>2nd</Edition>
+                            <PublishYear>2009</PublishYear>
+                            <Publisher>American Mathematical Society</Publisher>
+                        </Book>
+                        <Book>
+                            <Authors>Phil Dyke </Authors>
+                            <BookName>An Introduction to Laplace Transforms and Fourier Series </BookName>
+                            <Edition>2nd</Edition>
+                            <PublishYear>2014 </PublishYear>
+                            <Publisher>Springer</Publisher>
+                        </Book>
+                    </Books>
+                    <ContactHours>39</ContactHours>
+                    <CourseCode>MATH 201 </CourseCode>
+                    <CourseCredit>3.0</CourseCredit>
+                    <CourseDescriptions>
+                        <CourseDescription>
+                            <Description>Definition and properties, subspaces, basis and dimension, change of basis; Linear Transformation (LT): definition and properties, linear operator matrix, geometry of LT, standard plane LT</Description>
+                            <Title>Vector Spaces </Title>
+                        </CourseDescription>
+                        <CourseDescription>
+                            <Description>Differentiation and integration of vectors together with elementary applications; Definition of line, surface and volume integrals; Gradient, divergence and curl of point functions, various formulae, Gauss’s theorem, Stoke’s theorem, Green’s theorem. </Description>
+                            <Title>Vector Calculus </Title>
+                        </CourseDescription>
+                        <CourseDescription>
+                            <Description>Complex number system; General functions of a complex variable; Limits and continuity of a function of complex variable and related theorems; Complex differentiation and the Cauchy’s Riemann Equations; Mapping by elementary functions</Description>
+                            <Title>Complex Variable </Title>
+                        </CourseDescription>
+                        <CourseDescription>
+                            <Description>Line integral of a complex function; Cauchy’s Integral Theorem; Cauchy’s Integral Formula; Liouville’s Theorem; Taylor’s Theorem and Laurent’s Theorem. Singular points; Residue; Cauchy’s Residue Theorem. Evaluation of residues; Contour integration; Conformal mapping</Description>
+                            <Title>Integral Theorem </Title>
+                        </CourseDescription>
+                        <CourseDescription>
+                            <Description>Real and complex form of Fourier series; Finite transform; Fourier Integral; Fourier transforms and their uses in solving boundary value problems of wave equations</Description>
+                            <Title>Fourier Analysis </Title>
+                        </CourseDescription>
+                        <CourseDescription>
+                            <Description>Definition; Laplace transforms of some elementary functions; Sufficient conditions for existence of Laplace transforms; Inverse Laplace transforms; Laplace transforms of derivatives. </Description>
+                            <Title>Laplace Transforms </Title>
+                        </CourseDescription>
+                        <CourseDescription>
+                            <Description>The unit step function; Periodic function; Some special theorems on Laplace transforms; Partial fraction; Solutions of differential equations by Laplace transforms; Evaluation of improper integrals</Description>
+                            <Title></Title>
+                        </CourseDescription>
+                    </CourseDescriptions>
+                    <CourseObjectives>
+                        <CourseObjective>
+                            <Objective> Introduce and develop the methods of vector analysis</Objective>
+                        </CourseObjective>
+                        <CourseObjective>
+                            <Objective>Introduce vector spaces and linear transformations, and their applications to a variety of problems</Objective>
+                        </CourseObjective>
+                        <CourseObjective>
+                            <Objective>Introduce complex number system in details</Objective>
+                        </CourseObjective>
+                        <CourseObjective>
+                            <Objective>Provide basic concept of Fourier series, Fourier integral, Fourier transforms, Laplace Transforms and Inverse Laplace Transforms of different functions</Objective>
+                        </CourseObjective>
+                    </CourseObjectives>
+                    <CourseTitle>Mathematics III (Vector, Complex Variable, Fourier Analysis and Laplace Transformation) </CourseTitle>
+                    <CourseType>Theory</CourseType>
+                    <LaboratoryRequirements/>
+                    <LearningOutcomes>
+                        <LearningOutcome>
+                            <Outcome>Explain the basic concepts of vector spaces and subspaces</Outcome>
+                        </LearningOutcome>
+                        <LearningOutcome>
+                            <Outcome>Demonstrate an understanding of the fundamental concepts of complex analysis</Outcome>
+                        </LearningOutcome>
+                        <LearningOutcome>
+                            <Outcome>Apply theorems and rules in problem analysis. </Outcome>
+                        </LearningOutcome>
+                        <LearningOutcome>
+                            <Outcome>Calculate Fourier and Laplace Transforms and Inverse Laplace Transforms. </Outcome>
+                        </LearningOutcome>
+                        <LearningOutcome>
+                            <Outcome>Solve boundary problems for using Fourier Transform</Outcome>
+                        </LearningOutcome>
+                        <LearningOutcome>
+                            <Outcome>Classify Laplace Transforms, Definition, existence and basic properties, differential function, periodic function etc</Outcome>
+                        </LearningOutcome>
+                        <LearningOutcome>
+                            <Outcome>Describe different types Inverse Laplace Transform with the help of partial fraction, evaluation of integrals</Outcome>
+                        </LearningOutcome>
+                    </LearningOutcomes>
+                    <Prerequisite>None</Prerequisite>
+                    <Rationale>Vector spaces are widely used in Data Science. Complex numbers are used to encode geometric information through algebra. The Laplace transform has a number of properties that make it useful for analyzing linear dynamical systems. Most of the works of image matching, face recognition, 3-D map creation, video-processing, sound processing are done using Fourier Transform, Laplace Transform. Fourier series help to better analyze a signal in another domain rather in the original domain. </Rationale>
+                </Course>
+            </Courses>
+            <SemesterName>Semester 3</SemesterName>
         </Semester>
     </Semesters>
 </Syllabus>
