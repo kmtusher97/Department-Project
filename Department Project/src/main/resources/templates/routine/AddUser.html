@@ -25,8 +25,16 @@
             <ul class="nav nav-pills flex-column sidebar-nav">
                 <li class="nav-item"><a class="nav-link" th:href="@{/admin/dashboard}"><em class="fa fa-dashboard"></em>
                     Dashboard</a></li>
-                <li class="nav-item"><a class="nav-link active" th:href="@{/admin/addSyll}"><em
-                    class="fa fa-pencil-square-o"></em> Syllabus <span class="sr-only">(current)</span></a></li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/admin/addSyll}">
+                        <em class="fa fa-pencil-square-o"></em> Syllabus
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" th:href="@{/admin/addUser/{error} (error=${'+'})}">
+                        <em class="fa fa-users"></em> Add User
+                    </a>
+                </li>
             </ul>
 
             <a th:href="@{/login}" class="logout-button"><em class="fa fa-power-off"></em> Signout</a></nav>
