@@ -23,6 +23,12 @@ public class TeacherController {
     @Autowired
     UserServices userServices;
 
+    /**
+     * Provides the Teacher Dashboard Page
+     *
+     * @param userEmail
+     * @return Teacher Dashboard Page
+     */
     @RequestMapping(value = "/login/{userEmail}", method = RequestMethod.GET)
     public ModelAndView teacherLoginRequest(@PathVariable("userEmail") String userEmail) {
         User user = userServices.getByEmail(userEmail);
@@ -46,8 +52,6 @@ public class TeacherController {
     public ModelAndView updateTeacherProfile(@PathVariable("teacherId") Integer teacherId) {
         Teacher teacher = teacherServices.getTeacherById(teacherId);
 
-        System.err.println("Before " + teacher);
-
         ModelAndView teacherProfileEditForm = new ModelAndView("routine/UpdateTeacherInfo");
         teacherProfileEditForm.addObject("user", userServices.getUserByID(teacherId));
         teacherProfileEditForm.addObject("teacher", teacher);
@@ -57,6 +61,9 @@ public class TeacherController {
 
     /**
      * Save updated info of teacher profile to database
+     * First get the existing teacher object from database using teacher ID
+     * Update the existing object with newly edited data
+     * Update operation is done by teacherServices
      *
      * @param teacherId
      * @param teacherEdited
@@ -67,7 +74,7 @@ public class TeacherController {
                                            @ModelAttribute("teacher") Teacher teacherEdited) {
         Teacher teacher = teacherServices.getTeacherById(teacherId);
         teacher = teacherServices.updateTeacherWithEditedData(teacher, teacherEdited);
-        System.err.println(teacher);
+
         teacherServices.saveOrUpdate(teacher);
 
         return new ModelAndView("redirect:/teacher/login/" + userServices.getUserByID(teacherId).getEmail());
