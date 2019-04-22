@@ -63,17 +63,7 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
-			<groupId>org.apache.xmlgraphics</groupId>
-			<artifactId>fop</artifactId>
-			<version>2.3</version>
-			<exclusions>
-				<exclusion>su
-					<groupId>xml-apis</groupId>
-					<artifactId>xml-apis</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
+
 		<dependency>
 			<groupId>com.fasterxml.jackson.dataformat</groupId> <!-- for xml file generation -->
 			<artifactId>jackson-dataformat-xml</artifactId>

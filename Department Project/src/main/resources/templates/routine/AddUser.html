@@ -25,8 +25,16 @@
             <ul class="nav nav-pills flex-column sidebar-nav">
                 <li class="nav-item"><a class="nav-link" th:href="@{/admin/dashboard}"><em class="fa fa-dashboard"></em>
                     Dashboard</a></li>
-                <li class="nav-item"><a class="nav-link active" th:href="@{/admin/addSyll}"><em
-                    class="fa fa-pencil-square-o"></em> Syllabus <span class="sr-only">(current)</span></a></li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/admin/addSyll}">
+                        <em class="fa fa-pencil-square-o"></em> Syllabus
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" th:href="@{/admin/addUser/{error} (error=${'+'})}">
+                        <em class="fa fa-users"></em> Add User
+                    </a>
+                </li>
             </ul>
 
             <a th:href="@{/login}" class="logout-button"><em class="fa fa-power-off"></em> Signout</a></nav>
@@ -36,8 +44,8 @@
                     <h1 class="float-left text-center text-md-left">Users</h1>
                 </div>
                 <div class="dropdown user-dropdown col-md-6 col-lg-4 text-center text-md-right"><a
-                    class="btn btn-stripped dropdown-toggle" href="https://example.com" id="dropdownMenuLink"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        class="btn btn-stripped dropdown-toggle" href="https://example.com" id="dropdownMenuLink"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <img th:src="@{/Asset/images/Zahid-sir.jpg}" alt="profile photo"
                          class="circle float-left profile-photo" width="50" height="auto">
                     <div class="username mt-1">
@@ -47,7 +55,7 @@
                 </a>
                     <div class="dropdown-menu dropdown-menu-right" style="margin-right: 1.5rem;"
                          aria-labelledby="dropdownMenuLink"><a class="dropdown-item" href="#"><em
-                        class="fa fa-user-circle mr-1"></em> View Profile</a>
+                            class="fa fa-user-circle mr-1"></em> View Profile</a>
                         <a class="dropdown-item" href="#"><em class="fa fa-power-off mr-1"></em> Logout</a></div>
                 </div>
                 <div class="clear"></div>
@@ -65,6 +73,18 @@
                                             <div class="col-md-9">
                                                 <input required type="text" name="email" class="form-control"
                                                        id="name" th:field="${teacher.fullName}">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-3 col-form-label" for="name">Designation</label>
+                                            <div class="col-md-9">
+                                                <select class="custom-select form-control" id="name"
+                                                        th:field="${teacher.designation}">
+                                                    <option th:value="professor">Professor</option>
+                                                    <option th:value="associateProfessor">Associate Professor</option>
+                                                    <option th:value="assistantProfessor">Assistant Professor</option>
+                                                    <option th:value="lecturer">Lecturer</option>
+                                                </select>
                                             </div>
                                         </div>
                                         <div class="form-group row">

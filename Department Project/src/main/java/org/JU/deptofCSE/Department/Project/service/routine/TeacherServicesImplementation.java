@@ -17,7 +17,7 @@ public class TeacherServicesImplementation implements TeacherServices {
 
     @Override
     public List<Teacher> getAllTeacher() {
-        return (List<Teacher>)teacherRepository.findAll();
+        return (List<Teacher>) teacherRepository.findAll();
     }
 
     @Override
@@ -34,4 +34,24 @@ public class TeacherServicesImplementation implements TeacherServices {
     public void delete(Integer id) {
         teacherRepository.deleteById(id);
     }
+
+    /**
+     * Update the old object with newly edited data
+     *
+     * @param oldTeacherData
+     * @param newTeacherData
+     * @return updated Teacher Object
+     */
+    @Override
+    public Teacher updateTeacherWithEditedData(Teacher oldTeacherData, Teacher newTeacherData) {
+        oldTeacherData.setFullName(newTeacherData.getFullName());
+        oldTeacherData.setDesignation(newTeacherData.getDesignation());
+        oldTeacherData.setMobileNo1(newTeacherData.getMobileNo1());
+        oldTeacherData.setMobileNo2(newTeacherData.getMobileNo2());
+        oldTeacherData.setCampusResident(newTeacherData.isCampusResident());
+
+        return oldTeacherData;
+    }
+
+
 }

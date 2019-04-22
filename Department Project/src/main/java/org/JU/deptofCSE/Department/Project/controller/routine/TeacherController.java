@@ -23,15 +23,60 @@ public class TeacherController {
     @Autowired
     UserServices userServices;
 
+    /**
+     * Provides the Teacher Dashboard Page
+     *
+     * @param userEmail
+     * @return Teacher Dashboard Page
+     */
     @RequestMapping(value = "/login/{userEmail}", method = RequestMethod.GET)
     public ModelAndView teacherLoginRequest(@PathVariable("userEmail") String userEmail) {
         User user = userServices.getByEmail(userEmail);
         Teacher teacher = teacherServices.getTeacherById(user.getId());
 
         ModelAndView teacherDashboard = new ModelAndView("routine/TeacherDashboard");
-        teacherDashboard.addObject(user);
-        teacherDashboard.addObject(teacher);
+        teacherDashboard.addObject("user", user);
+        teacherDashboard.addObject("teacher", teacher);
 
         return teacherDashboard;
+    }
+
+
+    /**
+     * Provides a profile edit form to update teacher profile information
+     *
+     * @param teacherId
+     * @return Send edited data to store in database
+     */
+    @RequestMapping(value = "/updateInfo/{teacherId}", method = RequestMethod.GET)
+    public ModelAndView updateTeacherProfile(@PathVariable("teacherId") Integer teacherId) {
+        Teacher teacher = teacherServices.getTeacherById(teacherId);
+
+        ModelAndView teacherProfileEditForm = new ModelAndView("routine/UpdateTeacherInfo");
+        teacherProfileEditForm.addObject("user", userServices.getUserByID(teacherId));
+        teacherProfileEditForm.addObject("teacher", teacher);
+
+        return teacherProfileEditForm;
+    }
+
+    /**
+     * Save updated info of teacher profile to database
+     * First get the existing teacher object from database using teacher ID
+     * Update the existing object with newly edited data
+     * Update operation is done by teacherServices
+     *
+     * @param teacherId
+     * @param teacherEdited
+     * @return redirects to Teacher Dashboard Pager
+     */
+    @RequestMapping(value = "/saveTeacherInfo/{teacherId}", method = RequestMethod.POST)
+    public ModelAndView saveTeacherProfile(@PathVariable("teacherId") Integer teacherId,
+                                           @ModelAttribute("teacher") Teacher teacherEdited) {
+        Teacher teacher = teacherServices.getTeacherById(teacherId);
+        teacher = teacherServices.updateTeacherWithEditedData(teacher, teacherEdited);
+
+        teacherServices.saveOrUpdate(teacher);
+
+        return new ModelAndView("redirect:/teacher/login/" + userServices.getUserByID(teacherId).getEmail());
     }
 }
