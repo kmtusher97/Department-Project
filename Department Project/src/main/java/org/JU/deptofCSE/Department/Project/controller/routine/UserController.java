@@ -49,6 +49,7 @@ public class UserController {
      * If the requested email already exists then resend admin to the beginning
      * Saves the newly add user to database
      * Also creates an object of Teacher Class and stores it to database
+     * Initially Admin provides the Full Name, Designation, Email Address and initial password
      *
      * @param newUser html form input
      * @return Add User page
@@ -63,6 +64,7 @@ public class UserController {
 
         Teacher newTeacher = new Teacher(userServices.getByEmail(newUser.getEmail()));
         newTeacher.setFullName(teacher.getFullName());
+        newTeacher.setDesignation(teacher.getDesignation());
         teacherServices.saveOrUpdate(newTeacher);
 
         return new ModelAndView("redirect:/admin/addUser/" + "user_added_successfully");
