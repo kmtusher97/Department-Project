@@ -63,8 +63,11 @@ public class UserController {
         userServices.saveOrUpdateUser(newUser);
 
         Teacher newTeacher = new Teacher(userServices.getByEmail(newUser.getEmail()));
+
         newTeacher.setFullName(teacher.getFullName());
         newTeacher.setDesignation(teacher.getDesignation());
+        newTeacher.setInLeave(false);
+
         teacherServices.saveOrUpdate(newTeacher);
 
         return new ModelAndView("redirect:/admin/addUser/" + "user_added_successfully");

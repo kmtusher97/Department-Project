@@ -23,12 +23,12 @@
 
             <a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><em class="fa fa-bars"></em></a>
             <ul class="nav nav-pills flex-column sidebar-nav">
-                <li class="nav-item"><a class="nav-link active"
+                <li class="nav-item"><a class="nav-link"
                                         th:href="@{'/teacher/login/' + ${user.email}}"><em
                         class="fa fa-dashboard"></em>
                     Dashboard <span class="sr-only">(current)</span></a></li>
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{'/teacher/updateInfo/' + ${teacher.id}}"><em
+                    <a class="nav-link active" th:href="@{'/teacher/updateInfo/' + ${teacher.id}}"><em
                             class="fa fa-user"></em> Update Profile <span class="sr-only">(current)</span>
                     </a>
                 </li>
@@ -66,7 +66,7 @@
                 <div class="col-sm-12">
                     <section class="row">
                         <div class="col-md-12 col-lg-8">
-                            <form class="form" th:action="@{/saveTeacherInfo}" method="post" th:object="${teacher}">
+                            <form class="form" th:action="@{'/teacher/saveTeacherInfo/' + ${teacher.id}}" method="post">
                                 <div class="form-group row">
                                     <label class="col-md-3 col-form-label" for="fullName">Full Name</label>
                                     <div class="col-md-9">
@@ -89,14 +89,14 @@
                                 <div class="form-group row">
                                     <label class="col-md-3 col-form-label" for="mobileNo1">Mobile No.1</label>
                                     <div class="col-md-9">
-                                        <input required type="text" name="mobileNo1" class="form-control"
+                                        <input required type="text" pattern=".{11}" name="mobileNo1" class="form-control"
                                                id="mobileNo1" th:field="${teacher.mobileNo1}">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-md-3 col-form-label" for="mobileNo2">Mobile No.2</label>
                                     <div class="col-md-9">
-                                        <input  type="text" name="mobileNo2" class="form-control"
+                                        <input  type="text" pattern=".{11}" name="mobileNo2" class="form-control"
                                                id="mobileNo2" th:field="${teacher.mobileNo2}">
                                     </div>
                                 </div>
@@ -108,13 +108,6 @@
                                             <option th:value="yes">Yes</option>
                                             <option th:value="no">No</option>
                                         </select>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-md-3 col-form-label" for="joiningDate">Joining Date</label>
-                                    <div class="col-md-9">
-                                        <input required type="text" name="joiningDate" class="form-control"
-                                               id="joiningDate" th:field="${teacher.joiningDate}">
                                     </div>
                                 </div>
                                 <input class="btn btn-lg btn-primary btn-block" type="submit" value="Submit">

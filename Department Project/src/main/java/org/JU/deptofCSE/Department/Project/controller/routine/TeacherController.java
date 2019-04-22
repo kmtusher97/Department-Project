@@ -29,9 +29,47 @@ public class TeacherController {
         Teacher teacher = teacherServices.getTeacherById(user.getId());
 
         ModelAndView teacherDashboard = new ModelAndView("routine/TeacherDashboard");
-        teacherDashboard.addObject(user);
-        teacherDashboard.addObject(teacher);
+        teacherDashboard.addObject("user", user);
+        teacherDashboard.addObject("teacher", teacher);
 
         return teacherDashboard;
+    }
+
+
+    /**
+     * Provides a profile edit form to update teacher profile information
+     *
+     * @param teacherId
+     * @return Send edited data to store in database
+     */
+    @RequestMapping(value = "/updateInfo/{teacherId}", method = RequestMethod.GET)
+    public ModelAndView updateTeacherProfile(@PathVariable("teacherId") Integer teacherId) {
+        Teacher teacher = teacherServices.getTeacherById(teacherId);
+
+        System.err.println("Before " + teacher);
+
+        ModelAndView teacherProfileEditForm = new ModelAndView("routine/UpdateTeacherInfo");
+        teacherProfileEditForm.addObject("user", userServices.getUserByID(teacherId));
+        teacherProfileEditForm.addObject("teacher", teacher);
+
+        return teacherProfileEditForm;
+    }
+
+    /**
+     * Save updated info of teacher profile to database
+     *
+     * @param teacherId
+     * @param teacherEdited
+     * @return redirects to Teacher Dashboard Pager
+     */
+    @RequestMapping(value = "/saveTeacherInfo/{teacherId}", method = RequestMethod.POST)
+    public ModelAndView saveTeacherProfile(@PathVariable("teacherId") Integer teacherId,
+                                           @ModelAttribute("teacher") Teacher teacherEdited) {
+        Teacher teacher = teacherServices.getTeacherById(teacherId);
+        teacher = teacherServices.updateTeacherWithEditedData(teacher, teacherEdited);
+        System.err.println(teacher);
+        teacherServices.saveOrUpdate(teacher);
+
+        return new ModelAndView("redirect:/teacher/login/" + userServices.getUserByID(teacherId).getEmail());
     }
 }

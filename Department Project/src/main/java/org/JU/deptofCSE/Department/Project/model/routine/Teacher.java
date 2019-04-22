@@ -1,8 +1,6 @@
 package org.JU.deptofCSE.Department.Project.model.routine;
 
 import javax.persistence.*;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Entity
@@ -27,8 +25,8 @@ public class Teacher {
     @Column(name = "campusResident")
     private boolean campusResident;
 
-    @Column(name = "joiningDate")
-    private Date joiningDate;
+    @Column(name = "isInLeave")
+    private boolean isInLeave;
 
     @Column(name = "numberOfCommitteeAsChairman")
     private Integer numberOfCommitteeAsChairman;
@@ -44,15 +42,16 @@ public class Teacher {
     @MapsId
     private User user;
 
-    public Teacher() {}
+    public Teacher() {
+    }
 
     public Teacher(User user) {
         this.user = user;
     }
 
     public Teacher(Integer id, String fullName, String designation,
-                   String mobileNo1, String mobileNo2, boolean campusResident,
-                   Date joiningDate, Integer numberOfCommitteeAsChairman,
+                   String mobileNo1, String mobileNo2,
+                   boolean campusResident, Integer numberOfCommitteeAsChairman,
                    Integer numberOfCommitteeAsMember, User user) {
         this.id = id;
         this.fullName = fullName;
@@ -60,7 +59,6 @@ public class Teacher {
         this.mobileNo1 = mobileNo1;
         this.mobileNo2 = mobileNo2;
         this.campusResident = campusResident;
-        this.joiningDate = joiningDate;
         this.numberOfCommitteeAsChairman = numberOfCommitteeAsChairman;
         this.numberOfCommitteeAsMember = numberOfCommitteeAsMember;
         this.user = user;
@@ -114,12 +112,12 @@ public class Teacher {
         this.campusResident = campusResident;
     }
 
-    public Date getJoiningDate() {
-        return joiningDate;
+    public boolean isInLeave() {
+        return isInLeave;
     }
 
-    public void setJoiningDate(Date joiningDate) {
-        this.joiningDate = joiningDate;
+    public void setInLeave(boolean inLeave) {
+        isInLeave = inLeave;
     }
 
     public Integer getNumberOfCommitteeAsChairman() {
@@ -155,9 +153,10 @@ public class Teacher {
                 ", mobileNo1='" + mobileNo1 + '\'' +
                 ", mobileNo2='" + mobileNo2 + '\'' +
                 ", campusResident=" + campusResident +
-                ", joiningDate=" + joiningDate +
+                ", isInLeave=" + isInLeave +
                 ", numberOfCommitteeAsChairman=" + numberOfCommitteeAsChairman +
                 ", numberOfCommitteeAsMember=" + numberOfCommitteeAsMember +
+                ", user=" + user +
                 '}';
     }
 }
