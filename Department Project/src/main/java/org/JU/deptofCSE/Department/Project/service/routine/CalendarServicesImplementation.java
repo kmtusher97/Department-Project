@@ -6,8 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 @Service
 @Transactional
@@ -18,16 +21,32 @@ public class CalendarServicesImplementation implements CalendarServices {
 
     @Override
     public List<Calendar> getAllCalendar() {
-        return (List<Calendar>)calendarRepository.findAll();
+        return (List<Calendar>) calendarRepository.findAll();
     }
 
     @Override
-    public Calendar getCalendarByDate(Date date) { return calendarRepository.getOne(date); }
+    public Calendar getCalendarByDate(LocalDate date) {
+        return calendarRepository.getOne(date);
+    }
 
     @Override
-    public void saveOrUpdate(Calendar calendar) { calendarRepository.save(calendar); }
+    public void saveOrUpdate(Calendar calendar) {
+        calendarRepository.save(calendar);
+    }
 
     @Override
-    public void delate(Date date) { calendarRepository.deleteById(date); }
+    public void delete(LocalDate date) {
+        calendarRepository.deleteById(date);
+    }
+
+    @Override
+    public List<LocalDate> generateDatesBetween(LocalDate startDate, LocalDate endDate) {
+        long numOfDaysBetween = ChronoUnit.DAYS.between(startDate, endDate);
+        return IntStream.iterate(0, i -> i + 1)
+                .limit(numOfDaysBetween)
+                .mapToObj(i -> startDate.plusDays(i))
+                .collect(Collectors.toList());
+    }
+
 
 }

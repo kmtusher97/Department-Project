@@ -1,8 +1,10 @@
 package org.JU.deptofCSE.Department.Project.controller.routine;
 
+import org.JU.deptofCSE.Department.Project.model.routine.AcademicYear;
 import org.JU.deptofCSE.Department.Project.model.routine.Teacher;
 import org.JU.deptofCSE.Department.Project.model.routine.User;
 import org.JU.deptofCSE.Department.Project.model.syllabus.Syllabus;
+import org.JU.deptofCSE.Department.Project.service.routine.AcademicYearServices;
 import org.JU.deptofCSE.Department.Project.service.routine.AdminServices;
 import org.JU.deptofCSE.Department.Project.service.routine.UserServices;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +24,7 @@ public class AdminController {
     UserServices userServices;
 
     @Autowired
-    AdminServices adminServices;
+    AcademicYearServices academicYearServices;
 
     @RequestMapping(value = "/dashboard", method = RequestMethod.GET)
     public ModelAndView adminDashboard() {
@@ -36,15 +38,16 @@ public class AdminController {
     }
 
     @RequestMapping(value = "/editSyll", method = RequestMethod.POST)
-    public ModelAndView editSyllabus(@ModelAttribute("syllabusForm")Syllabus syllabusForm) {
+    public ModelAndView editSyllabus(@ModelAttribute("syllabusForm") Syllabus syllabusForm) {
         String fileName = syllabusForm.makeXmlFileName();
-        return new ModelAndView("redirect:/syl/editSyll/" +fileName);
+        return new ModelAndView("redirect:/syl/editSyll/" + fileName);
     }
 
 
     /**
      * Admin request to add new user
      * This page also view all the users emails are currently in the system
+     *
      * @return AddUser page
      */
     @RequestMapping(value = "/addUser/{error}", method = RequestMethod.GET)
@@ -59,5 +62,19 @@ public class AdminController {
         addUserPage.addObject("teacher", teacher);
         addUserPage.addObject("userList", userList);
         return addUserPage;
+    }
+
+
+    /**
+     * Allows admin to add, edit and delete academic calendar
+     *
+     * @return Academic Calendar Page
+     */
+    @RequestMapping(value = "/academicCalendar", method = RequestMethod.GET)
+    public ModelAndView academicCalendar() {
+        ModelAndView academicCalendarPage = new ModelAndView("routine/AcademicCalendar");
+        List<AcademicYear> academicYears = academicYearServices.getAllAcademicYears();
+        academicCalendarPage.addObject("academicYears", academicYears);
+        return academicCalendarPage;
     }
 }
