@@ -8,28 +8,55 @@ public class SyllabusQuery {
 
     private Integer to;
 
-    private Integer year;
-
-    private Integer semester;
-
-    private String courseCode;
+    private String session;
 
     public SyllabusQuery() {
         this.category = "";
         this.from = 0;
         this.to = 0;
-        this.year = 0;
-        this.semester = 0;
-        this.courseCode = "";
+        this.session = "";
     }
 
-    public SyllabusQuery(String category, Integer from, Integer to, Integer year, Integer semester, String courseCode) {
+    public SyllabusQuery(String category,
+                         Integer from,
+                         Integer to,
+                         String session) {
         this.category = category;
         this.from = from;
         this.to = to;
-        this.year = year;
-        this.semester = semester;
-        this.courseCode = courseCode;
+        this.session = session;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public Integer getFrom() {
+        return from;
+    }
+
+    public void setFrom(Integer from) {
+        this.from = from;
+    }
+
+    public Integer getTo() {
+        return to;
+    }
+
+    public void setTo(Integer to) {
+        this.to = to;
+    }
+
+    public String getSession() {
+        return session;
+    }
+
+    public void setSession(String session) {
+        this.session = session;
     }
 
     /**
@@ -72,76 +99,18 @@ public class SyllabusQuery {
         this.to = Integer.parseInt(yearTo);
     }
 
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
-
-    public Integer getFrom() {
-        return from;
-    }
-
-    public void setFrom(Integer from) {
-        this.from = from;
-    }
-
-    public Integer getTo() {
-        return to;
-    }
-
-    public void setTo(Integer to) {
-        this.to = to;
-    }
-
-    public Integer getYear() {
-        return year;
-    }
-
-    public void setYear(Integer year) {
-        this.year = year;
-    }
-
-    public Integer getSemester() {
-        return semester;
-    }
-
-    public void setSemester(Integer semester) {
-        this.semester = semester;
-    }
-
-    public String getCourseCode() {
-        return courseCode;
-    }
-
-    public void setCourseCode(String courseCode) {
-        this.courseCode = courseCode;
-    }
-
-
     /**
-     * Makes the xml file name for the object
-     * @return xml file name
+     * parse form and to from session
      */
-    public String makeXmlFileName() {
-        return this.category + "_" + Integer.toString(this.from) + "to" + Integer.toString(this.to);
-    }
-
-    public int getSemesterNoByYearAndSemester() {
-        int ret = 0;
-
-        if(this.category == "Undergrad" || this.category == "Masters") {
-            ret = this.year * (this.semester + (this.semester % 2));
-            ret -= (this.semester % 2);
+    public void parseSession(String session) {
+        int year = 0, powerOf10 = 1;
+        for(int i = 3; i >= 0; i--) {
+            year += ((session.charAt(i) - '0') * powerOf10);
+            powerOf10 *= 10;
         }
-        else if(this.category == "Phd") {                                       // future addition
-
-        }
-        return ret;
+        this.from = year;
+        this.to = year + 1;
     }
-
 
     @Override
     public String toString() {
@@ -149,9 +118,7 @@ public class SyllabusQuery {
                 "category='" + category + '\'' +
                 ", from=" + from +
                 ", to=" + to +
-                ", year=" + year +
-                ", semester=" + semester +
-                ", courseCode='" + courseCode + '\'' +
+                ", session='" + session + '\'' +
                 '}';
     }
 }

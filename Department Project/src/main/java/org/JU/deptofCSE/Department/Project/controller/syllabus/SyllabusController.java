@@ -135,6 +135,8 @@ public class SyllabusController {
     public ModelAndView viewSyllabus(@ModelAttribute("syllabusQuery") SyllabusQuery syllabusQuery,
                                      @ModelAttribute("message") String message,
                                      @PathVariable("userEmail") String userEmail) throws JAXBException {
+        syllabusQuery.parseSession(syllabusQuery.getSession());
+        System.err.println(syllabusQuery);
         String syllabusName = syllabusServices.getSyllabusNameBySession(syllabusQuery.getFrom(), syllabusQuery.getTo());
 
         if (syllabusName == null) {                                               // if the requested syllabus does not exist or the parameters are invalid

@@ -70,76 +70,50 @@
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-md-3 col-form-label" for="from">Effective From</label>
+                                            <label class="col-md-3 col-form-label" for="session">Session</label>
                                             <div class="col-md-9">
-                                                <select class="custom-select form-control" id="from" th:field="${syllabusQuery.from}">
-                                                    <option th:value="2001">2001</option>
-                                                    <option th:value="2002">2002</option>
-                                                    <option th:value="2003">2003</option>
-                                                    <option th:value="2004">2004</option>
-                                                    <option th:value="2005">2005</option>
-                                                    <option th:value="2006">2006</option>
-                                                    <option th:value="2007">2007</option>
-                                                    <option th:value="2008">2008</option>
-                                                    <option th:value="2009">2009</option>
-                                                    <option th:value="2010">2010</option>
-                                                    <option th:value="2011">2011</option>
-                                                    <option th:value="2012">2012</option>
-                                                    <option th:value="2013">2013</option>
-                                                    <option th:value="2014">2014</option>
-                                                    <option th:value="2015">2015</option>
-                                                    <option th:value="2016">2016</option>
-                                                    <option th:value="2017">2017</option>
-                                                    <option th:value="2018">2018</option>
-                                                    <option th:value="2019">2019</option>
-                                                    <option th:value="2020">2020</option>
-                                                    <option th:value="2021">2021</option>
-                                                    <option th:value="2022">2022</option>
-                                                    <option th:value="2023">2023</option>
-                                                    <option th:value="2024">2024</option>
-                                                    <option th:value="2025">2025</option>
-                                                    <option th:value="2026">2026</option>
-                                                    <option th:value="2027">2027</option>
-                                                    <option th:value="2028">2028</option>
-                                                    <option th:value="2029">2029</option>
-                                                    <option th:value="2030">2030</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label class="col-md-3 col-form-label" for="to">Effective To</label>
-                                            <div class="col-md-9">
-                                                <select class="custom-select form-control" id="to" th:field="${syllabusQuery.to}">
-                                                    <option th:value="2001">2001</option>
-                                                    <option th:value="2002">2002</option>
-                                                    <option th:value="2003">2003</option>
-                                                    <option th:value="2004">2004</option>
-                                                    <option th:value="2005">2005</option>
-                                                    <option th:value="2006">2006</option>
-                                                    <option th:value="2007">2007</option>
-                                                    <option th:value="2008">2008</option>
-                                                    <option th:value="2009">2009</option>
-                                                    <option th:value="2010">2010</option>
-                                                    <option th:value="2011">2011</option>
-                                                    <option th:value="2012">2012</option>
-                                                    <option th:value="2013">2013</option>
-                                                    <option th:value="2014">2014</option>
-                                                    <option th:value="2015">2015</option>
-                                                    <option th:value="2016">2016</option>
-                                                    <option th:value="2017">2017</option>
-                                                    <option th:value="2018">2018</option>
-                                                    <option th:value="2019">2019</option>
-                                                    <option th:value="2020">2020</option>
-                                                    <option th:value="2021">2021</option>
-                                                    <option th:value="2022">2022</option>
-                                                    <option th:value="2023">2023</option>
-                                                    <option th:value="2024">2024</option>
-                                                    <option th:value="2025">2025</option>
-                                                    <option th:value="2026">2026</option>
-                                                    <option th:value="2027">2027</option>
-                                                    <option th:value="2028">2028</option>
-                                                    <option th:value="2029">2029</option>
-                                                    <option th:value="2030">2030</option>
+                                                <select class="custom-select form-control" id="session" th:field="${syllabusQuery.session}">
+                                                    <option th:value="200102">2001-02</option>
+                                                    <option th:value="200203">2002-03</option>
+                                                    <option th:value="200304">2003-04</option>
+                                                    <option th:value="200405">2004-05</option>
+                                                    <option th:value="200506">2005-06</option>
+                                                    <option th:value="200607">2006-07</option>
+                                                    <option th:value="200708">2007-08</option>
+                                                    <option th:value="200809">2008-09</option>
+                                                    <option th:value="200910">2009-10</option>
+                                                    <option th:value="201011">2010-11</option>
+                                                    <option th:value="201112">2011-12</option>
+                                                    <option th:value="201213">2012-13</option>
+                                                    <option th:value="201314">2013-14</option>
+                                                    <option th:value="201415">2014-15</option>
+                                                    <option th:value="201516">2015-16</option>
+                                                    <option th:value="201617">2016-17</option>
+                                                    <option th:value="201718">2017-18</option>
+                                                    <option th:value="201819">2018-19</option>
+                                                    <option th:value="201920">2019-20</option>
+                                                    <option th:value="202021">2020-21</option>
+                                                    <option th:value="202122">2021-22</option>
+                                                    <option th:value="202223">2022-23</option>
+                                                    <option th:value="202324">2023-24</option>
+                                                    <option th:value="202425">2024-25</option>
+                                                    <option th:value="202526">2025-26</option>
+                                                    <option th:value="202627">2026-27</option>
+                                                    <option th:value="202728">2027-28</option>
+                                                    <option th:value="202829">2028-29</option>
+                                                    <option th:value="202930">2029-30</option>
+                                                    <option th:value="203031">2030-31</option>
+                                                    <option th:value="203132">2031-32</option>
+                                                    <option th:value="203233">2032-33</option>
+                                                    <option th:value="203334">2033-34</option>
+                                                    <option th:value="203435">2034-35</option>
+                                                    <option th:value="203536">2035-36</option>
+                                                    <option th:value="203637">2036-37</option>
+                                                    <option th:value="203738">2037-38</option>
+                                                    <option th:value="203839">2038-39</option>
+                                                    <option th:value="203940">2039-40</option>
+                                                    <option th:value="204041">2040-41</option>
+
                                                 </select>
                                             </div>
                                         </div>
